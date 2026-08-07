@@ -1,20 +1,48 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
 
+const bannerImages = [
+  { src: "/images/collin1.avif", alt: "Dr. Collin at Wyoming Clinic of Chiropractic" },
+  { src: "/images/collin2.avif", alt: "Chiropractic care at Wyoming Clinic" },
+  { src: "/images/front-door.avif", alt: "Front door of Wyoming Clinic of Chiropractic" },
+  { src: "/images/front-entry.avif", alt: "Front entry of Wyoming Clinic of Chiropractic" },
+]
+
 export function Hero() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bannerImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-chiro.jpg"
-          alt="Chiropractic care at Wyoming Clinic"
-          fill
-          className="object-cover object-[center_calc(50%+40px)]"
-          priority
-        />
+        {bannerImages.map((image, index) => (
+          <div
+            key={image.src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 bg-foreground/60" />
       </div>
 
@@ -42,6 +70,21 @@ export function Hero() {
               </a>
             </Button>
           </div>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="mt-12 flex gap-2">
+          {bannerImages.map((image, index) => (
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
 
