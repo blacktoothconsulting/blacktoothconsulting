@@ -11,6 +11,9 @@ const bannerImages = [
   { src: "/images/collin2.avif", alt: "Chiropractic care at Wyoming Clinic" },
   { src: "/images/front-door.avif", alt: "Front door of Wyoming Clinic of Chiropractic" },
   { src: "/images/front-entry.avif", alt: "Front entry of Wyoming Clinic of Chiropractic" },
+  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at Wyoming Clinic of Chiropractic" },
+  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at Wyoming Clinic of Chiropractic" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at Wyoming Clinic of Chiropractic" },
 ]
 
 export function Hero() {
