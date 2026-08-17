@@ -6,15 +6,16 @@ const navigation = {
   main: [
     { name: "Home", href: "#" },
     { name: "Services", href: "#services" },
+    { name: "Our Providers", href: "#providers" },
     { name: "About", href: "#about" },
     { name: "New Patients", href: "#new-patients" },
     { name: "Contact", href: "#contact" },
   ],
   services: [
-    { name: "Corrective Exercises", href: "#services" },
-    { name: "Lifestyle Advice", href: "#services" },
-    { name: "Nutritional Counseling", href: "#services" },
+    { name: "Gonstead Chiropractic", href: "#services" },
+    { name: "General Medical Care", href: "#providers" },
     { name: "Massage Therapy", href: "#services" },
+    { name: "Nutritional Counseling", href: "#services" },
     { name: "Digital X-ray", href: "#services" },
   ],
 }
@@ -29,20 +30,20 @@ export function Footer() {
             <Link href="#" className="flex items-center gap-3">
               <Image
                 src="/images/logo.avif"
-                alt="Wyoming Clinic of Chiropractic Logo"
+                alt="The Wyoming Clinic Logo"
                 width={50}
                 height={50}
                 className="h-12 w-auto brightness-200"
               />
               <div>
                 <p className="font-serif text-lg font-semibold leading-tight">
-                  Wyoming Clinic
+                  The Wyoming Clinic
                 </p>
-                <p className="text-xs text-background/70">of Chiropractic</p>
+                <p className="text-xs text-background/70">Chiropractic &amp; Medical Care</p>
               </div>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Specific chiropractic healthcare for the whole family in Sheridan, Wyoming.
+              Chiropractic and general medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 
@@ -118,7 +119,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/10">
           <p className="text-center text-sm text-background/50">
-            &copy; {new Date().getFullYear()} Wyoming Clinic of Chiropractic. All rights reserved.
+            &copy; {new Date().getFullYear()} The Wyoming Clinic. All rights reserved.
           </p>
         </div>
       </div>

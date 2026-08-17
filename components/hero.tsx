@@ -1,20 +1,51 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
 
+const bannerImages = [
+  { src: "/images/collin1.avif", alt: "Chiropractic care at The Wyoming Clinic" },
+  { src: "/images/collin2.avif", alt: "Chiropractic care at The Wyoming Clinic" },
+  { src: "/images/front-door.avif", alt: "Front door of The Wyoming Clinic" },
+  { src: "/images/front-entry.avif", alt: "Front entry of The Wyoming Clinic" },
+  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at The Wyoming Clinic" },
+  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at The Wyoming Clinic" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at The Wyoming Clinic" },
+]
+
 export function Hero() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bannerImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-chiro.jpg"
-          alt="Chiropractic care at Wyoming Clinic"
-          fill
-          className="object-cover object-[center_calc(50%+40px)]"
-          priority
-        />
+        {bannerImages.map((image, index) => (
+          <div
+            key={image.src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 bg-foreground/60" />
       </div>
 
@@ -25,11 +56,12 @@ export function Hero() {
             Sheridan, Wyoming
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Specific Chiropractic Healthcare for the Whole Family
+            Chiropractic &amp; Medical Care for the Whole Family
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
-            Our mission is to help you live the life you deserve through chiropractic care. 
-            We will always have time for you. To listen. To explain. You will get answers in our office.
+            Our mission is to help you live the life you deserve. From trusted Gonstead
+            chiropractic to general medical care, we&apos;ll always have time for you &mdash;
+            to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
@@ -42,6 +74,21 @@ export function Hero() {
               </a>
             </Button>
           </div>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="mt-12 flex gap-2">
+          {bannerImages.map((image, index) => (
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
 

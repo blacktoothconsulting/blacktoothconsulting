@@ -16,8 +16,8 @@ export function About() {
           <div className="relative">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/family-health.jpg"
-                alt="Family healthcare at Wyoming Clinic of Chiropractic"
+                src="/images/office.avif"
+                alt="Office at The Wyoming Clinic"
                 fill
                 className="object-cover"
               />

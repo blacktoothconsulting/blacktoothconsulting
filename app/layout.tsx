@@ -14,9 +14,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Wyoming Clinic of Chiropractic | Sheridan, WY | Gonstead Care',
-  description: 'Specific chiropractic healthcare for the whole family in Sheridan, Wyoming. Gonstead technique specialists offering corrective exercises, massage therapy, nutritional counseling, and more.',
-  keywords: 'chiropractor, chiropractic, Sheridan, Wyoming, Gonstead, spinal care, back pain, massage therapy',
+  title: 'Wyoming Clinic of Integrated Health | Chiropractic & Medical Care | Sheridan, WY',
+  description: 'Integrated chiropractic and cash-pay medical care for the whole family in Sheridan, Wyoming. Home of Gonstead chiropractic care and now scheduling general medical care with Gordon Hendrickson, PA-C.',
+  keywords: 'chiropractor, chiropractic, physician assistant, primary care, cash pay clinic, medical clinic, Sheridan, Wyoming, Gonstead, spinal care, back pain, massage therapy, Gordon Hendrickson',
   icons: {
     icon: '/images/logo.avif',
     apple: '/images/logo.avif',

@@ -21,7 +21,7 @@ const services = [
   },
   {
     name: "Nutritional Counseling",
-    description: "Customized nutrition plans to support your body&apos;s healing and overall wellness.",
+    description: "Customized nutrition plans to support your body's healing and overall wellness.",
     icon: Apple,
   },
   {
