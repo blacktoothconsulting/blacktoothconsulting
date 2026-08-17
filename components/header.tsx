@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 const navigation = [
   { name: "Home", href: "#" },
   { name: "Services", href: "#services" },
+  { name: "Our Providers", href: "#providers" },
   { name: "About", href: "#about" },
   { name: "New Patients", href: "#new-patients" },
   { name: "Contact", href: "#contact" },
@@ -36,16 +37,16 @@ export function Header() {
           <Link href="#" className="-m-1.5 p-1.5 flex items-center gap-3">
             <Image
               src="/images/logo.avif"
-              alt="Wyoming Clinic of Chiropractic Logo"
+              alt="The Wyoming Clinic Logo"
               width={50}
               height={50}
               className="h-12 w-auto"
             />
             <div className="hidden sm:block">
               <p className="font-serif text-lg font-semibold text-foreground leading-tight">
-                Wyoming Clinic
+                The Wyoming Clinic
               </p>
-              <p className="text-xs text-muted-foreground">of Chiropractic</p>
+              <p className="text-xs text-muted-foreground">Chiropractic &amp; Medical Care</p>
             </div>
           </Link>
         </div>

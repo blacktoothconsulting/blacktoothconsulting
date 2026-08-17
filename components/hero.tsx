@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
 
 const bannerImages = [
-  { src: "/images/collin1.avif", alt: "Dr. Collin at Wyoming Clinic of Chiropractic" },
-  { src: "/images/collin2.avif", alt: "Chiropractic care at Wyoming Clinic" },
-  { src: "/images/front-door.avif", alt: "Front door of Wyoming Clinic of Chiropractic" },
-  { src: "/images/front-entry.avif", alt: "Front entry of Wyoming Clinic of Chiropractic" },
-  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at Wyoming Clinic of Chiropractic" },
-  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at Wyoming Clinic of Chiropractic" },
-  { src: "/images/xray3.avif", alt: "X-ray imaging room at Wyoming Clinic of Chiropractic" },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at The Wyoming Clinic" },
+  { src: "/images/collin2.avif", alt: "Chiropractic care at The Wyoming Clinic" },
+  { src: "/images/front-door.avif", alt: "Front door of The Wyoming Clinic" },
+  { src: "/images/front-entry.avif", alt: "Front entry of The Wyoming Clinic" },
+  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at The Wyoming Clinic" },
+  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at The Wyoming Clinic" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at The Wyoming Clinic" },
 ]
 
 export function Hero() {
@@ -56,11 +56,12 @@ export function Hero() {
             Sheridan, Wyoming
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Specific Chiropractic Healthcare for the Whole Family
+            Chiropractic &amp; Medical Care for the Whole Family
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
-            Our mission is to help you live the life you deserve through chiropractic care. 
-            We will always have time for you. To listen. To explain. You will get answers in our office.
+            Our mission is to help you live the life you deserve. From trusted Gonstead
+            chiropractic to general medical care, we&apos;ll always have time for you &mdash;
+            to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
