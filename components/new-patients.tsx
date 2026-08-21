@@ -83,7 +83,7 @@ export function NewPatients() {
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/front-desk.avif"
-                alt="Front desk at The Wyoming Clinic"
+                alt="Front desk at the Wyoming Clinic of Integrated Health"
                 fill
                 className="object-cover"
               />

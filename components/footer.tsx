@@ -4,19 +4,19 @@ import { Phone, MapPin, Mail } from "lucide-react"
 
 const navigation = {
   main: [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "Our Providers", href: "#providers" },
-    { name: "About", href: "#about" },
-    { name: "New Patients", href: "#new-patients" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Chiropractic", href: "/chiropractic" },
+    { name: "Medical Care", href: "/medical-care" },
+    { name: "About", href: "/chiropractic#about" },
+    { name: "New Patients", href: "/#new-patients" },
+    { name: "Contact", href: "/#contact" },
   ],
   services: [
-    { name: "Gonstead Chiropractic", href: "#services" },
-    { name: "General Medical Care", href: "#providers" },
-    { name: "Massage Therapy", href: "#services" },
-    { name: "Nutritional Counseling", href: "#services" },
-    { name: "Digital X-ray", href: "#services" },
+    { name: "Gonstead Chiropractic", href: "/chiropractic" },
+    { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
+    { name: "General Medical Care", href: "/medical-care" },
+    { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
+    { name: "Massage Therapy", href: "/chiropractic#services" },
   ],
 }
 
@@ -27,23 +27,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="#" className="flex items-center gap-3">
-              <Image
-                src="/images/logo.avif"
-                alt="The Wyoming Clinic Logo"
-                width={50}
-                height={50}
-                className="h-12 w-auto brightness-200"
-              />
-              <div>
-                <p className="font-serif text-lg font-semibold leading-tight">
-                  The Wyoming Clinic
-                </p>
-                <p className="text-xs text-background/70">Chiropractic &amp; Medical Care</p>
-              </div>
+            <Link href="/" className="inline-flex">
+              <span className="flex items-center justify-center rounded-lg bg-background p-3">
+                <Image
+                  src="/images/logo.png"
+                  alt="Wyoming Clinic of Integrated Health Logo"
+                  width={220}
+                  height={165}
+                  className="h-24 w-auto"
+                />
+              </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Chiropractic and general medical care for the whole family in Sheridan, Wyoming.
+              Integrated chiropractic and cash-pay medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 
@@ -111,7 +107,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-background/70">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>Sheridan, Wyoming</span>
+                <span>528 Coffeen Ave, Sheridan, Wyoming</span>
               </li>
             </ul>
           </div>
@@ -119,7 +115,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/10">
           <p className="text-center text-sm text-background/50">
-            &copy; {new Date().getFullYear()} The Wyoming Clinic. All rights reserved.
+            &copy; {new Date().getFullYear()} Wyoming Clinic of Integrated Health. All rights reserved.
           </p>
         </div>
       </div>

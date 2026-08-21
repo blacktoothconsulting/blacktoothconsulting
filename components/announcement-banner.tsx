@@ -15,8 +15,8 @@ export function AnnouncementBanner() {
             </span>
           </div>
           <p className="text-sm sm:text-base font-medium text-balance">
-            The Wyoming Clinic now offers general medical care with{" "}
-            <span className="font-semibold">Gordon Hendrickson, PA</span> — chiropractic and
+            Now scheduling cash-pay medical care with{" "}
+            <span className="font-semibold">Gordon Hendrickson, PA-C</span> — chiropractic and
             healthcare under one roof.
           </p>
           <Link

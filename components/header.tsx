@@ -7,12 +7,12 @@ import { Menu, X, Phone, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "Our Providers", href: "#providers" },
-  { name: "About", href: "#about" },
-  { name: "New Patients", href: "#new-patients" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Chiropractic", href: "/chiropractic" },
+  { name: "Medical Care", href: "/medical-care" },
+  { name: "About", href: "/chiropractic#about" },
+  { name: "New Patients", href: "/#new-patients" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export function Header() {
@@ -34,13 +34,13 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5 flex items-center gap-3">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
             <Image
-              src="/images/logo.avif"
+              src="/images/logo-horse-tight.png"
               alt="Wyoming Clinic of Integrated Health Logo"
-              width={50}
-              height={50}
-              className="h-12 w-auto"
+              width={120}
+              height={120}
+              className="h-16 w-auto mix-blend-multiply"
             />
             <div className="hidden sm:block">
               <p className="font-serif text-lg font-semibold text-foreground leading-tight">
@@ -83,7 +83,7 @@ export function Header() {
             307.655.8775
           </a>
           <Button asChild>
-            <Link href="#contact">Book Appointment</Link>
+            <Link href="/#contact">Book Appointment</Link>
           </Button>
         </div>
       </nav>
@@ -148,7 +148,7 @@ export function Header() {
               307.655.8775
             </a>
             <Button asChild className="w-full">
-              <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
                 Book Appointment
               </Link>
             </Button>
