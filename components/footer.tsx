@@ -4,20 +4,19 @@ import { Phone, MapPin, Mail } from "lucide-react"
 
 const navigation = {
   main: [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "Our Providers", href: "#providers" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
-    { name: "New Patients", href: "#new-patients" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Chiropractic", href: "/chiropractic" },
+    { name: "Medical Care", href: "/medical-care" },
+    { name: "About", href: "/#about" },
+    { name: "New Patients", href: "/#new-patients" },
+    { name: "Contact", href: "/#contact" },
   ],
   services: [
-    { name: "Gonstead Chiropractic", href: "#services" },
-    { name: "General Medical Care", href: "#providers" },
-    { name: "Cash-Pay Pricing", href: "#pricing" },
-    { name: "Massage Therapy", href: "#services" },
-    { name: "Digital X-ray", href: "#services" },
+    { name: "Gonstead Chiropractic", href: "/chiropractic" },
+    { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
+    { name: "General Medical Care", href: "/medical-care" },
+    { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
+    { name: "Massage Therapy", href: "/chiropractic#services" },
   ],
 }
 
@@ -28,7 +27,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="#" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/images/logo.avif"
                 alt="Wyoming Clinic of Integrated Health Logo"
