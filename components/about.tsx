@@ -41,9 +41,9 @@ export function About() {
               in our office and it is an honor to do so. Thank you for your trust and confidence.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              At the Wyoming Clinic your care is individualized and tailored to your needs, 
-              from the chiropractic care to the corrective exercises, as well as even the 
-              massage therapy and nutrition.
+              As certified Gonstead practitioners, we focus on finding and correcting the root
+              cause of your discomfort &mdash; not just chasing symptoms &mdash; so you can get
+              lasting relief and stay well for the long run.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { CollinProfile } from "@/components/collin-profile"
+import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { ChiropracticPricing } from "@/components/chiropractic-pricing"
 import { Contact } from "@/components/contact"
@@ -38,6 +39,7 @@ export default function ChiropracticPage() {
           </Button>
         </PageHero>
         <CollinProfile />
+        <About />
         <Services />
         <ChiropracticPricing />
         <Contact />

@@ -10,7 +10,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Chiropractic", href: "/chiropractic" },
   { name: "Medical Care", href: "/medical-care" },
-  { name: "About", href: "/#about" },
+  { name: "About", href: "/chiropractic#about" },
   { name: "New Patients", href: "/#new-patients" },
   { name: "Contact", href: "/#contact" },
 ]
@@ -36,11 +36,11 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
             <Image
-              src="/images/logo.avif"
+              src="/images/logo.png"
               alt="Wyoming Clinic of Integrated Health Logo"
-              width={50}
-              height={50}
-              className="h-12 w-auto"
+              width={96}
+              height={72}
+              className="h-14 w-auto"
             />
             <div className="hidden sm:block">
               <p className="font-serif text-lg font-semibold text-foreground leading-tight">

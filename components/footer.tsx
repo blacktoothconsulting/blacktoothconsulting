@@ -7,7 +7,7 @@ const navigation = {
     { name: "Home", href: "/" },
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/chiropractic#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
   ],
@@ -28,13 +28,15 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/images/logo.avif"
-                alt="Wyoming Clinic of Integrated Health Logo"
-                width={50}
-                height={50}
-                className="h-12 w-auto brightness-200"
-              />
+              <span className="flex items-center justify-center rounded-lg bg-background p-1.5">
+                <Image
+                  src="/images/logo.png"
+                  alt="Wyoming Clinic of Integrated Health Logo"
+                  width={96}
+                  height={72}
+                  className="h-12 w-auto"
+                />
+              </span>
               <div>
                 <p className="font-serif text-lg font-semibold leading-tight">
                   Wyoming Clinic
