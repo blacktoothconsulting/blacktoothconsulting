@@ -7,6 +7,7 @@ const navigation = {
     { name: "Home", href: "#" },
     { name: "Services", href: "#services" },
     { name: "Our Providers", href: "#providers" },
+    { name: "Pricing", href: "#pricing" },
     { name: "About", href: "#about" },
     { name: "New Patients", href: "#new-patients" },
     { name: "Contact", href: "#contact" },
@@ -14,8 +15,8 @@ const navigation = {
   services: [
     { name: "Gonstead Chiropractic", href: "#services" },
     { name: "General Medical Care", href: "#providers" },
+    { name: "Cash-Pay Pricing", href: "#pricing" },
     { name: "Massage Therapy", href: "#services" },
-    { name: "Nutritional Counseling", href: "#services" },
     { name: "Digital X-ray", href: "#services" },
   ],
 }
@@ -30,20 +31,20 @@ export function Footer() {
             <Link href="#" className="flex items-center gap-3">
               <Image
                 src="/images/logo.avif"
-                alt="The Wyoming Clinic Logo"
+                alt="Wyoming Clinic of Integrated Health Logo"
                 width={50}
                 height={50}
                 className="h-12 w-auto brightness-200"
               />
               <div>
                 <p className="font-serif text-lg font-semibold leading-tight">
-                  The Wyoming Clinic
+                  Wyoming Clinic
                 </p>
-                <p className="text-xs text-background/70">Chiropractic &amp; Medical Care</p>
+                <p className="text-xs text-background/70">of Integrated Health</p>
               </div>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Chiropractic and general medical care for the whole family in Sheridan, Wyoming.
+              Integrated chiropractic and cash-pay medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 
@@ -111,7 +112,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-background/70">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>Sheridan, Wyoming</span>
+                <span>528 Coffeen Ave, Sheridan, Wyoming</span>
               </li>
             </ul>
           </div>
@@ -119,7 +120,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/10">
           <p className="text-center text-sm text-background/50">
-            &copy; {new Date().getFullYear()} The Wyoming Clinic. All rights reserved.
+            &copy; {new Date().getFullYear()} Wyoming Clinic of Integrated Health. All rights reserved.
           </p>
         </div>
       </div>

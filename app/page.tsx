@@ -3,6 +3,7 @@ import { AnnouncementBanner } from "@/components/announcement-banner"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
 import { Providers } from "@/components/providers"
+import { Pricing } from "@/components/pricing"
 import { About } from "@/components/about"
 import { NewPatients } from "@/components/new-patients"
 import { Hours } from "@/components/hours"
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Providers />
+        <Pricing />
         <About />
         <NewPatients />
         <Hours />
