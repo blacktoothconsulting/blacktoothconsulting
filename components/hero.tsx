@@ -8,6 +8,8 @@ import { Phone, MapPin, Clock } from "lucide-react"
 
 const bannerImages = [
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/collin-headshot.avif", alt: "Collin Redinger, D.C. at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
   { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-entry.avif", alt: "Front entry of the Wyoming Clinic of Integrated Health" },

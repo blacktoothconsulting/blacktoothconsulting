@@ -24,7 +24,7 @@ const careLines = [
     eyebrow: "Medical Care",
     provider: "Gordon Hendrickson, PA-C",
     icon: Stethoscope,
-    image: "/placeholder.svg?height=750&width=600",
+    image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
       "Straightforward, cash-pay primary and acute medical care with clear, up-front pricing and convenient same-day scheduling.",
@@ -69,7 +69,7 @@ export function ProvidersOverview() {
                   src={line.image || "/placeholder.svg"}
                   alt={line.imageAlt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               </div>
