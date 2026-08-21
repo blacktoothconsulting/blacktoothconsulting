@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Phone, MapPin, Mail, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -8,12 +8,19 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function Contact() {
+  const [mounted, setMounted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   })
+
+  // Render the form only after mount so browser extensions (e.g. password
+  // managers) that inject DOM into inputs can't cause a hydration mismatch.
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -110,64 +117,76 @@ export function Contact() {
               <h3 className="text-lg font-semibold text-foreground mb-6">
                 Send Us a Message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-4" suppressHydrationWarning>
-                <div suppressHydrationWarning>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                    Full Name
-                  </label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" suppressHydrationWarning>
-                  <div suppressHydrationWarning>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                      Email
+              {mounted ? (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
+                      Full Name
                     </label>
                     <Input
-                      id="email"
-                      type="email"
-                      placeholder="you@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      id="name"
+                      type="text"
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                     />
                   </div>
-                  <div suppressHydrationWarning>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
-                      Phone
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
+                        Phone
+                      </label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="(307) 555-0000"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
+                      Message
                     </label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="(307) 555-0000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    <Textarea
+                      id="message"
+                      placeholder="How can we help you?"
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
                     />
                   </div>
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
+              ) : (
+                <div className="space-y-4" aria-hidden="true">
+                  <div className="h-[68px] rounded-md bg-muted/50" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="h-[68px] rounded-md bg-muted/50" />
+                    <div className="h-[68px] rounded-md bg-muted/50" />
+                  </div>
+                  <div className="h-[122px] rounded-md bg-muted/50" />
+                  <div className="h-10 rounded-md bg-muted/50" />
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="How can we help you?"
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
+              )}
             </CardContent>
           </Card>
         </div>

@@ -36,11 +36,11 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-horse.png"
               alt="Wyoming Clinic of Integrated Health Logo"
-              width={96}
-              height={72}
-              className="h-14 w-auto"
+              width={120}
+              height={90}
+              className="h-16 w-auto mix-blend-multiply"
             />
             <div className="hidden sm:block">
               <p className="font-serif text-lg font-semibold text-foreground leading-tight">

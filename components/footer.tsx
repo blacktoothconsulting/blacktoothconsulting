@@ -27,22 +27,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
-              <span className="flex items-center justify-center rounded-lg bg-background p-1.5">
+            <Link href="/" className="inline-flex">
+              <span className="flex items-center justify-center rounded-lg bg-background p-3">
                 <Image
                   src="/images/logo.png"
                   alt="Wyoming Clinic of Integrated Health Logo"
-                  width={96}
-                  height={72}
-                  className="h-12 w-auto"
+                  width={220}
+                  height={165}
+                  className="h-24 w-auto"
                 />
               </span>
-              <div>
-                <p className="font-serif text-lg font-semibold leading-tight">
-                  Wyoming Clinic
-                </p>
-                <p className="text-xs text-background/70">of Integrated Health</p>
-              </div>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
               Integrated chiropractic and cash-pay medical care for the whole family in Sheridan, Wyoming.
