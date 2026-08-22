@@ -33,20 +33,20 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
+        <div className="flex min-w-0 lg:flex-1">
+          <Link href="/" className="-m-1.5 p-1.5 flex min-w-0 items-center gap-2 sm:gap-3">
             <Image
               src="/images/logo-horse-tight.png"
               alt="Wyoming Clinic of Integrated Health Logo"
               width={120}
               height={120}
-              className="h-16 w-auto mix-blend-multiply"
+              className="h-12 w-auto shrink-0 mix-blend-multiply sm:h-16"
             />
-            <div className="hidden sm:block">
-              <p className="font-serif text-lg font-semibold text-foreground leading-tight">
+            <div className="min-w-0">
+              <p className="font-serif text-base font-semibold text-foreground leading-tight sm:text-lg">
                 Wyoming Clinic
               </p>
-              <p className="text-xs text-muted-foreground">of Integrated Health</p>
+              <p className="text-[11px] text-muted-foreground sm:text-xs">of Integrated Health</p>
             </div>
           </Link>
         </div>
