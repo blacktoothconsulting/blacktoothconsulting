@@ -52,12 +52,19 @@ export function GordonProfile() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
-                <a href="tel:307-655-8775">Call 307.655.8775 to Schedule</a>
+                <a href="#schedule">Schedule Online</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="#pricing">View Pricing Menu</a>
+                <a href="tel:307-655-8775">Call 307.655.8775</a>
               </Button>
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Or{" "}
+              <a href="#pricing" className="font-medium text-primary underline underline-offset-4">
+                view the pricing menu
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
