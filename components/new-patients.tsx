@@ -52,7 +52,7 @@ const providerPaths = [
     provider: "with Collin Redinger, D.C.",
     icon: Activity,
     detail:
-      "Your exam focuses on spinal alignment, range of motion, and the mechanics behind your pain.",
+      "Your exam focuses on spinal alignment, range of motion, and the mechanics behind your condition.",
     extra: "X-rays are taken if necessary to get a complete picture of your spine.",
     extraIcon: FileImage,
     href: "/chiropractic",
