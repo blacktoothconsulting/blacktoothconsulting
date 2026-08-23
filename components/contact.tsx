@@ -38,8 +38,8 @@ export function Contact() {
             Get Your Life Back!
           </h2>
           <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-            Ready to start your journey to better health? Contact us today to schedule 
-            your appointment or ask any questions.
+            Call us at 307.655.8775 or send a message below. Chiropractic, massage, and
+            medical questions are all welcome.
           </p>
         </div>
 

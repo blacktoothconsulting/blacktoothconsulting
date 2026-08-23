@@ -5,25 +5,25 @@ const modalities = [
   {
     name: "Therapeutic Massage",
     description:
-      "Focused soft-tissue work targeting the muscles that support your spine, relieving tension and improving range of motion.",
+      "Work on the specific muscles that are giving you trouble, usually the ones around your neck, shoulders, and low back.",
     icon: Hand,
   },
   {
     name: "Deep Tissue",
     description:
-      "Slower, firmer pressure that reaches the deeper layers of muscle and fascia to release chronic tightness and adhesions.",
+      "Slower and firmer, for knots and tightness that have been there a while and do not let go easily.",
     icon: Waves,
   },
   {
     name: "Sport & Recovery",
     description:
-      "Pre- and post-activity work for athletes and active patients to support recovery, flexibility, and injury prevention.",
+      "For anyone training, competing, or working a physical job. Book it before an event or after a hard week.",
     icon: Dumbbell,
   },
   {
     name: "Relaxation Massage",
     description:
-      "Gentler, full-body work focused on stress relief, circulation, and giving your nervous system a chance to reset.",
+      "Lighter pressure over the whole body. Good if you are mainly here to unwind.",
     icon: HeartPulse,
   },
 ]
@@ -47,12 +47,12 @@ export function MassageServices() {
               What We Offer
             </p>
             <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Massage That Works With Your Care Plan
+              Types of Massage We Offer
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Massage is available on its own or alongside chiropractic care. When muscles stay
-              tight, adjustments have a harder time holding &mdash; addressing both together helps
-              your progress last.
+              You do not need to be a chiropractic patient to book a massage. If you are one,
+              it helps: tight muscles pull joints back out of place, so the two work well
+              together.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">

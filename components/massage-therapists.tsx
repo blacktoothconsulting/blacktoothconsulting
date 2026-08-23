@@ -8,16 +8,14 @@ const therapists = [
     name: "Therapist Name",
     credentials: "LMT",
     image: null as string | null,
-    bio:
-      "Bio coming soon. This is where we'll share this therapist's training, the modalities they specialize in, and what patients can expect from a session with them.",
+    bio: "Bio coming soon.",
     focus: ["Modality", "Modality", "Modality"],
   },
   {
     name: "Therapist Name",
     credentials: "LMT",
     image: null as string | null,
-    bio:
-      "Bio coming soon. This is where we'll share this therapist's training, the modalities they specialize in, and what patients can expect from a session with them.",
+    bio: "Bio coming soon.",
     focus: ["Modality", "Modality", "Modality"],
   },
 ]
@@ -34,8 +32,8 @@ export function MassageTherapists() {
             Meet Our Massage Therapists
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our licensed massage therapists work alongside Collin to address the soft tissue that
-            supports your spine &mdash; so adjustments hold longer and you feel better sooner.
+            Our therapists are licensed in Wyoming and work in the same office as Collin, so
+            your massage and your adjustments stay on the same page.
           </p>
         </div>
 

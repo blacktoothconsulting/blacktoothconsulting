@@ -16,8 +16,8 @@ export function MedicalScheduler() {
             Book an Appointment with Gordon
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Choose a time that works for you using the calendar below. Prefer to talk to someone?
-            Give us a call and we&apos;ll get you scheduled.
+            Pick a time from the calendar below. If you would rather book over the phone, call
+            us at 307.655.8775.
           </p>
         </div>
 

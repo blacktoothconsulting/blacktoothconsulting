@@ -58,7 +58,7 @@ export function Hero() {
             Sheridan, Wyoming
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Chiropractic &amp; Medical Care for the Whole Family
+            Chiropractic, Massage &amp; Medical Care for the Whole Family
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
             Our mission is to create a community that takes an active role in their own

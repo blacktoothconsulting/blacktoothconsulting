@@ -49,14 +49,15 @@ export function Services() {
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             At the Wyoming Clinic, your care is individualized and tailored to your needs, 
-            from chiropractic care to corrective exercises and nutrition. Looking for{" "}
+            from chiropractic care to corrective exercises and nutrition. Massage therapy has
+            its own page &mdash;{" "}
             <Link
               href="/massage"
               className="font-medium text-primary underline underline-offset-4 hover:text-accent transition-colors"
             >
-              therapeutic massage
+              see what our therapists offer
             </Link>
-            ?
+            .
           </p>
         </div>
 

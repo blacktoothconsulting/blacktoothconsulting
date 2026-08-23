@@ -11,7 +11,7 @@ const careLines = [
     image: "/images/collin1.avif",
     imageAlt: "Chiropractic care at the Wyoming Clinic of Integrated Health",
     description:
-      "Specific, hands-on Gonstead chiropractic care for the whole family — helping you move well, feel better, and live the life you deserve.",
+      "Hands-on Gonstead chiropractic for the whole family, from newborns to grandparents.",
     highlights: [
       "Gonstead technique specialists",
       "Corrective exercises & lifestyle advice",
@@ -27,7 +27,7 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Straightforward, cash-pay primary and acute medical care with clear, up-front pricing and convenient same-day scheduling.",
+      "Primary and same-day acute care, paid in cash. You see the price before you agree to anything.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
@@ -43,7 +43,7 @@ const careLines = [
     image: "/images/massage-room.png",
     imageAlt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
     description:
-      "Therapeutic massage that addresses the soft tissue supporting your spine — available on its own or alongside chiropractic care.",
+      "Massage for the muscles around your spine. Book it on its own, or add it to your chiropractic visits.",
     highlights: [
       "Therapeutic & deep tissue work",
       "Sport, recovery & relaxation massage",
@@ -67,9 +67,8 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            The Wyoming Clinic of Integrated Health brings together trusted Gonstead chiropractic,
-            cash-pay medical care, and therapeutic massage under one roof. Choose the care
-            you&apos;re looking for to learn more.
+            Gonstead chiropractic, cash-pay medical care, and massage therapy &mdash; all at
+            528 Coffeen Ave.
           </p>
         </div>
 

@@ -10,6 +10,8 @@ import {
   Activity,
   FileImage,
   FlaskConical,
+  Hand,
+  Sparkles,
 } from "lucide-react"
 
 const sharedSteps = [
@@ -57,6 +59,7 @@ const providerPaths = [
     extraIcon: FileImage,
     href: "/chiropractic",
     cta: "Chiropractic care",
+    wide: false,
   },
   {
     label: "Medical Care",
@@ -69,6 +72,20 @@ const providerPaths = [
     extraIcon: FlaskConical,
     href: "/medical-care",
     cta: "Medical care",
+    wide: false,
+  },
+  {
+    label: "Massage Therapy",
+    provider: "with a licensed massage therapist",
+    icon: Hand,
+    detail:
+      "Your therapist asks what is bothering you, what you want worked on, and how much pressure you like.",
+    extra:
+      "You undress only to your comfort level and stay covered by a sheet the whole time.",
+    extraIcon: Sparkles,
+    href: "/massage",
+    cta: "Massage therapy",
+    wide: true,
   },
 ]
 
@@ -85,9 +102,8 @@ export function NewPatients() {
               What to Expect on Your First Visit
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Whether you&apos;re here for chiropractic or medical care, your first visit follows
-              the same simple path. Here&apos;s what you can expect when you walk through our
-              doors.
+              Chiropractic, massage, or medical care &mdash; every first visit starts the same
+              way. Here is how it goes.
             </p>
 
             <div className="mt-8 space-y-6">
@@ -139,7 +155,9 @@ export function NewPatients() {
                 {providerPaths.map((path) => (
                   <div
                     key={path.label}
-                    className="flex flex-col rounded-2xl border border-border bg-card p-5"
+                    className={`flex flex-col rounded-2xl border border-border bg-card p-5 ${
+                      path.wide ? "sm:col-span-2" : ""
+                    }`}
                   >
                     <h4 className="flex items-center gap-2 font-semibold text-foreground">
                       <path.icon className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />

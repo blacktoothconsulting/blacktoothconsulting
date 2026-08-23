@@ -22,7 +22,7 @@ export default function MassagePage() {
         <PageHero
           eyebrow="Therapeutic Massage"
           title="Massage Therapy in Sheridan"
-          description="Licensed massage therapists working with the soft tissue that supports your spine. Book massage on its own, or pair it with chiropractic care to help your adjustments hold longer."
+          description="Licensed massage therapists, in the same building as your chiropractor. Call to book a session, and tell us what is bothering you when you do."
         >
           <Button size="lg" asChild>
             <a href="tel:307-655-8775">Call 307.655.8775 to Book</a>
