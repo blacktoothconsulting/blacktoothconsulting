@@ -151,6 +151,12 @@ export function Pricing() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 border-t border-border pt-6 text-sm text-muted-foreground leading-relaxed">
+            <span className="font-semibold text-foreground">Medicare Patients:</span> Our medical
+            provider has opted out of Medicare. Medicare patients are welcome on a private-pay basis
+            and must sign a Medicare private contract before receiving care. Medicare will not
+            reimburse these services.
+          </p>
         </div>
 
         {/* CTA */}
