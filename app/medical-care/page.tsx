@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { GordonProfile } from "@/components/gordon-profile"
+import { GordonBio } from "@/components/gordon-bio"
 import { MedicalScheduler } from "@/components/medical-scheduler"
 import { MedicalServices } from "@/components/medical-services"
 import { Pricing } from "@/components/pricing"
@@ -47,6 +48,7 @@ export default function MedicalCarePage() {
           </Button>
         </PageHero>
         <GordonProfile />
+        <GordonBio />
         <MedicalScheduler />
         <MedicalServices />
         <Pricing />

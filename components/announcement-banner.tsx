@@ -11,11 +11,11 @@ export function AnnouncementBanner() {
               <Sparkles className="h-4 w-4" aria-hidden="true" />
             </span>
             <span className="text-xs font-semibold uppercase tracking-wider">
-              Now Expanding
+              Now Offering Medical Care
             </span>
           </div>
           <p className="text-sm sm:text-base font-medium text-balance">
-            Now scheduling cash-pay medical care with{" "}
+            Now scheduling cash-pay visits with{" "}
             <span className="font-semibold">Gordon Hendrickson, PA-C</span> — chiropractic and
             healthcare under one roof.
           </p>
