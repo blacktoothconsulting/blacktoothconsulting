@@ -4,8 +4,9 @@
  * TODO — confirm before/after launch:
  *   1. SITE_URL must match the live domain exactly (inferred from info@wyochiro.com).
  *   2. POSTAL_CODE is Sheridan's main ZIP — confirm it matches the Coffeen Ave suite.
- *   3. Opening hours are not published anywhere on the site yet. Once Collin
- *      provides them, fill in OPENING_HOURS below and it will be included.
+ *   3. OPENING_HOURS mirrors the hours shown in the hero and contact sections
+ *      (Mon-Thu 8am-6pm, Fri 8am-12pm). Confirm these are still current, and
+ *      note whether massage/medical keep different hours than chiropractic.
  *   4. Add `geo` (latitude/longitude) and `sameAs` (Google Business Profile,
  *      Facebook, etc.) once those are known — both improve local ranking.
  */
@@ -24,7 +25,10 @@ const MAP_URL = "https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
  * Example once hours are confirmed:
  *   [{ days: ["Monday", "Tuesday"], opens: "09:00", closes: "17:00" }]
  */
-const OPENING_HOURS: { days: string[]; opens: string; closes: string }[] = []
+const OPENING_HOURS: { days: string[]; opens: string; closes: string }[] = [
+  { days: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "08:00", closes: "18:00" },
+  { days: ["Friday"], opens: "08:00", closes: "12:00" },
+]
 
 const address = {
   "@type": "PostalAddress",
