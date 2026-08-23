@@ -32,16 +32,21 @@ export function CollinProfile() {
               Gonstead Chiropractic &nbsp;|&nbsp; Care for the Whole Family
             </p>
 
-            {/* Placeholder bio — replace with Collin's real bio when available */}
+            {/*
+              TODO: Replace with Collin's full bio once he provides it.
+              Needed: education/chiropractic school, Gonstead training, years in
+              practice, years in Sheridan, and a personal note. The copy below is
+              intentionally general so nothing unverified is published.
+            */}
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              [Placeholder bio] Collin Redinger, D.C. provides specific, hands-on Gonstead
-              chiropractic care focused on finding and correcting the root cause of your discomfort.
-              He takes the time to listen, explain your care, and build a plan tailored to your
-              body and your goals &mdash; so you can move well and feel your best.
+              Collin practices Gonstead chiropractic &mdash; a specific, hands-on approach that
+              looks for the underlying cause of your problem rather than just the spot that hurts.
+              He treats the whole family, from newborns to grandparents.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              [Placeholder bio] Add Collin&apos;s background, education, certifications, and a
-              personal note here. Share this text and a photo and we&apos;ll drop them right in.
+              He will take the time to explain what he finds and why he is recommending what he
+              recommends. If you have questions about whether chiropractic is right for what you
+              are dealing with, call the office and ask.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
