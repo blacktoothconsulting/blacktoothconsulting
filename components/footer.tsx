@@ -105,9 +105,16 @@ export function Footer() {
                   info@wyochiro.com
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-background/70">
-                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>528 Coffeen Ave, Sheridan, Wyoming</span>
+              <li>
+                <a
+                  href="https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-background/70 hover:text-background transition-colors"
+                >
+                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                  <span>528 Coffeen Ave, Sheridan, Wyoming</span>
+                </a>
               </li>
             </ul>
           </div>

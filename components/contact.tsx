@@ -63,15 +63,20 @@ export function Contact() {
                     <p className="text-primary-foreground/80">307.655.8775</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-4 text-primary-foreground/90">
+                <a
+                  href="https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-primary-foreground/90 hover:text-primary-foreground transition-colors"
+                >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-primary-foreground/80">Sheridan, Wyoming</p>
+                    <p className="text-primary-foreground/80">528 Coffeen Ave, Sheridan, WY</p>
                   </div>
-                </div>
+                </a>
                 <a 
                   href="mailto:info@wyochiro.com" 
                   className="flex items-center gap-4 text-primary-foreground/90 hover:text-primary-foreground transition-colors"

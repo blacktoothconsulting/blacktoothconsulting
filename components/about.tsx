@@ -36,8 +36,8 @@ export function About() {
               Dedicated to Your Health and Wellness
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Our mission is to help you live the life you deserve through chiropractic care. 
-              We will always have time for you. To listen. To explain. You will get answers 
+              Our mission is to create a community that takes an active role in their own health.
+              We will always have time for you. To listen. To explain. You will get answers
               in our office and it is an honor to do so. Thank you for your trust and confidence.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
