@@ -7,6 +7,7 @@ const navigation = {
     { name: "Home", href: "/" },
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
+    { name: "Massage", href: "/massage" },
     { name: "About", href: "/chiropractic#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
@@ -16,7 +17,7 @@ const navigation = {
     { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
     { name: "General Medical Care", href: "/medical-care" },
     { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
-    { name: "Massage Therapy", href: "/chiropractic#services" },
+    { name: "Massage Therapy", href: "/massage" },
   ],
 }
 

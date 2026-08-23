@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Activity, Stethoscope, ArrowRight } from "lucide-react"
+import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const careLines = [
@@ -14,7 +14,7 @@ const careLines = [
       "Specific, hands-on Gonstead chiropractic care for the whole family — helping you move well, feel better, and live the life you deserve.",
     highlights: [
       "Gonstead technique specialists",
-      "Corrective exercises & massage therapy",
+      "Corrective exercises & lifestyle advice",
       "Digital X-ray & postural screenings",
     ],
     href: "/chiropractic",
@@ -36,6 +36,22 @@ const careLines = [
     href: "/medical-care",
     cta: "Explore Medical Care",
   },
+  {
+    eyebrow: "Massage Therapy",
+    provider: "Licensed Massage Therapists",
+    icon: Hand,
+    image: "/images/massage-room.png",
+    imageAlt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
+    description:
+      "Therapeutic massage that addresses the soft tissue supporting your spine — available on its own or alongside chiropractic care.",
+    highlights: [
+      "Therapeutic & deep tissue work",
+      "Sport, recovery & relaxation massage",
+      "Pairs with your chiropractic plan",
+    ],
+    href: "/massage",
+    cta: "Explore Massage Therapy",
+  },
 ]
 
 export function ProvidersOverview() {
@@ -45,20 +61,20 @@ export function ProvidersOverview() {
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
-            Two Kinds of Care, One Clinic
+            Three Kinds of Care, One Clinic
           </p>
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            The Wyoming Clinic of Integrated Health brings together trusted Gonstead chiropractic
-            and cash-pay medical care under one roof. Choose the care you&apos;re looking for to
-            learn more.
+            The Wyoming Clinic of Integrated Health brings together trusted Gonstead chiropractic,
+            cash-pay medical care, and therapeutic massage under one roof. Choose the care
+            you&apos;re looking for to learn more.
           </p>
         </div>
 
         {/* Two care-line cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {careLines.map((line) => (
             <div
               key={line.href}
