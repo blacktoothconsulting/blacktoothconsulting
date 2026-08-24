@@ -13,7 +13,7 @@ const careLines = [
     description:
       "Hands-on Gonstead chiropractic for the whole family, from newborns to grandparents.",
     highlights: [
-      "Gonstead technique specialists",
+      "Gonstead technique specialist",
       "Corrective exercises & lifestyle advice",
       "Digital X-ray & postural screenings",
     ],
