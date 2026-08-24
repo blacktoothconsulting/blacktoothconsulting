@@ -2,7 +2,7 @@ import Image from "next/image"
 import { CheckCircle } from "lucide-react"
 
 const features = [
-  "Gonstead Technique Specialists",
+  "Gonstead Technique Specialist",
   "Family-Friendly Environment",
   "Personalized Treatment Plans",
   "Modern Diagnostic Equipment",
@@ -13,7 +13,7 @@ export function About() {
     <section id="about" className="py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative">
+          <div className="relative lg:order-2">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/office.avif"
@@ -22,13 +22,13 @@ export function About() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg hidden sm:block">
+            <div className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg hidden sm:block">
               <p className="text-3xl font-bold font-serif">Gonstead</p>
               <p className="text-sm opacity-90">Technique Certified</p>
             </div>
           </div>
 
-          <div>
+          <div className="lg:order-1">
             <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
               About Our Practice
             </p>
@@ -36,14 +36,14 @@ export function About() {
               Dedicated to Your Health and Wellness
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Our mission is to help you live the life you deserve through chiropractic care. 
-              We will always have time for you. To listen. To explain. You will get answers 
+              Our mission is to create a community that takes an active role in their own health.
+              We will always have time for you. To listen. To explain. You will get answers
               in our office and it is an honor to do so. Thank you for your trust and confidence.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              As certified Gonstead practitioners, we focus on finding and correcting the root
-              cause of your discomfort &mdash; not just chasing symptoms &mdash; so you can get
-              lasting relief and stay well for the long run.
+              As a certified Gonstead practitioner, Collin focuses on finding and correcting the
+              root cause of your discomfort &mdash; not just chasing symptoms &mdash; so you can
+              get lasting relief and stay well for the long run.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">

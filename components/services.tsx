@@ -1,9 +1,9 @@
+import Link from "next/link"
 import { 
   Activity, 
   Heart, 
   Apple, 
   Scan, 
-  Hand, 
   MonitorCheck 
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -30,11 +30,6 @@ const services = [
     icon: Scan,
   },
   {
-    name: "Massage Therapy",
-    description: "Therapeutic massage to relieve muscle tension and complement chiropractic care.",
-    icon: Hand,
-  },
-  {
     name: "Digital X-ray Imaging",
     description: "State-of-the-art imaging technology for precise diagnosis and treatment planning.",
     icon: MonitorCheck,
@@ -54,7 +49,15 @@ export function Services() {
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             At the Wyoming Clinic, your care is individualized and tailored to your needs, 
-            from chiropractic care to corrective exercises, massage therapy, and nutrition.
+            from chiropractic care to corrective exercises and nutrition. Massage therapy has
+            its own page &mdash;{" "}
+            <Link
+              href="/massage"
+              className="font-medium text-primary underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              see what our therapists offer
+            </Link>
+            .
           </p>
         </div>
 

@@ -13,7 +13,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "Chiropractic Care | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Specific Gonstead chiropractic care for the whole family in Sheridan, Wyoming, with Collin Redinger, D.C. — corrective exercises, massage therapy, digital X-ray, and more.",
+    "Specific Gonstead chiropractic care for the whole family in Sheridan, Wyoming, with Collin Redinger, D.C. — corrective exercises, spinal and postural screenings, digital X-ray, and more.",
 }
 
 export default function ChiropracticPage() {

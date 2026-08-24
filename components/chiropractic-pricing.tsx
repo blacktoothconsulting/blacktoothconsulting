@@ -24,7 +24,7 @@ const priceGroups: { title: string; items: PriceItem[] }[] = [
   {
     title: "Therapies & Add-Ons",
     items: [
-      { service: "Massage therapy", price: "$—" },
+      { service: "Massage therapy (see Massage page)", price: "$—" },
       { service: "Corrective exercise session", price: "$—" },
       { service: "Additional digital X-ray", price: "$—" },
     ],
@@ -43,9 +43,8 @@ export function ChiropracticPricing() {
             Chiropractic Pricing Menu
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            The pricing below is a placeholder. Share your current chiropractic prices and
-            we&apos;ll update this menu right away. In the meantime, please call the clinic for
-            current rates and insurance questions.
+            Our chiropractic rates are being finalized. Call the clinic at 307.655.8775 and
+            we will go over current pricing with you.
           </p>
         </div>
 

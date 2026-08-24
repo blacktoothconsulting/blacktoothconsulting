@@ -7,6 +7,7 @@ const navigation = {
     { name: "Home", href: "/" },
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
+    { name: "Massage", href: "/massage" },
     { name: "About", href: "/chiropractic#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
@@ -16,7 +17,7 @@ const navigation = {
     { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
     { name: "General Medical Care", href: "/medical-care" },
     { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
-    { name: "Massage Therapy", href: "/chiropractic#services" },
+    { name: "Massage Therapy", href: "/massage" },
   ],
 }
 
@@ -39,7 +40,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Integrated chiropractic and cash-pay medical care for the whole family in Sheridan, Wyoming.
+              Chiropractic, massage, and cash-pay medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 
@@ -105,9 +106,16 @@ export function Footer() {
                   info@wyochiro.com
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-background/70">
-                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>528 Coffeen Ave, Sheridan, Wyoming</span>
+              <li>
+                <a
+                  href="https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-background/70 hover:text-background transition-colors"
+                >
+                  <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                  <span>528 Coffeen Ave, Sheridan, Wyoming</span>
+                </a>
               </li>
             </ul>
           </div>

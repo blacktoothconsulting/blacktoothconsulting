@@ -58,12 +58,12 @@ export function Hero() {
             Sheridan, Wyoming
           </p>
           <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Chiropractic &amp; Medical Care for the Whole Family
+            Chiropractic, Massage &amp; Medical Care for the Whole Family
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
-            Our mission is to help you live the life you deserve. From trusted Gonstead
-            chiropractic to general medical care, we&apos;ll always have time for you &mdash;
-            to listen, to explain, and to get you answers.
+            Our mission is to create a community that takes an active role in their own
+            health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
+            always have time for you &mdash; to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
@@ -104,7 +104,14 @@ export function Hero() {
               </div>
               <div>
                 <p className="font-medium text-foreground">Location</p>
-                <p className="text-sm text-muted-foreground">Sheridan, Wyoming</p>
+                <a
+                  href="https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  528 Coffeen Ave, Sheridan, WY
+                </a>
               </div>
             </div>
             <div className="flex items-center gap-4 py-6 px-4">

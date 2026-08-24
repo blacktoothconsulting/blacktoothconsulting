@@ -7,6 +7,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 
+const CLINIC_EMAIL = "info@wyochiro.com"
+const CLINIC_PHONE = "307.655.8775"
+
 export function Contact() {
   const [mounted, setMounted] = useState(false)
   const [formData, setFormData] = useState({
@@ -22,12 +25,33 @@ export function Contact() {
     setMounted(true)
   }, [])
 
+  const [sent, setSent] = useState(false)
+
+  /*
+    There is no mail service connected to this site, so the form hands the
+    message off to the visitor's own email app addressed to CLINIC_EMAIL.
+    That way a submission can never be silently lost.
+
+    To switch to a true server-side form later, add an email provider
+    (e.g. Resend) and POST these fields to a route handler instead.
+  */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message! We will get back to you soon.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+
+    const subject = `Website message from ${formData.name || "a patient"}`
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone || "Not provided"}`,
+      "",
+      formData.message,
+    ].join("\n")
+
+    window.location.href = `mailto:${CLINIC_EMAIL}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`
+
+    setSent(true)
   }
 
   return (
@@ -38,8 +62,8 @@ export function Contact() {
             Get Your Life Back!
           </h2>
           <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-            Ready to start your journey to better health? Contact us today to schedule 
-            your appointment or ask any questions.
+            Call us at 307.655.8775 or send a message below. Chiropractic, massage, and
+            medical questions are all welcome.
           </p>
         </div>
 
@@ -63,15 +87,20 @@ export function Contact() {
                     <p className="text-primary-foreground/80">307.655.8775</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-4 text-primary-foreground/90">
+                <a
+                  href="https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-primary-foreground/90 hover:text-primary-foreground transition-colors"
+                >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-primary-foreground/80">Sheridan, Wyoming</p>
+                    <p className="text-primary-foreground/80">528 Coffeen Ave, Sheridan, WY</p>
                   </div>
-                </div>
+                </a>
                 <a 
                   href="mailto:info@wyochiro.com" 
                   className="flex items-center gap-4 text-primary-foreground/90 hover:text-primary-foreground transition-colors"
@@ -114,9 +143,38 @@ export function Contact() {
           {/* Contact Form */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-6 lg:p-8">
-              <h3 className="text-lg font-semibold text-foreground mb-6">
+              <h3 className="text-lg font-semibold text-foreground">
                 Send Us a Message
               </h3>
+              <p className="mt-2 mb-6 text-sm text-muted-foreground leading-relaxed">
+                Filling this out opens your email app with the message ready to send. For
+                anything urgent, call{" "}
+                <a
+                  href={`tel:${CLINIC_PHONE.replace(/\./g, "-")}`}
+                  className="font-medium text-primary underline underline-offset-4"
+                >
+                  {CLINIC_PHONE}
+                </a>
+                .
+              </p>
+
+              {sent && (
+                <div
+                  role="status"
+                  className="mb-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-muted-foreground leading-relaxed"
+                >
+                  <span className="font-semibold text-foreground">Almost there.</span>{" "}
+                  Your email app should have opened with your message ready to send &mdash; it is not sent
+                  until you hit send there. If nothing opened, email us directly at{" "}
+                  <a
+                    href={`mailto:${CLINIC_EMAIL}`}
+                    className="font-medium text-primary underline underline-offset-4"
+                  >
+                    {CLINIC_EMAIL}
+                  </a>
+                  .
+                </div>
+              )}
               {mounted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -173,7 +231,8 @@ export function Contact() {
                     />
                   </div>
                   <Button type="submit" className="w-full">
-                    Send Message
+                    <Mail className="mr-2 h-4 w-4" />
+                    Compose Message
                   </Button>
                 </form>
               ) : (

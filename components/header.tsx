@@ -10,6 +10,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Chiropractic", href: "/chiropractic" },
   { name: "Medical Care", href: "/medical-care" },
+  { name: "Massage", href: "/massage" },
   { name: "About", href: "/chiropractic#about" },
   { name: "New Patients", href: "/#new-patients" },
   { name: "Contact", href: "/#contact" },
@@ -74,7 +75,7 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4 lg:ml-10 xl:ml-14">
           <a
             href="tel:307-655-8775"
             className="flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"

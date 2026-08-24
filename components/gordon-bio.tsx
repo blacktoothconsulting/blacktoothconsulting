@@ -30,7 +30,7 @@ export function GordonBio() {
               About Gordon
             </p>
             <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Care That Considers the Whole Person
+              Meet Gordon
             </h2>
 
             <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
