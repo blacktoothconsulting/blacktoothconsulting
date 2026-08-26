@@ -1,14 +1,10 @@
 import { Clock } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { CHIROPRACTIC_SCHEDULE, MEDICAL_SCHEDULE } from "@/lib/clinic"
 
-const hours = [
-  { day: "Monday", time: "8:00am – 6:00pm", isOpen: true },
-  { day: "Tuesday", time: "8:00am – 6:00pm", isOpen: true },
-  { day: "Wednesday", time: "8:00am – 6:00pm", isOpen: true },
-  { day: "Thursday", time: "8:00am – 6:00pm", isOpen: true },
-  { day: "Friday", time: "8:00am – 12:00pm", isOpen: true },
-  { day: "Saturday", time: "CLOSED", isOpen: false },
-  { day: "Sunday", time: "CLOSED", isOpen: false },
+const schedules = [
+  { name: "Chiropractic", hours: CHIROPRACTIC_SCHEDULE },
+  { name: "Medical Care", hours: MEDICAL_SCHEDULE },
 ]
 
 export function Hours() {
@@ -25,25 +21,39 @@ export function Hours() {
           </h2>
         </div>
 
-        <Card className="max-w-md mx-auto border-border/50">
-          <CardContent className="p-0">
-            <div className="divide-y divide-border">
-              {hours.map((item) => (
-                <div 
-                  key={item.day} 
-                  className={`flex items-center justify-between px-6 py-4 ${
-                    !item.isOpen ? "bg-muted/50" : ""
-                  }`}
-                >
-                  <span className="font-medium text-foreground">{item.day}</span>
-                  <span className={item.isOpen ? "text-muted-foreground" : "text-muted-foreground/60"}>
-                    {item.time}
-                  </span>
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          {schedules.map((schedule) => (
+            <Card key={schedule.name} className="border-border/50">
+              <CardContent className="p-0">
+                <h3 className="border-b border-border px-6 py-4 font-serif text-xl font-semibold text-foreground">
+                  {schedule.name}
+                </h3>
+                <div className="divide-y divide-border">
+                  {schedule.hours.map((item) => (
+                    <div
+                      key={item.day}
+                      className={`flex items-center justify-between px-6 py-3 ${
+                        !item.isOpen ? "bg-muted/50" : ""
+                      }`}
+                    >
+                      <span className="font-medium text-foreground">{item.day}</span>
+                      <span
+                        className={
+                          item.isOpen ? "text-muted-foreground" : "text-muted-foreground/60"
+                        }
+                      >
+                        {item.time}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
+          Massage availability varies by therapist. Call 307.655.8775 for current appointment times.
+        </p>
       </div>
     </section>
   )

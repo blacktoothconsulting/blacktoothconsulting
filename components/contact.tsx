@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import { CHIROPRACTIC_HOURS, MEDICAL_HOURS } from "@/lib/clinic"
 
 const CLINIC_EMAIL = "info@wyochiro.com"
 const CLINIC_PHONE = "307.655.8775"
@@ -119,7 +120,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Hours</p>
-                    <p className="text-primary-foreground/80">Mon-Thu 8am-6pm, Fri 8am-12pm</p>
+                    <p className="text-primary-foreground/80">Chiropractic: {CHIROPRACTIC_HOURS}</p>
+                    <p className="text-primary-foreground/80">Medical: {MEDICAL_HOURS}</p>
                   </div>
                 </div>
               </div>

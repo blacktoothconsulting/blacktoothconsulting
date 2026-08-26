@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CROSS_REFERRAL_NOTE } from "@/lib/clinic"
 
 const careLines = [
   {
@@ -69,6 +70,9 @@ export function ProvidersOverview() {
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Gonstead chiropractic, cash-pay medical care, and massage therapy &mdash; all at
             528 Coffeen Ave.
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            {CROSS_REFERRAL_NOTE}
           </p>
         </div>
 
