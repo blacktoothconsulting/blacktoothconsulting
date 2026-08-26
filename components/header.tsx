@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CHIROPRACTIC_HOURS, MEDICAL_HOURS } from "@/lib/clinic"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -121,22 +122,20 @@ export function Header() {
               <Clock className="h-4 w-4 text-primary" />
               Opening Hours
             </p>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-              <span className="text-muted-foreground">Monday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Tuesday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Wednesday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Thursday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Friday</span>
-              <span className="text-foreground">8:00am - 12:00pm</span>
-              <span className="text-muted-foreground">Saturday</span>
-              <span className="text-foreground">CLOSED</span>
-              <span className="text-muted-foreground">Sunday</span>
-              <span className="text-foreground">CLOSED</span>
-            </div>
+            <dl className="grid gap-3 text-sm">
+              <div>
+                <dt className="font-medium text-foreground">Chiropractic</dt>
+                <dd className="text-muted-foreground">{CHIROPRACTIC_HOURS}</dd>
+              </div>
+              <div>
+                <dt className="font-medium text-foreground">Medical Care</dt>
+                <dd className="text-muted-foreground">{MEDICAL_HOURS}</dd>
+              </div>
+              <div>
+                <dt className="font-medium text-foreground">Massage</dt>
+                <dd className="text-muted-foreground">Call for therapist availability</dd>
+              </div>
+            </dl>
           </div>
 
           {/* Contact info */}

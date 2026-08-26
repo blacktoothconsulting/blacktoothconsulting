@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
+import { CHIROPRACTIC_HOURS, MEDICAL_HOURS } from "@/lib/clinic"
 
 const bannerImages = [
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
@@ -131,7 +132,8 @@ export function Hero() {
               </div>
               <div>
                 <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Mon-Thu 8am-6pm, Fri 8am-12pm</p>
+                <p className="text-sm text-muted-foreground">Chiropractic: {CHIROPRACTIC_HOURS}</p>
+                <p className="text-sm text-muted-foreground">Medical: {MEDICAL_HOURS}</p>
               </div>
             </div>
           </div>

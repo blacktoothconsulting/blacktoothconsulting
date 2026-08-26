@@ -1,5 +1,6 @@
 import { Stethoscope, FlaskConical, Scissors, Wallet } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { MedicareNotice } from "@/components/medicare-notice"
 
 const careGroups = [
   {
@@ -92,12 +93,9 @@ export function MedicalServices() {
               available upon request for patients to submit to their insurance. Insurance
               reimbursement is not guaranteed.
             </p>
-            <p className="mt-4 border-t border-primary/15 pt-4 text-sm text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">Medicare Patients:</span> Our medical
-              provider has opted out of Medicare. Medicare patients are welcome on a private-pay
-              basis and must sign a Medicare private contract before receiving care. Medicare will
-              not reimburse these services.
-            </p>
+            <div className="mt-4 border-t border-primary/15 pt-4">
+              <MedicareNotice />
+            </div>
           </div>
         </div>
       </div>

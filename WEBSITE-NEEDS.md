@@ -75,33 +75,22 @@ call for pricing.
 
 - Confirm the earwax removal pricing is correct as posted: $65 for one ear,
   $85 for both.
-- Confirm the Medicare opt-out and private contract wording is exactly how you
-  want it. This one carries compliance weight, so please read it closely on the
-  Medical Care page.
-- Should patients be able to read or download the Medicare private contract
-  before their visit?
-- Any cross-referral language you want between medical, chiropractic, and
-  massage?
 
 ---
 
 ## FOR BOTH — BUSINESS DETAILS
 
-- CONFIRM THE WEBSITE DOMAIN. We used www.wyochiro.com, inferred from the
-  info@wyochiro.com email address. This is now embedded in the Google and Maps
-  listing data. A wrong domain means a wrong search listing.
+- CHOOSE THE NEW WEBSITE DOMAIN AND CLINIC EMAIL. Gordon prefers moving away
+  from wyochiro.com now that medical care is included. Options he suggested include
+  thewyomingclinic.com and wyintegratedhealth.com. Availability and final approval
+  still need to be confirmed before replacing the current domain and email.
 - Confirm the ZIP code. We assumed 82801.
 - Suite or unit number for 528 Coffeen Ave, if there is one.
-- Confirm the clinic hours are current: Mon-Thu 8am-6pm, Fri 8am-12pm.
-- IMPORTANT: Do massage and medical keep different hours than chiropractic? Right
-  now one shared set of hours is published for all three services.
+- Confirm massage hours or note that availability will continue to vary by therapist.
 - Does the clinic have a Google Business Profile? Linking it significantly helps
   the clinic show up in Google Maps and local search.
 - Facebook and/or Instagram links, if there are any. The website footer currently
   has no social links.
-- Ownership: is Gordon a partner/owner now, or a provider practicing at the
-  clinic? This affects how the site is worded and how the Google listing is set
-  up.
 - Who has final say on website copy?
 
 ---
@@ -128,7 +117,14 @@ Noting these so nobody chases them:
   "Thank you" message and discarded the submission. It now opens the visitor's
   email app with the message pre-filled to info@wyochiro.com, with the phone
   number shown for anything urgent.
-- Clinic hours are now included in the Google and Maps listing data.
+- Chiropractic and medical hours are confirmed, displayed separately throughout
+  the site, and reconciled in the Google and Maps listing data.
+- Gordon's Medicare opt-out explanation and official Noridian private-pay contract
+  link are published on the Medical Care page.
+- Gordon is described as the medical provider, not as an owner or partner of the
+  chiropractic practice. The underlying LLC is not prominently displayed.
+- Gordon's approved subtle cross-referral wording is published once in the shared
+  provider overview.
 - Real clinic photos are already on the site (front entry, front desk, office,
   interior).
 - Gordon already has a headshot on the site.
