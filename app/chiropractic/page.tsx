@@ -2,8 +2,10 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { CollinProfile } from "@/components/collin-profile"
+import { GonsteadProcess } from "@/components/gonstead-process"
 import { About } from "@/components/about"
 import { Services } from "@/components/services"
+import { XrayResults } from "@/components/xray-results"
 import { ChiropracticPricing } from "@/components/chiropractic-pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -39,8 +41,10 @@ export default function ChiropracticPage() {
           </Button>
         </PageHero>
         <CollinProfile />
+        <GonsteadProcess />
         <About />
         <Services />
+        <XrayResults />
         <ChiropracticPricing />
         <Contact />
       </main>
