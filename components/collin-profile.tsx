@@ -54,17 +54,16 @@ export function CollinProfile() {
               run.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Off the clock, Collin enjoys working his small ranch &mdash; raising cows, horses,
-              and hay &mdash; along with never-ending construction projects, hunting, fishing,
-              biking, and spending time with his wife and four children.
+              Dr. Collin Redinger loves his practice and his patients and thoroughly enjoys his
+              life&apos;s work; in his limited off time he enjoys working his small ranch with
+              raising cows, horses and hay, doing never ending construction projects with his
+              family, hunting, fishing, biking and spending time with his amazing wife and 4
+              children.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <a href="tel:307-655-8775">Call 307.655.8775 to Schedule</a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="#chiropractic-pricing">View Pricing</a>
               </Button>
             </div>
           </div>

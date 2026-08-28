@@ -14,7 +14,6 @@ const navigation = {
   ],
   services: [
     { name: "Gonstead Chiropractic", href: "/chiropractic" },
-    { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
     { name: "General Medical Care", href: "/medical-care" },
     { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
     { name: "Massage Therapy", href: "/massage" },

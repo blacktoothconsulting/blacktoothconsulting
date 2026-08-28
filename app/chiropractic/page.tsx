@@ -6,7 +6,6 @@ import { GonsteadProcess } from "@/components/gonstead-process"
 import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
-import { ChiropracticPricing } from "@/components/chiropractic-pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -45,7 +44,6 @@ export default function ChiropracticPage() {
         <About />
         <Services />
         <XrayResults />
-        <ChiropracticPricing />
         <Contact />
       </main>
       <Footer />

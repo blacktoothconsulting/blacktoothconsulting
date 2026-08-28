@@ -29,73 +29,68 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative bg-background">
-      {/* Framed banner with whitespace on the sides */}
-      <div className="relative mx-auto max-w-6xl px-4 py-6 sm:py-8 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl shadow-xl min-h-[600px] sm:min-h-[500px] lg:min-h-[560px]">
-          {/* Background Image Carousel */}
-          <div className="absolute inset-0 z-0">
-            {bannerImages.map((image, index) => (
-              <div
-                key={image.src}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === current ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <Image
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                />
-              </div>
-            ))}
-            <div className="absolute inset-0 bg-foreground/60" />
+    <section className="relative overflow-hidden min-h-[600px] sm:min-h-[500px] lg:min-h-[560px] bg-foreground">
+      {/* Letterboxed image carousel — narrower than the full-width section */}
+      <div className="absolute inset-0 z-0 mx-auto max-w-4xl">
+        {bannerImages.map((image, index) => (
+          <div
+            key={image.src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
           </div>
+        ))}
+        <div className="absolute inset-0 bg-foreground/60" />
+      </div>
 
-          {/* Content */}
-          <div className="relative z-10 flex h-full flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
-            <div className="max-w-xl">
-              <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
-                Sheridan, Wyoming
-              </p>
-              <h1 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl text-balance">
-                Chiropractic, Massage &amp; Medical Care for the Whole Family
-              </h1>
-              <p className="mt-6 text-base sm:text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
-                Our mission is to create a community that takes an active role in their own
-                health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-                always have time for you &mdash; to listen, to explain, and to get you answers.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
-                  <Link href="#contact">Schedule Your Visit</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
-                  <a href="tel:307-655-8775">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call 307.655.8775
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            {/* Carousel Indicators */}
-            <div className="mt-8 flex gap-2">
-              {bannerImages.map((image, index) => (
-                <button
-                  key={image.src}
-                  type="button"
-                  onClick={() => setCurrent(index)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
-                  }`}
-                  aria-label={`Show image ${index + 1}`}
-                />
-              ))}
-            </div>
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex h-full min-h-[600px] max-w-7xl flex-col justify-center px-4 py-10 sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
+        <div className="max-w-2xl">
+          <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
+            Sheridan, Wyoming
+          </p>
+          <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+            Chiropractic, Massage &amp; Medical Care for the Whole Family
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
+            Our mission is to create a community that takes an active role in their own
+            health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
+            always have time for you &mdash; to listen, to explain, and to get you answers.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Button size="lg" asChild>
+              <Link href="#contact">Schedule Your Visit</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
+              <a href="tel:307-655-8775">
+                <Phone className="mr-2 h-4 w-4" />
+                Call 307.655.8775
+              </a>
+            </Button>
           </div>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="mt-12 flex gap-2">
+          {bannerImages.map((image, index) => (
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
 
