@@ -163,11 +163,11 @@ export function Pricing() {
               for those services. Patients should review the agreement carefully and contact
               Medicare or their supplemental insurer with questions about coverage.
             </p>
-            <Button variant="outline" size="sm" asChild className="mt-4">
+            <Button variant="outline" size="sm" asChild className="mt-4 h-auto w-full sm:w-auto whitespace-normal text-left">
               <a href={MEDICARE_CONTRACT_URL} target="_blank" rel="noopener noreferrer">
-                <FileText className="mr-2 h-4 w-4" />
-                View Medicare Private-Pay Contract
-                <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                <FileText className="h-4 w-4 shrink-0" />
+                <span>View Medicare Private-Pay Contract</span>
+                <ExternalLink className="h-3.5 w-3.5 shrink-0" />
               </a>
             </Button>
           </div>

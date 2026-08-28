@@ -89,7 +89,7 @@ export function MedicalServices() {
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
             <Wallet className="h-6 w-6 text-primary" aria-hidden="true" />
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="font-semibold text-lg text-foreground">Simple Cash-Pay Care</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Insurance is not billed. Payment is due at the time of service. Superbills are
@@ -99,7 +99,7 @@ export function MedicalServices() {
             <div className="mt-4 border-t border-primary/15 pt-4">
               <div className="flex items-start gap-3">
                 <FileText className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-foreground">Medicare Patients (Opt-Out)</p>
                   <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                     Medicare opt-out means that the medical provider has chosen not to bill
@@ -109,11 +109,11 @@ export function MedicalServices() {
                     carefully and contact Medicare or their supplemental insurer with questions
                     about coverage.
                   </p>
-                  <Button variant="outline" size="sm" asChild className="mt-4">
+                  <Button variant="outline" size="sm" asChild className="mt-4 h-auto w-full sm:w-auto whitespace-normal text-left">
                     <a href={MEDICARE_CONTRACT_URL} target="_blank" rel="noopener noreferrer">
-                      <FileText className="mr-2 h-4 w-4" />
-                      View Medicare Private-Pay Contract
-                      <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                      <FileText className="h-4 w-4 shrink-0" />
+                      <span>View Medicare Private-Pay Contract</span>
+                      <ExternalLink className="h-3.5 w-3.5 shrink-0" />
                     </a>
                   </Button>
                 </div>
