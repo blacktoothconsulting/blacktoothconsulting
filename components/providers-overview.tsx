@@ -81,7 +81,7 @@ export function ProvidersOverview() {
               href={line.href}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <Image
                   src={line.image || "/placeholder.svg"}
                   alt={line.imageAlt}
@@ -139,6 +139,12 @@ export function ProvidersOverview() {
             </Link>
           ))}
         </div>
+
+        <p className="mt-12 mx-auto max-w-3xl text-center text-sm text-muted-foreground leading-relaxed">
+          Medical, chiropractic, and massage services are available under one roof and may
+          complement one another when appropriate. Each service can also be scheduled
+          independently.
+        </p>
       </div>
     </section>
   )

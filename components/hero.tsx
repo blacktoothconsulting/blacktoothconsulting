@@ -8,7 +8,6 @@ import { Phone, MapPin, Clock } from "lucide-react"
 
 const bannerImages = [
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin-headshot.avif", alt: "Collin Redinger, D.C. at the Wyoming Clinic of Integrated Health" },
   { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
   { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
@@ -131,7 +130,8 @@ export function Hero() {
               </div>
               <div>
                 <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Mon-Thu 8am-6pm, Fri 8am-12pm</p>
+                <p className="text-sm text-muted-foreground">Chiropractic: Mon&ndash;Thu 8am&ndash;6pm, Fri 8am&ndash;12pm</p>
+                <p className="text-sm text-muted-foreground">Medical: Mon&ndash;Fri 8am&ndash;6pm</p>
               </div>
             </div>
           </div>

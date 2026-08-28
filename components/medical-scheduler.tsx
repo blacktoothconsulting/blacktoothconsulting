@@ -21,7 +21,7 @@ export function MedicalScheduler() {
           </p>
         </div>
 
-        <div className="mx-auto w-full max-w-[650px] overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        <div className="mx-auto w-full max-w-[650px] lg:max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           <iframe
             src={SCHEDULING_URL}
             title="Schedule an appointment with Gordon Hendrickson, PA-C"

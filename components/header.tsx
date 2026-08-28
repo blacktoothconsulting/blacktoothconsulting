@@ -117,25 +117,33 @@ export function Header() {
 
           {/* Hours section - styled like original site */}
           <div className="px-4 mb-4">
-            <p className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+            <p className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <Clock className="h-4 w-4 text-primary" />
               Opening Hours
             </p>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-              <span className="text-muted-foreground">Monday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Tuesday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Wednesday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Thursday</span>
-              <span className="text-foreground">8:00am - 6:00pm</span>
-              <span className="text-muted-foreground">Friday</span>
-              <span className="text-foreground">8:00am - 12:00pm</span>
-              <span className="text-muted-foreground">Saturday</span>
-              <span className="text-foreground">CLOSED</span>
-              <span className="text-muted-foreground">Sunday</span>
-              <span className="text-foreground">CLOSED</span>
+            <div className="mb-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
+                Chiropractic &amp; Massage
+              </p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                <span className="text-muted-foreground">Mon &ndash; Thu</span>
+                <span className="text-foreground">8:00am - 6:00pm</span>
+                <span className="text-muted-foreground">Friday</span>
+                <span className="text-foreground">8:00am - 12:00pm</span>
+                <span className="text-muted-foreground">Sat &amp; Sun</span>
+                <span className="text-foreground">CLOSED</span>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
+                Medical Care
+              </p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                <span className="text-muted-foreground">Mon &ndash; Fri</span>
+                <span className="text-foreground">8:00am - 6:00pm</span>
+                <span className="text-muted-foreground">Sat &amp; Sun</span>
+                <span className="text-foreground">CLOSED</span>
+              </div>
             </div>
           </div>
 

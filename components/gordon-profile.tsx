@@ -43,8 +43,8 @@ export function GordonProfile() {
             <div className="mt-6 flex gap-3 rounded-xl border border-border bg-muted/50 p-4">
               <Baby className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Pediatric care:</span> Children are
-                welcome for new or ongoing health concerns and injuries. Well-child exams and
+                <span className="font-semibold text-foreground">Pediatric care:</span>{" "}
+                Children are welcome for new or ongoing health concerns and injuries. Well-child exams and
                 vaccines are not currently offered &mdash; please continue routine preventive care
                 with your child&apos;s regular pediatrician.
               </p>
