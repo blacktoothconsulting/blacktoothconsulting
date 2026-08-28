@@ -28,9 +28,14 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] sm:min-h-[500px] lg:min-h-[560px] bg-foreground">
-      {/* Letterboxed image carousel — narrower than the full-width section */}
-      <div className="absolute inset-0 z-0 mx-auto max-w-4xl">
+    <section className="relative overflow-hidden bg-foreground sm:min-h-[500px] lg:min-h-[560px]">
+      {/*
+        Mobile: image sits in a natural-aspect band at the top so the landscape
+        photo isn't cropped into an extreme zoom.
+        Desktop (sm+): image is absolutely positioned and letterboxed within a
+        centered max-w-4xl band, with the content overlaid on top.
+      */}
+      <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:z-0 sm:mx-auto sm:aspect-auto sm:max-w-4xl">
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
@@ -51,7 +56,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex h-full min-h-[600px] max-w-7xl flex-col justify-center px-4 py-10 sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
         <div className="max-w-2xl">
           <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
             Sheridan, Wyoming
