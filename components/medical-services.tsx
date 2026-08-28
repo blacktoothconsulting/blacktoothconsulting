@@ -1,5 +1,9 @@
-import { Stethoscope, FlaskConical, Scissors, Wallet } from "lucide-react"
+import { Stethoscope, FlaskConical, Scissors, Wallet, FileText, ExternalLink } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
+const MEDICARE_CONTRACT_URL =
+  "https://med.noridianmedicare.com/documents/10525/2052366/Opt-Out%2BPrivate%2BContract.pdf"
 
 const careGroups = [
   {
@@ -92,12 +96,29 @@ export function MedicalServices() {
               available upon request for patients to submit to their insurance. Insurance
               reimbursement is not guaranteed.
             </p>
-            <p className="mt-4 border-t border-primary/15 pt-4 text-sm text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">Medicare Patients:</span> Our medical
-              provider has opted out of Medicare. Medicare patients are welcome on a private-pay
-              basis and must sign a Medicare private contract before receiving care. Medicare will
-              not reimburse these services.
-            </p>
+            <div className="mt-4 border-t border-primary/15 pt-4">
+              <div className="flex items-start gap-3">
+                <FileText className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Medicare Patients (Opt-Out)</p>
+                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                    Medicare opt-out means that the medical provider has chosen not to bill
+                    Medicare. Medicare-covered services are provided through a private agreement
+                    between the patient and the provider, and Medicare generally does not reimburse
+                    the patient or provider for those services. Patients should review the agreement
+                    carefully and contact Medicare or their supplemental insurer with questions
+                    about coverage.
+                  </p>
+                  <Button variant="outline" size="sm" asChild className="mt-4">
+                    <a href={MEDICARE_CONTRACT_URL} target="_blank" rel="noopener noreferrer">
+                      <FileText className="mr-2 h-4 w-4" />
+                      View Medicare Private-Pay Contract
+                      <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

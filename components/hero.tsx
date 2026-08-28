@@ -8,7 +8,6 @@ import { Phone, MapPin, Clock } from "lucide-react"
 
 const bannerImages = [
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin-headshot.avif", alt: "Collin Redinger, D.C. at the Wyoming Clinic of Integrated Health" },
   { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
   { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
@@ -29,9 +28,9 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Image Carousel */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative overflow-hidden min-h-[600px] sm:min-h-[500px] lg:min-h-[560px] bg-foreground">
+      {/* Letterboxed image carousel — narrower than the full-width section */}
+      <div className="absolute inset-0 z-0 mx-auto max-w-4xl">
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
@@ -52,7 +51,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:py-40 lg:px-8">
+      <div className="relative z-10 mx-auto flex h-full min-h-[600px] max-w-7xl flex-col justify-center px-4 py-10 sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
         <div className="max-w-2xl">
           <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
             Sheridan, Wyoming
@@ -131,7 +130,8 @@ export function Hero() {
               </div>
               <div>
                 <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Mon-Thu 8am-6pm, Fri 8am-12pm</p>
+                <p className="text-sm text-muted-foreground">Chiropractic: Mon&ndash;Thu 8am&ndash;6pm, Fri 8am&ndash;12pm</p>
+                <p className="text-sm text-muted-foreground">Medical: Mon&ndash;Fri 8am&ndash;6pm</p>
               </div>
             </div>
           </div>

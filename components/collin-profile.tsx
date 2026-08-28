@@ -32,29 +32,38 @@ export function CollinProfile() {
               Gonstead Chiropractic &nbsp;|&nbsp; Care for the Whole Family
             </p>
 
-            {/*
-              TODO: Replace with Collin's full bio once he provides it.
-              Needed: education/chiropractic school, Gonstead training, years in
-              practice, years in Sheridan, and a personal note. The copy below is
-              intentionally general so nothing unverified is published.
-            */}
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Collin practices Gonstead chiropractic &mdash; a specific, hands-on approach that
-              looks for the underlying cause of your problem rather than just the spot that hurts.
-              He treats the whole family, from newborns to grandparents.
+              Dr. Collin Redinger was born and raised in Sheridan, Wyoming. He went to the
+              University of Wyoming for his undergraduate studies, then completed his Doctorate
+              at Northwestern Health Sciences University in Bloomington, MN. He studied and
+              practiced under Gonstead doctors while continuing his education on weekends with
+              countless seminars fine-tuning his training in the Gonstead System.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              He will take the time to explain what he finds and why he is recommending what he
-              recommends. If you have questions about whether chiropractic is right for what you
-              are dealing with, call the office and ask.
+              After clinical work in Minnesota, he moved his growing family back home to Sheridan
+              and opened The Wyoming Clinic in 2018. With over 8 years of clinical experience, he
+              continues to learn and fine-tune his craft.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              With the Gonstead System, every patient is unique and has to be examined and
+              adjusted very specifically to get the best results &mdash; nothing is generalized,
+              because no two problems are the same. His care often includes specific, gentle
+              adjustments, education on home care and lifestyle modifications, diet and supplement
+              guidance, lab work review, and at-home exercises that enhance the stability of the
+              spine, all with the goal of getting each person as healthy as possible for the long
+              run.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Dr. Collin Redinger loves his practice and his patients and thoroughly enjoys his
+              life&apos;s work; in his limited off time he enjoys working his small ranch with
+              raising cows, horses and hay, doing never ending construction projects with his
+              family, hunting, fishing, biking and spending time with his amazing wife and 4
+              children.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <a href="tel:307-655-8775">Call 307.655.8775 to Schedule</a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="#chiropractic-pricing">View Pricing</a>
               </Button>
             </div>
           </div>

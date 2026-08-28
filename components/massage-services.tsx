@@ -55,6 +55,18 @@ export function MassageServices() {
               together.
             </p>
 
+            <p className="mt-6 rounded-lg border border-border bg-card px-4 py-3 text-sm text-muted-foreground leading-relaxed">
+              <span className="font-semibold text-foreground">Pricing:</span> Massage rates vary
+              by session length and type. Call us at{" "}
+              <a
+                href="tel:307-655-8775"
+                className="font-medium text-primary underline underline-offset-4 hover:text-accent transition-colors"
+              >
+                307.655.8775
+              </a>{" "}
+              for current pricing and to book.
+            </p>
+
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {modalities.map((modality) => (
                 <div key={modality.name}>
