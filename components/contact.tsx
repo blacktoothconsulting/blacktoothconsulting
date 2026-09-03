@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Phone, MapPin, Mail, Clock } from "lucide-react"
+import { Phone, MapPin, Mail, Clock, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,6 +9,16 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const CLINIC_EMAIL = "info@wyochiro.com"
 const CLINIC_PHONE = "307.655.8775"
+
+/*
+  Google review link. Replace this with the clinic's exact "write a review"
+  URL from their Google Business Profile (Google Business dashboard →
+  "Ask for reviews" → copy link, usually looks like https://g.page/r/XXXX/review).
+  Until that is confirmed, this opens the clinic on Google Maps where the
+  Reviews tab and "Write a review" button are available.
+*/
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/maps/search/?api=1&query=Wyoming+Clinic+of+Integrated+Health+Sheridan+WY"
 
 export function Contact() {
   const [mounted, setMounted] = useState(false)
@@ -126,7 +136,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 flex flex-col sm:flex-row gap-3">
               <Button 
                 size="lg" 
                 variant="secondary" 
@@ -136,6 +146,17 @@ export function Contact() {
                 <a href="tel:307-655-8775">
                   <Phone className="mr-2 h-4 w-4" />
                   Call to Get Started
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                asChild
+              >
+                <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                  <Star className="mr-2 h-4 w-4" />
+                  Leave a Review
                 </a>
               </Button>
             </div>

@@ -2,6 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Phone, MapPin, Mail } from "lucide-react"
 
+/*
+  Google review link. Replace with the clinic's exact "write a review" URL
+  from their Google Business Profile. Until confirmed, this opens the clinic
+  on Google Maps where the Reviews tab / "Write a review" button live.
+*/
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/maps/search/?api=1&query=Wyoming+Clinic+of+Integrated+Health+Sheridan+WY"
+
 const navigation = {
   main: [
     { name: "Home", href: "/" },
@@ -11,6 +19,7 @@ const navigation = {
     { name: "About", href: "/chiropractic#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
+    { name: "Leave a Review", href: GOOGLE_REVIEW_URL, external: true },
   ],
   services: [
     { name: "Gonstead Chiropractic", href: "/chiropractic" },
@@ -51,12 +60,23 @@ export function Footer() {
             <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    href={item.href} 
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
-                    {item.name}
-                  </Link>
+                  {"external" in item && item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-background/70 hover:text-background transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      href={item.href} 
+                      className="text-sm text-background/70 hover:text-background transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

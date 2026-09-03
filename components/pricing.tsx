@@ -23,32 +23,30 @@ const priceGroups: { title: string; note?: string; items: PriceItem[] }[] = [
     title: "Common In-Office Testing",
     note: "Tests are usually added to the appropriate medical visit unless specifically included.",
     items: [
-      { service: "X-ray", price: "$80" },
-      { service: "Urine dipstick", price: "$20" },
-      { service: "Rapid strep test", price: "$35" },
-      { service: "Rapid flu test", price: "$35" },
-      { service: "Rapid COVID-19 test", price: "$35" },
-      { service: "Combined COVID-19 / flu test", price: "$55" },
+      { service: "X-ray", price: "$95" },
+      { service: "Urinalysis", price: "$15" },
+      { service: "Rapid strep test", price: "$25" },
+      { service: "Combined COVID-19 / flu test", price: "$35" },
       { service: "12-lead EKG", price: "$65" },
-      { service: "Hemoglobin A1c", price: "$40" },
-      { service: "Nebulizer treatment", price: "$40" },
+      { service: "Hemoglobin A1c", price: "$30" },
+      { service: "Nebulizer treatment", price: "$25" },
     ],
   },
   {
     title: "Common In-Office Procedures",
     note: "More complex procedures may cost more. We provide an estimate before non-urgent treatment. Outside pathology fees are separate.",
     items: [
-      { service: "Simple laceration repair", price: "$195" },
-      { service: "Complex laceration repair", price: "$255–295" },
-      { service: "Abscess drainage — simple", price: "$175" },
-      { service: "Ingrown toenail partial removal", price: "$225" },
+      { service: "Laceration repair", price: "$175–295" },
+      { service: "Abscess drainage", price: "$125–175" },
+      { service: "Ingrown toenail partial removal", price: "$200" },
       { service: "Earwax removal — one ear", price: "$65" },
       { service: "Earwax removal — both ears", price: "$85" },
-      { service: "Cryotherapy — first lesion", price: "$40" },
-      { service: "Each additional cryotherapy lesion", price: "$10" },
+      { service: "Cryotherapy — 1–14 lesions", price: "$50" },
+      { service: "Cryotherapy — 15+ lesions", price: "$75" },
       { service: "Large joint injection", price: "$150" },
       { service: "Small joint or bursa injection", price: "$125" },
-      { service: "Trigger-point injection", price: "$100" },
+      { service: "Trigger-point injection — 1–2 muscles", price: "$125" },
+      { service: "Trigger-point injection — 3+ muscles", price: "$175" },
       { service: "Skin biopsy", price: "$150" },
     ],
   },
@@ -59,9 +57,11 @@ const priceGroups: { title: string; note?: string; items: PriceItem[] }[] = [
       { service: "B12 injection", price: "$30" },
       { service: "Toradol injection", price: "$40" },
       { service: "Kenalog IM injection", price: "$50" },
-      { service: "Rocephin injection", price: "$55–75" },
+      { service: "Rocephin injection", price: "$27.50–50" },
       { service: "Dexamethasone injection", price: "$40" },
-      { service: "Ondansetron dose", price: "$30" },
+      { service: "Ondansetron injection", price: "$30" },
+      { service: "Ondansetron (oral)", price: "$5–10" },
+      { service: "IV hydration", price: "$75–90" },
       { service: "Patient-supplied medication injection", price: "$25" },
     ],
   },
@@ -176,7 +176,7 @@ export function Pricing() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Prices updated August 2026. Current pricing will be confirmed before treatment.
+            Prices updated September 2026. Current pricing will be confirmed before treatment.
           </p>
           <Button size="lg" asChild>
             <a href="tel:307-655-8775">

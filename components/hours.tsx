@@ -20,7 +20,7 @@ const schedules = [
     icon: Stethoscope,
     hours: [
       { day: "Monday", time: "8:00am – 6:00pm", isOpen: true },
-      { day: "Tuesday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Tuesday", time: "8:00am – 5:00pm", isOpen: true },
       { day: "Wednesday", time: "8:00am – 6:00pm", isOpen: true },
       { day: "Thursday", time: "8:00am – 6:00pm", isOpen: true },
       { day: "Friday", time: "8:00am – 6:00pm", isOpen: true },
