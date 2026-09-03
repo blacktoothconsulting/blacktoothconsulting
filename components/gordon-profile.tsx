@@ -30,7 +30,7 @@ export function GordonProfile() {
               Gordon Hendrickson, PA-C
             </h2>
             <p className="mt-3 text-base font-medium text-foreground">
-              Adult Primary Care &nbsp;|&nbsp; Acute Care for Children and Adults
+              Primary &amp; Same-Day Care for Adults and Children
             </p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
               Gordon Hendrickson, PA-C provides straightforward, cash-pay medical care with clear

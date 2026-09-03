@@ -14,7 +14,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "Medical Care | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Cash-pay primary and acute medical care in Sheridan, Wyoming, with Gordon Hendrickson, PA-C. Transparent pricing, same-day visits, in-office testing and procedures.",
+    "Cash-pay primary and same-day care for adults and children in Sheridan, Wyoming, with Gordon Hendrickson, PA-C. Transparent pricing, same-day visits, in-office testing and procedures.",
 }
 
 export default function MedicalCarePage() {
