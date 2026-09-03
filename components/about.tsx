@@ -14,13 +14,23 @@ export function About() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative lg:order-2">
-            <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/images/office.avif"
-                alt="Office at the Wyoming Clinic of Integrated Health"
-                fill
-                className="object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/office.avif"
+                  alt="Reception and office at the Wyoming Clinic of Integrated Health"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl mt-8">
+                <Image
+                  src="/images/medical-exam-room.jpg"
+                  alt="Medical exam room at the Wyoming Clinic of Integrated Health"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg hidden sm:block">
               <p className="text-3xl font-bold font-serif">Integrated</p>
