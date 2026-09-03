@@ -43,7 +43,7 @@ export function Header() {
               height={120}
               className="h-12 w-auto shrink-0 mix-blend-multiply sm:h-16"
             />
-            <div className="min-w-0">
+            <div className="min-w-0 text-center">
               <p className="font-serif text-base font-semibold text-foreground leading-tight sm:text-lg">
                 Wyoming Clinic
               </p>
@@ -84,7 +84,7 @@ export function Header() {
             307.655.8775
           </a>
           <Button asChild>
-            <Link href="/#contact">Book Appointment</Link>
+            <Link href="/medical-care#schedule">Book Appointment</Link>
           </Button>
         </div>
       </nav>
@@ -157,7 +157,7 @@ export function Header() {
               307.655.8775
             </a>
             <Button asChild className="w-full">
-              <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/medical-care#schedule" onClick={() => setMobileMenuOpen(false)}>
                 Book Appointment
               </Link>
             </Button>
