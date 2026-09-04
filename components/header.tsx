@@ -3,21 +3,31 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X, Phone, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Chiropractic", href: "/chiropractic" },
-  { name: "Medical Care", href: "/medical-care" },
-  { name: "Massage", href: "/massage" },
-  { name: "About", href: "/chiropractic#about" },
-  { name: "New Patients", href: "/#new-patients" },
-  { name: "Contact", href: "/#contact" },
-]
-
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // The "About" link points to the about section on whatever page you're on.
+  const aboutHref =
+    pathname === "/chiropractic"
+      ? "/chiropractic#about"
+      : pathname === "/medical-care"
+        ? "/medical-care#about"
+        : "/#about"
+
+  const navigation = [
+    { name: "Home", href: "/" },
+    { name: "Chiropractic", href: "/chiropractic" },
+    { name: "Medical Care", href: "/medical-care" },
+    { name: "Massage", href: "/massage" },
+    { name: "About", href: aboutHref },
+    { name: "New Patients", href: "/#new-patients" },
+    { name: "Contact", href: "/#contact" },
+  ]
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -56,10 +66,15 @@ export function Header() {
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-lg p-2.5 text-foreground hover:bg-muted transition-colors"
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-expanded={mobileMenuOpen}
           >
-            <span className="sr-only">Open main menu</span>
-            <Menu className="h-6 w-6" aria-hidden="true" />
+            <span className="sr-only">{mobileMenuOpen ? "Close main menu" : "Open main menu"}</span>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
 
@@ -91,7 +106,7 @@ export function Header() {
 
       {/* Mobile dropdown menu */}
       <div 
-        className={`lg:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
+        className={`lg:hidden absolute top-full left-0 right-0 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
           mobileMenuOpen 
             ? "opacity-100 scale-y-100" 
             : "opacity-0 scale-y-0 pointer-events-none"
