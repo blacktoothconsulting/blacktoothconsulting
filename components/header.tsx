@@ -106,13 +106,13 @@ export function Header() {
 
       {/* Mobile dropdown menu */}
       <div 
-        className={`lg:hidden absolute top-full left-0 right-0 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
+        className={`lg:hidden absolute top-full left-0 right-0 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
           mobileMenuOpen 
             ? "opacity-100 scale-y-100" 
             : "opacity-0 scale-y-0 pointer-events-none"
         }`}
       >
-        <div className="px-4 py-4">
+        <div className="px-4 pt-4 pb-24">
           {/* Navigation links */}
           <nav className="space-y-1 mb-4">
             {navigation.map((item) => (
