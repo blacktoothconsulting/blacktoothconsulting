@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { AnnouncementBanner } from "@/components/announcement-banner"
 import { Hero } from "@/components/hero"
 import { ProvidersOverview } from "@/components/providers-overview"
+import { About } from "@/components/about"
 import { NewPatients } from "@/components/new-patients"
 import { Hours } from "@/components/hours"
 import { Contact } from "@/components/contact"
@@ -15,6 +16,7 @@ export default function Home() {
         <AnnouncementBanner />
         <Hero />
         <ProvidersOverview />
+        <About />
         <NewPatients />
         <Hours />
         <Contact />

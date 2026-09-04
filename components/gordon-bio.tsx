@@ -21,7 +21,7 @@ const credentials = [
 
 export function GordonBio() {
   return (
-    <section id="about-gordon" className="pb-20 lg:pb-28 bg-background">
+    <section id="about" className="scroll-mt-20 pb-20 lg:pb-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Biography */}

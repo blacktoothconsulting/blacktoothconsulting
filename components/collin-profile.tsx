@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function CollinProfile() {
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section id="about" className="scroll-mt-20 py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative">

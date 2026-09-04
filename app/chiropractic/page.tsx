@@ -3,7 +3,6 @@ import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { CollinProfile } from "@/components/collin-profile"
 import { GonsteadProcess } from "@/components/gonstead-process"
-import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
 import { Contact } from "@/components/contact"
@@ -41,7 +40,6 @@ export default function ChiropracticPage() {
         </PageHero>
         <CollinProfile />
         <GonsteadProcess />
-        <About />
         <Services />
         <XrayResults />
         <Contact />
