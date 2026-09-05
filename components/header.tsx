@@ -141,8 +141,10 @@ export function Header() {
                 Chiropractic &amp; Massage
               </p>
               <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                <span className="text-muted-foreground">Mon &ndash; Thu</span>
+                <span className="text-muted-foreground">Mon, Wed, Thu</span>
                 <span className="text-foreground">8:00am - 6:00pm</span>
+                <span className="text-muted-foreground">Tuesday</span>
+                <span className="text-foreground">8:00am - 5:00pm</span>
                 <span className="text-muted-foreground">Friday</span>
                 <span className="text-foreground">8:00am - 12:00pm</span>
                 <span className="text-muted-foreground">Sat &amp; Sun</span>

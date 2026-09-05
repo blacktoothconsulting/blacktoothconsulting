@@ -129,7 +129,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Hours</p>
-                    <p className="text-primary-foreground/80">Chiropractic: Mon&ndash;Thu 8am&ndash;6pm, Fri 8am&ndash;12pm</p>
+                    <p className="text-primary-foreground/80">Chiropractic: Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm</p>
                     <p className="text-primary-foreground/80">Medical: Mon&ndash;Fri 8am&ndash;6pm</p>
                   </div>
                 </div>
