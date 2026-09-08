@@ -13,7 +13,7 @@ export function About() {
     <section id="about" className="py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative lg:order-2">
+          <div className="relative lg:order-1">
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
@@ -38,7 +38,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="lg:order-1">
+          <div className="lg:order-2">
             <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
               About Our Clinic
             </p>

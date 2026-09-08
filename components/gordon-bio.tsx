@@ -36,31 +36,36 @@ export function GordonBio() {
             <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
               <p>
                 Gordon Hendrickson, PA-C, is a certified Physician Assistant providing primary and
-                acute medical care at Wyoming Clinic of Integrated Health. He has several years of
-                experience in family and primary care, caring for both adults and children with a
-                wide range of acute illnesses, injuries, chronic medical conditions, and preventive
-                health needs.
+                same-day medical care for adults and children at Wyoming Clinic of Integrated
+                Health. His clinical experience includes treating acute illnesses and injuries,
+                managing chronic conditions and medications, and providing preventive care.
               </p>
               <p>
-                Gordon believes good healthcare should consider the whole person rather than
-                focusing only on a diagnosis. His approach incorporates lifestyle modifications
-                when they can meaningfully improve a patient&apos;s health, while also using
-                medications, diagnostic testing, office-based procedures, and other evidence-based
-                treatments when appropriate. He emphasizes clear communication and works with
-                patients to develop practical treatment plans based on their individual needs and
-                goals.
+                Gordon believes healthcare should focus on the whole person, not just a diagnosis.
+                His approach combines lifestyle changes when they can meaningfully improve health,
+                along with other evidence-based treatments when appropriate. He emphasizes clear
+                communication and works with patients to develop practical treatment plans based on
+                their individual needs and goals.
               </p>
               <p>
-                As a Physician Assistant, Gordon is trained to diagnose and treat medical
-                conditions, prescribe medications, order and interpret diagnostic testing, and
-                perform a variety of office-based procedures. When a condition requires care beyond
-                the scope of the clinic, he helps coordinate referral to the appropriate physician
-                or specialist.
+                As a Physician Assistant, Gordon can diagnose and treat medical conditions,
+                prescribe medications, order and interpret diagnostic testing, and perform
+                office-based procedures. When additional evaluation or specialized care is needed,
+                he helps coordinate referral to the appropriate specialist.
               </p>
               <p>
-                Gordon enjoys being part of the Sheridan community and providing patients with
-                straightforward, accessible medical care in a setting where they feel heard and
-                understand their treatment options.
+                Gordon studied physiology at the University of Minnesota before continuing his
+                medical training at Rocky Mountain College in Billings, Montana, where he earned his
+                Master of Physician Assistant Studies.
+              </p>
+              <p>
+                Outside of the clinic, Gordon enjoys spending time with his wife and five children,
+                as well as hiking and mountain biking in the Bighorn Mountains.
+              </p>
+              <p>
+                Gordon is proud to serve the Sheridan community and strives to provide thoughtful,
+                accessible medical care in a setting where patients feel heard, understand their
+                options, and have an active role in their healthcare.
               </p>
             </div>
           </div>
