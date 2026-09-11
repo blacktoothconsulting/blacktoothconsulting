@@ -16,7 +16,7 @@ const navigation = {
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
     { name: "Massage", href: "/massage" },
-    { name: "About", href: "/chiropractic#about" },
+    { name: "About", href: "/#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
     { name: "Leave a Review", href: GOOGLE_REVIEW_URL, external: true },

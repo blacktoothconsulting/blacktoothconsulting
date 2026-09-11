@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="mt-12 flex gap-2">
+        <div className="mt-8 flex gap-2 sm:mt-12">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
