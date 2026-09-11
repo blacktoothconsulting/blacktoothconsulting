@@ -77,6 +77,41 @@ export function Contact() {
           </p>
         </div>
 
+        <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Card className="border-0 shadow-sm">
+            <CardContent className="flex h-full flex-col p-6">
+              <h3 className="text-lg font-semibold text-foreground">
+                Call to Schedule a Chiropractic Appointment
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Speak with our team by phone to find a chiropractic appointment time that works for you.
+              </p>
+              <Button size="lg" className="mt-5 w-full sm:w-auto" asChild>
+                <a href="tel:307-655-8775">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call 307.655.8775
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-sm">
+            <CardContent className="flex h-full flex-col p-6">
+              <h3 className="text-lg font-semibold text-foreground">
+                Schedule a Medical Appointment with Gordon
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Use Gordon&apos;s online scheduler to choose a medical appointment time.
+              </p>
+              <Button size="lg" className="mt-5 w-full sm:w-auto" asChild>
+                <a href="/medical-care#schedule">
+                  Schedule with Gordon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">

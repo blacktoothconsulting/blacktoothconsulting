@@ -99,7 +99,7 @@ export function Header() {
             307.655.8775
           </a>
           <Button asChild>
-            <Link href="/medical-care#schedule">Book Appointment</Link>
+            <Link href="/#contact">Book Appointment</Link>
           </Button>
         </div>
       </nav>
