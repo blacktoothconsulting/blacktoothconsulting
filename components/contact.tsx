@@ -2,9 +2,6 @@ import Link from "next/link"
 import { Phone, MapPin, Mail, Clock, Star, Activity, Stethoscope, Hand } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { AppointmentForm } from "@/components/appointment-form"
-
-const CLINIC_EMAIL = "info@wyochiro.com"
 
 /*
   Google review link. Replace this with the clinic's exact "write a review"
@@ -49,7 +46,7 @@ export function Contact() {
             Get Your Life Back!
           </h2>
           <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-            Choose the care you&apos;re looking for below, or send us a message. Call{" "}
+            Choose the care you&apos;re looking for below, or call us at{" "}
             <a href="tel:307-655-8775" className="font-medium underline underline-offset-4">
               307.655.8775
             </a>{" "}
@@ -60,19 +57,24 @@ export function Contact() {
         {/* Service-specific booking paths */}
         <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3">
           {bookingOptions.map((option) => (
-            <Card key={option.title} className="border-0 shadow-sm">
-              <CardContent className="flex h-full flex-col p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
-                  <option.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">{option.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {option.description}
-                </p>
-                <Button className="mt-5 w-full" asChild>
-                  <Link href={option.href}>{option.cta}</Link>
-                </Button>
-              </CardContent>
+            <Card
+              key={option.title}
+              className="border-0 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
+            >
+              <Link href={option.href} className="block h-full rounded-xl focus:outline-none">
+                <CardContent className="flex h-full flex-col p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
+                    <option.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-foreground">{option.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {option.description}
+                  </p>
+                  <span className="mt-5 inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+                    {option.cta}
+                  </span>
+                </CardContent>
+              </Link>
             </Card>
           ))}
         </div>
@@ -148,22 +150,20 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <Card className="border-0 shadow-xl">
-            <CardContent className="p-6 lg:p-8">
-              <h3 className="text-lg font-semibold text-foreground">Send Us a Message</h3>
-              <p className="mt-2 mb-6 text-sm text-muted-foreground leading-relaxed">
-                Have a question about chiropractic, massage, or medical care? Send it here and
-                we&apos;ll reply by email or phone. For anything urgent, call{" "}
-                <a
-                  href="tel:307-655-8775"
-                  className="font-medium text-primary underline underline-offset-4"
-                >
-                  307.655.8775
-                </a>
-                .
-              </p>
-              <AppointmentForm kind="message" service="General" />
+          {/* Clinic location */}
+          <Card className="overflow-hidden border-0 shadow-xl">
+            <CardContent className="p-0">
+              <div className="sr-only">
+                <h3>Find us in Sheridan</h3>
+                <p>Visit Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, Wyoming.</p>
+              </div>
+              <iframe
+                title="Map showing Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, WY"
+                src="https://www.google.com/maps?q=528+Coffeen+Ave,+Sheridan,+WY&output=embed"
+                className="h-[320px] w-full border-0 sm:h-[380px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </CardContent>
           </Card>
         </div>
