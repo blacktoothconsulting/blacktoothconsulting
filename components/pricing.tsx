@@ -82,13 +82,13 @@ export function Pricing() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
-            Transparent Cash-Pay Pricing
+            Straightforward Medical Care Pricing
           </p>
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             Patient Pricing Menu
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Straightforward cash-pay care with no surprise clinic bills. Payment is due at the time
+            Straightforward medical care with no surprise clinic bills. Payment is due at the time
             of service. You may request an itemized receipt or superbill to submit to your insurance
             plan; reimbursement is not guaranteed. This menu highlights our most common services and
             is not a complete list &mdash; please call to ask about a specific service.

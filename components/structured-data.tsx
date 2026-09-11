@@ -44,7 +44,7 @@ const clinic = {
   "@id": `${SITE_URL}/#clinic`,
   name: "Wyoming Clinic of Integrated Health",
   description:
-    "Integrated Gonstead chiropractic, cash-pay general medical care, and therapeutic massage for the whole family in Sheridan, Wyoming.",
+    "Integrated Gonstead chiropractic, straightforward general medical care, and therapeutic massage for the whole family in Sheridan, Wyoming.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo.png`,
   image: `${SITE_URL}/images/logo.png`,
@@ -97,7 +97,7 @@ const clinic = {
       "@type": "MedicalTherapy",
       name: "General Medical Care",
       description:
-        "Cash-pay primary and same-day acute medical care with clear, up-front pricing.",
+        "Straightforward primary and same-day acute medical care with clear, up-front pricing.",
       url: `${SITE_URL}/medical-care`,
     },
     {

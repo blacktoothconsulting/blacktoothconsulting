@@ -90,7 +90,7 @@ export function MedicalServices() {
             <Wallet className="h-6 w-6 text-primary" aria-hidden="true" />
           </div>
           <div className="min-w-0">
-            <h3 className="font-semibold text-lg text-foreground">Simple Cash-Pay Care</h3>
+            <h3 className="font-semibold text-lg text-foreground">Straightforward Medical Care</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Insurance is not billed. Payment is due at the time of service. Superbills are
               available upon request for patients to submit to their insurance. Insurance

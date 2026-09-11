@@ -33,7 +33,7 @@ export function GordonProfile() {
               Primary &amp; Same-Day Care for Adults and Children
             </p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Gordon Hendrickson, PA-C provides straightforward, cash-pay medical care with clear
+              Gordon Hendrickson, PA-C provides straightforward medical care with clear
               prices and convenient scheduling. From same-day illness and injury visits to
               preventive exams and in-office procedures, you&apos;ll always have time to ask
               questions and get clear answers.

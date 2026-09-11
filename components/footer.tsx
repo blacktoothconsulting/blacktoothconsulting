@@ -48,7 +48,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Chiropractic, massage, and cash-pay medical care for the whole family in Sheridan, Wyoming.
+              Chiropractic, massage, and straightforward medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 

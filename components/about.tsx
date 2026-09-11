@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react"
 
 const features = [
   "Gonstead Chiropractic Care",
-  "Cash-Pay Medical Care",
+  "Straightforward Medical Care",
   "Therapeutic Massage",
   "Family-Friendly Environment",
 ]
@@ -46,7 +46,7 @@ export function About() {
               Integrated Care for the Whole Family
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              The Wyoming Clinic of Integrated Health brings Gonstead chiropractic, cash-pay
+              The Wyoming Clinic of Integrated Health brings Gonstead chiropractic, straightforward
               general medical care, and therapeutic massage together under one roof in Sheridan.
               Our mission is to create a community that takes an active role in their own health.
             </p>

@@ -15,7 +15,7 @@ export function AnnouncementBanner() {
             </span>
           </div>
           <p className="text-sm sm:text-base font-medium text-balance">
-            Now scheduling cash-pay visits with{" "}
+            Now scheduling straightforward medical visits with{" "}
             <span className="font-semibold">Gordon Hendrickson, PA-C</span> — chiropractic and
             healthcare under one roof.
           </p>
