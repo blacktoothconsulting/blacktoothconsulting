@@ -136,7 +136,7 @@ export function Hero() {
               <div>
                 <p className="font-medium text-foreground">Hours</p>
                 <p className="text-sm text-muted-foreground">Chiropractic: Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm</p>
-                <p className="text-sm text-muted-foreground">Medical: Mon&ndash;Fri 8am&ndash;6pm</p>
+                <p className="text-sm text-muted-foreground">Medical: Mon/Wed/Thu/Fri 8am&ndash;6pm, Tue 8am&ndash;5pm</p>
               </div>
             </div>
           </div>
