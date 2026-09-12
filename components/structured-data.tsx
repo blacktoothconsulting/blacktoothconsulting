@@ -5,8 +5,9 @@
  *   1. SITE_URL must match the live domain exactly (inferred from info@wyochiro.com).
  *   2. POSTAL_CODE is Sheridan's main ZIP — confirm it matches the Coffeen Ave suite.
  *   3. OPENING_HOURS reflects overall clinic availability. Chiropractic/massage
- *      run Mon-Thu 8am-6pm and Fri 8am-12pm; medical runs Mon-Fri 8am-6pm, so
- *      the clinic as a whole is open Mon-Fri 8am-6pm.
+ *      run Mon/Wed/Thu 8am-6pm, Tue 8am-5pm, Fri 8am-12pm; medical runs
+ *      Mon/Wed/Thu/Fri 8am-6pm, Tue 8am-5pm. Combined, the clinic is open
+ *      Mon/Wed/Thu/Fri 8am-6pm and Tue 8am-5pm.
  *   4. Add `geo` (latitude/longitude) and `sameAs` (Google Business Profile,
  *      Facebook, etc.) once those are known — both improve local ranking.
  */
@@ -26,7 +27,8 @@ const MAP_URL = "https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
  *   [{ days: ["Monday", "Tuesday"], opens: "09:00", closes: "17:00" }]
  */
 const OPENING_HOURS: { days: string[]; opens: string; closes: string }[] = [
-  { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "18:00" },
+  { days: ["Monday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "18:00" },
+  { days: ["Tuesday"], opens: "08:00", closes: "17:00" },
 ]
 
 const address = {
@@ -44,7 +46,7 @@ const clinic = {
   "@id": `${SITE_URL}/#clinic`,
   name: "Wyoming Clinic of Integrated Health",
   description:
-    "Integrated Gonstead chiropractic, cash-pay general medical care, and therapeutic massage for the whole family in Sheridan, Wyoming.",
+    "Integrated Gonstead chiropractic, straightforward general medical care, and therapeutic massage for the whole family in Sheridan, Wyoming.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo.png`,
   image: `${SITE_URL}/images/logo.png`,
@@ -97,7 +99,7 @@ const clinic = {
       "@type": "MedicalTherapy",
       name: "General Medical Care",
       description:
-        "Cash-pay primary and same-day acute medical care with clear, up-front pricing.",
+        "Straightforward primary and same-day acute medical care with clear, up-front pricing.",
       url: `${SITE_URL}/medical-care`,
     },
     {

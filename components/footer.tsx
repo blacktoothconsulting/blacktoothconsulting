@@ -16,7 +16,7 @@ const navigation = {
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
     { name: "Massage", href: "/massage" },
-    { name: "About", href: "/chiropractic#about" },
+    { name: "About", href: "/#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
     { name: "Leave a Review", href: GOOGLE_REVIEW_URL, external: true },
@@ -48,7 +48,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Chiropractic, massage, and cash-pay medical care for the whole family in Sheridan, Wyoming.
+              Chiropractic, massage, and straightforward medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 

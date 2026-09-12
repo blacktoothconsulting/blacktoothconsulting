@@ -28,11 +28,11 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Primary and same-day acute care, paid in cash. You see the price before you agree to anything.",
+      "Primary and same-day acute care with clear, upfront pricing. You see the price before you agree to anything.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
-      "Transparent cash-pay pricing",
+      "Clear, upfront pricing",
     ],
     href: "/medical-care",
     cta: "Explore Medical Care",
@@ -68,7 +68,7 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Gonstead chiropractic, cash-pay medical care, and massage therapy &mdash; all at
+            Gonstead chiropractic, straightforward medical care, and massage therapy &mdash; all at
             528 Coffeen Ave.
           </p>
         </div>
