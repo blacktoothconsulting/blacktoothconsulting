@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { User } from "lucide-react"
 
 const therapists = [
@@ -46,10 +47,12 @@ export function MassageTherapists() {
             >
               <div className="relative flex aspect-[4/3] shrink-0 items-center justify-center bg-muted sm:aspect-auto sm:w-40">
                 {therapist.image ? (
-                  <img
-                    src={therapist.image}
+                  <Image
+                    src={therapist.image || "/placeholder.svg"}
                     alt={`${therapist.name}, ${therapist.title}`}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 160px"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="flex flex-col items-center gap-2 p-6 text-center">
