@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Phone, MapPin, Mail, Clock, Star, Activity, Stethoscope, Hand } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { OpeningHours } from "@/components/opening-hours"
 
 // Direct "write a review" link for the clinic's Google Business Profile.
 const GOOGLE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
@@ -118,18 +119,13 @@ export function Contact() {
                     <p className="text-primary-foreground/80">info@wyochiro.com</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-4 text-primary-foreground/90">
+                <div className="flex items-start gap-4 text-primary-foreground/90">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10">
                     <Clock className="h-5 w-5" />
                   </div>
-                  <div>
-                    <p className="font-medium">Hours</p>
-                    <p className="text-primary-foreground/80">
-                      Chiropractic: Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm
-                    </p>
-                    <p className="text-primary-foreground/80">
-                      Medical: Mon/Wed/Thu/Fri 8am&ndash;6pm, Tue 8am&ndash;5pm
-                    </p>
+                  <div className="flex-1">
+                    <p className="font-medium mb-3">Hours</p>
+                    <OpeningHours tone="primary" showHeading={false} />
                   </div>
                 </div>
               </div>

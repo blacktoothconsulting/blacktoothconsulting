@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
+import { OpeningHours } from "@/components/opening-hours"
 
 const bannerImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
@@ -129,14 +130,13 @@ export function Hero() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4 py-6 px-4">
+            <div className="flex items-start gap-4 py-6 px-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
-              <div>
-                <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Chiropractic: Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm</p>
-                <p className="text-sm text-muted-foreground">Medical: Mon/Wed/Thu/Fri 8am&ndash;6pm, Tue 8am&ndash;5pm</p>
+              <div className="flex-1">
+                <p className="font-medium text-foreground mb-3">Hours</p>
+                <OpeningHours showHeading={false} />
               </div>
             </div>
           </div>
