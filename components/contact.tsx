@@ -3,15 +3,8 @@ import { Phone, MapPin, Mail, Clock, Star, Activity, Stethoscope, Hand } from "l
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-/*
-  Google review link. Replace this with the clinic's exact "write a review"
-  URL from their Google Business Profile (Google Business dashboard →
-  "Ask for reviews" → copy link, usually looks like https://g.page/r/XXXX/review).
-  Until that is confirmed, this opens the clinic on Google Maps where the
-  Reviews tab and "Write a review" button are available.
-*/
-const GOOGLE_REVIEW_URL =
-  "https://www.google.com/maps/search/?api=1&query=Wyoming+Clinic+of+Integrated+Health+Sheridan+WY"
+// Direct "write a review" link for the clinic's Google Business Profile.
+const GOOGLE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
 
 const bookingOptions = [
   {
