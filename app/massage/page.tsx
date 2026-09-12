@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { MassageTherapists } from "@/components/massage-therapists"
 import { MassageServices } from "@/components/massage-services"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -38,6 +39,7 @@ export default function MassagePage() {
         </PageHero>
         <MassageServices />
         <MassageTherapists />
+        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />

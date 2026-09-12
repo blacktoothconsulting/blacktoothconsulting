@@ -5,6 +5,7 @@ import { CollinProfile } from "@/components/collin-profile"
 import { GonsteadProcess } from "@/components/gonstead-process"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -42,6 +43,7 @@ export default function ChiropracticPage() {
         <GonsteadProcess />
         <Services />
         <XrayResults />
+        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />
