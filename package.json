@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "impeccable:detect": "impeccable detect src/",
+    "impeccable:detect": "impeccable detect app/ components/",
     "impeccable:install": "impeccable install"
   },
   "dependencies": {
