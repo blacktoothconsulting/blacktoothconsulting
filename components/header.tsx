@@ -24,6 +24,7 @@ export function Header() {
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
     { name: "Massage", href: "/massage" },
+    { name: "Our Team", href: "/team" },
     { name: "About", href: aboutHref },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
