@@ -22,18 +22,11 @@ export function Header() {
 
   // Only page routes drive the active state; anchor links never highlight.
   const navigation = [
-<<<<<<< HEAD
     { name: "Home", href: "/", match: "/" },
     { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
     { name: "Massage", href: "/massage", match: "/massage" },
-=======
-    { name: "Home", href: "/" },
-    { name: "Chiropractic", href: "/chiropractic" },
-    { name: "Medical Care", href: "/medical-care" },
-    { name: "Massage", href: "/massage" },
-    { name: "Our Team", href: "/team" },
->>>>>>> team-page
+    { name: "Our Team", href: "/team", match: "/team" },
     { name: "About", href: aboutHref },
   ]
 

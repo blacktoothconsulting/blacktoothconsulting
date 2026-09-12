@@ -5,11 +5,8 @@ import { CollinProfile } from "@/components/collin-profile"
 import { GonsteadProcess } from "@/components/gonstead-process"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
-<<<<<<< HEAD
 import { AppointmentRequest } from "@/components/appointment-request"
-=======
 import { MeetTeamCta } from "@/components/meet-team-cta"
->>>>>>> team-page
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -46,7 +43,6 @@ export default function ChiropracticPage() {
         <GonsteadProcess />
         <Services />
         <XrayResults />
-<<<<<<< HEAD
         <AppointmentRequest
           service="Chiropractic"
           eyebrow="Book Your Visit"
@@ -58,9 +54,7 @@ export default function ChiropracticPage() {
             "Questions about your condition? Add them and we'll come prepared",
           ]}
         />
-=======
         <MeetTeamCta />
->>>>>>> team-page
         <Contact />
       </main>
       <Footer />
