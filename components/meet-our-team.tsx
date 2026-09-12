@@ -24,6 +24,11 @@ const teamMembers: TeamMember[] = [
     bio: "Gordon Hendrickson provides straightforward primary and same-day medical care for adults and children, with time for clear answers.",
   },
   {
+    name: "Our Care Coordinators",
+    title: "Care Coordinators",
+    bio: "Team introduction coming soon.",
+  },
+  {
     name: "Kerry Baros",
     title: "Massage Therapist",
   },
