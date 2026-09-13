@@ -68,7 +68,7 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Gonstead chiropractic, straightforward medical care, and massage therapy &mdash; all at
+            Gonstead chiropractic, straightforward medical care, and massage therapy, all at
             528 Coffeen Ave.
           </p>
         </div>

@@ -102,8 +102,8 @@ export function NewPatients() {
               What to Expect on Your First Visit
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Chiropractic, massage, or medical care &mdash; every first visit starts the same
-              way. Here is how it goes.
+              Whether it&apos;s chiropractic, massage, or medical care, every first visit starts the
+              same way. Here is how it goes.
             </p>
 
             <div className="mt-8 space-y-6">

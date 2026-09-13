@@ -25,7 +25,7 @@ export default function MedicalCarePage() {
         <PageHero
           eyebrow="Primary & Acute Medical Care"
           title="Straightforward Medical Care, Clear Prices"
-          description="Primary & same-day care for adults and children with Gordon Hendrickson, PA-C — same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
+          description="Primary and same-day care for adults and children with Gordon Hendrickson, PA-C. Same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
         >
           <Button size="lg" asChild>
             <a href="#schedule">Schedule Online</a>

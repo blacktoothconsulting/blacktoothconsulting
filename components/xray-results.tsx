@@ -27,7 +27,7 @@ export function XrayResults() {
             Before &amp; After X-Rays
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Digital X-ray lets us measure &mdash; not guess &mdash; how the spine is changing under
+            Digital X-ray lets us measure, not guess, how the spine is changing under
             care. Here is one patient&apos;s cervical spine before starting care and after a course
             of specific Gonstead adjustments.
           </p>

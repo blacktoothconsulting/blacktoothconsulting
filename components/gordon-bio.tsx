@@ -5,8 +5,8 @@ const credentials = [
     icon: GraduationCap,
     title: "Education",
     items: [
-      "Bachelor of Physiology — University of Minnesota",
-      "Master of Physician Assistant Studies — Rocky Mountain College, Billings, MT",
+      "Bachelor of Physiology, University of Minnesota",
+      "Master of Physician Assistant Studies, Rocky Mountain College, Billings, MT",
     ],
   },
   {

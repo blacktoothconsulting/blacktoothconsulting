@@ -68,7 +68,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
             Our mission is to create a community that takes an active role in their own
             health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you &mdash; to listen, to explain, and to get you answers.
+            always have time for you: to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>

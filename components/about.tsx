@@ -53,7 +53,7 @@ export function About() {
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Whether you see Dr. Collin Redinger for chiropractic, Gordon Hendrickson, PA-C for
               straightforward medical care, or one of our massage therapists, we will always have
-              time for you &mdash; to listen, to explain, and to find and correct the root cause so
+              time for you: to listen, to explain, and to find and correct the root cause so
               you can stay well for the long run.
             </p>
 

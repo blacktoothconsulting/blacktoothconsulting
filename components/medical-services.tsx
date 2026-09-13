@@ -49,8 +49,8 @@ export function MedicalServices() {
             Medical Services
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            A sample of the medical care available in-office. This is not a complete list &mdash;
-            call to ask about a specific service.
+            A sample of the medical care available in-office. This is not a complete list.
+            Call to ask about a specific service.
           </p>
         </div>
 

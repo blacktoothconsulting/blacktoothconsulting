@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "Meet Our Team | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Meet the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming — the people who welcome you, guide your care, and keep you moving.",
+    "Meet the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming. They welcome you, guide your care, and keep you moving.",
 }
 
 export default function TeamPage() {
@@ -21,7 +21,7 @@ export default function TeamPage() {
         <PageHero
           eyebrow="About Us"
           title="Meet Our Team"
-          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health — the people who welcome you at the door and walk alongside your care."
+          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health. They welcome you at the door and help with your care every step of the way."
         >
           <Button size="lg" asChild>
             <a href="tel:307-655-8775">Call 307.655.8775</a>
