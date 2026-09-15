@@ -1,7 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Activity, Stethoscope, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const careLines = [
   {
@@ -11,10 +12,10 @@ const careLines = [
     image: "/images/collin1.avif",
     imageAlt: "Chiropractic care at the Wyoming Clinic of Integrated Health",
     description:
-      "Specific, hands-on Gonstead chiropractic care for the whole family — helping you move well, feel better, and live the life you deserve.",
+      "Hands-on Gonstead chiropractic for the whole family, from newborns to grandparents.",
     highlights: [
-      "Gonstead technique specialists",
-      "Corrective exercises & massage therapy",
+      "Gonstead technique specialist",
+      "Corrective exercises & lifestyle advice",
       "Digital X-ray & postural screenings",
     ],
     href: "/chiropractic",
@@ -27,14 +28,30 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Straightforward, cash-pay primary and acute medical care with clear, up-front pricing and convenient same-day scheduling.",
+      "Primary and same-day medical care for adults and children.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
-      "Transparent cash-pay pricing",
+      "Clear, upfront pricing",
     ],
     href: "/medical-care",
     cta: "Explore Medical Care",
+  },
+  {
+    eyebrow: "Massage Therapy",
+    provider: "Licensed Massage Therapists",
+    icon: Hand,
+    image: "/images/massage-room.png",
+    imageAlt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
+    description:
+      "Massage for the muscles around your spine. Book it on its own, or add it to your chiropractic visits.",
+    highlights: [
+      "Therapeutic & deep tissue work",
+      "Sport, recovery & relaxation massage",
+      "Pairs with your chiropractic plan",
+    ],
+    href: "/massage",
+    cta: "Explore Massage Therapy",
   },
 ]
 
@@ -45,26 +62,26 @@ export function ProvidersOverview() {
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
-            Two Kinds of Care, One Clinic
+            Three Kinds of Care, One Clinic
           </p>
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            The Wyoming Clinic of Integrated Health brings together trusted Gonstead chiropractic
-            and cash-pay medical care under one roof. Choose the care you&apos;re looking for to
-            learn more.
+            Gonstead chiropractic, straightforward medical care, and massage therapy, all at one
+            location.
           </p>
         </div>
 
         {/* Two care-line cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {careLines.map((line) => (
-            <div
+            <Link
               key={line.href}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300"
+              href={line.href}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <Image
                   src={line.image || "/placeholder.svg"}
                   alt={line.imageAlt}
@@ -74,7 +91,13 @@ export function ProvidersOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               </div>
 
-              <div className="flex flex-1 flex-col p-6 lg:p-8">
+              <div
+                className={cn(
+                  "flex flex-1 flex-col p-6 lg:p-8",
+                  line.href === "/chiropractic" && "pl-5 pr-[18px] lg:p-8",
+                  line.href === "/massage" && "pl-5 pr-[19px] lg:p-8",
+                )}
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
                     <line.icon className="h-6 w-6 text-primary" aria-hidden="true" />
@@ -106,18 +129,33 @@ export function ProvidersOverview() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-2 mt-auto">
-                  <Button asChild className="w-full sm:w-auto">
-                    <Link href={line.href}>
-                      {line.cta}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                <div
+                  className={cn(
+                    "mt-8 pt-2 mt-auto",
+                    line.href === "/chiropractic" && "pt-3.5",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      buttonVariants({ size: "default" }),
+                      "w-full sm:w-auto pointer-events-none",
+                    )}
+                    aria-hidden="true"
+                  >
+                    {line.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
+
+        <p className="mt-12 mx-auto max-w-3xl text-center text-sm text-muted-foreground leading-relaxed">
+          Medical, chiropractic, and massage services are available under one roof and may
+          complement one another when appropriate. Each service can also be scheduled
+          independently.
+        </p>
       </div>
     </section>
   )
