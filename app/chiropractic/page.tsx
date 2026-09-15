@@ -25,7 +25,7 @@ export default function ChiropracticPage() {
         <PageHero
           eyebrow="Chiropractic Care"
           title="Gonstead Chiropractic for the Whole Family"
-          description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort — so you can move well, feel better, and live the life you deserve."
+          description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort, so you can move well, feel better, and live the life you deserve."
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>

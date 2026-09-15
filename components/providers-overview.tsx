@@ -28,7 +28,7 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Primary and same-day acute care with clear, upfront pricing. You see the price before you agree to anything.",
+      "Primary and same-day medical care for adults and children.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
@@ -68,8 +68,8 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Gonstead chiropractic, straightforward medical care, and massage therapy &mdash; all at
-            528 Coffeen Ave.
+            Gonstead chiropractic, straightforward medical care, and massage therapy, all at one
+            location.
           </p>
         </div>
 
@@ -91,7 +91,13 @@ export function ProvidersOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               </div>
 
-              <div className="flex flex-1 flex-col p-6 lg:p-8">
+              <div
+                className={cn(
+                  "flex flex-1 flex-col p-6 lg:p-8",
+                  line.href === "/chiropractic" && "pl-5 pr-[18px] lg:p-8",
+                  line.href === "/massage" && "pl-5 pr-[19px] lg:p-8",
+                )}
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
                     <line.icon className="h-6 w-6 text-primary" aria-hidden="true" />
@@ -123,7 +129,12 @@ export function ProvidersOverview() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-2 mt-auto">
+                <div
+                  className={cn(
+                    "mt-8 pt-2 mt-auto",
+                    line.href === "/chiropractic" && "pt-3.5",
+                  )}
+                >
                   <span
                     className={cn(
                       buttonVariants({ size: "default" }),

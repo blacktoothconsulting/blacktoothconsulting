@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
+import { isTeamPageEnabled } from "@/lib/site-features"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

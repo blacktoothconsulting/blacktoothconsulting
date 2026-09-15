@@ -34,7 +34,7 @@ export function Testimonials() {
               ))}
             </div>
             <p className="max-w-xl font-serif text-xl leading-relaxed text-foreground text-balance sm:text-2xl">
-              Read reviews from Sheridan families on Google — and if we&apos;ve helped you, we&apos;d be
+              Read reviews from Sheridan families on Google, and if we&apos;ve helped you, we&apos;d be
               honored if you shared your experience.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">

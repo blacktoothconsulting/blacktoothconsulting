@@ -5,7 +5,7 @@ import { Clock } from "lucide-react"
 // (grouped by service, day/time pairs) everywhere hours appear site-wide.
 const scheduleGroups = [
   {
-    name: "Chiropractic & Massage",
+    name: "Massage Hours:",
     rows: [
       { day: "Mon, Wed, Thu", time: "8:00am - 6:00pm" },
       { day: "Tuesday", time: "8:00am - 5:00pm" },
@@ -13,30 +13,23 @@ const scheduleGroups = [
       { day: "Sat & Sun", time: "CLOSED" },
     ],
   },
-  {
-    name: "Medical Care",
-    rows: [
-      { day: "Mon, Wed, Thu, Fri", time: "8:00am - 6:00pm" },
-      { day: "Tuesday", time: "8:00am - 5:00pm" },
-      { day: "Sat & Sun", time: "CLOSED" },
-    ],
-  },
 ]
 
 type OpeningHoursProps = {
   /** "default" for light surfaces (card/menu), "primary" for the dark primary background. */
-  tone?: "default" | "primary"
+  tone?: "default" | "primary" | "contact"
   /** Render the "Opening Hours" heading with a clock icon. */
   showHeading?: boolean
 }
 
 export function OpeningHours({ tone = "default", showHeading = true }: OpeningHoursProps) {
   const isPrimary = tone === "primary"
-  const headingClass = isPrimary ? "text-primary-foreground" : "text-foreground"
-  const iconClass = isPrimary ? "text-primary-foreground" : "text-primary"
-  const labelClass = isPrimary ? "text-primary-foreground" : "text-primary"
-  const dayClass = isPrimary ? "text-primary-foreground/70" : "text-muted-foreground"
-  const timeClass = isPrimary ? "text-primary-foreground" : "text-foreground"
+  const isContact = tone === "contact"
+  const headingClass = isPrimary || isContact ? "text-primary-foreground" : "text-foreground"
+  const iconClass = isPrimary || isContact ? "text-primary-foreground" : "text-primary"
+  const labelClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-primary"
+  const dayClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-muted-foreground"
+  const timeClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-foreground"
 
   return (
     <div>
@@ -49,7 +42,7 @@ export function OpeningHours({ tone = "default", showHeading = true }: OpeningHo
       <div className="space-y-3">
         {scheduleGroups.map((group) => (
           <div key={group.name}>
-            <p className={`mb-1 text-xs font-semibold uppercase tracking-wider ${labelClass}`}>
+            <p className={`mb-[11px] text-sm font-semibold uppercase tracking-wider ${labelClass}`}>
               {group.name}
             </p>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">

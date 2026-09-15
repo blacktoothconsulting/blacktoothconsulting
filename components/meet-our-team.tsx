@@ -1,10 +1,13 @@
 import Image from "next/image"
 import { MapPin, UserRound } from "lucide-react"
+import { TeamMemberCarousel } from "@/components/team-member-carousel"
 
 type TeamMember = {
   name: string
   title: string
   image?: string
+  images?: string[]
+  imagePositions?: string[]
   bio?: string
   personalNote?: string
 }
@@ -13,7 +16,15 @@ const teamMembers: TeamMember[] = [
   {
     name: "Collin Redinger, D.C.",
     title: "Doctor of Chiropractic",
-    image: "/images/collin-headshot.avif",
+    images: [
+      "/images/collin-horse.jpeg",
+      "/images/collin-hunt-creek.jpeg",
+      "/images/collin-alpine.jpeg",
+      "/images/collin-kids-turkey.jpeg",
+      "/images/collin-cattle.jpeg",
+      "/images/collin-tall-grass.jpeg",
+    ],
+    imagePositions: ["center 32%", "center top", "center top", "center 32%", "center top", "center 30%"],
     bio: "Dr. Collin Redinger brings Gonstead chiropractic care to families in Sheridan, with a focus on specific, individualized care and long-term health.",
     personalNote: "Family, ranch life, and the Sheridan community",
   },
@@ -21,7 +32,13 @@ const teamMembers: TeamMember[] = [
     name: "Gordon Hendrickson, PA-C",
     title: "Physician Assistant",
     image: "/images/gordon.png",
-    bio: "Gordon Hendrickson provides straightforward primary and same-day medical care for adults and children, with time for clear answers.",
+    bio: "Gordon Hendrickson provides primary and same-day medical care for adults and children, with a personal approach and time to listen, explain, and answer your questions.",
+  },
+  {
+    name: "Care Coordinators",
+    title: "Jolene Laumbach, Leeanna Miller, and Shari Willet",
+    image: "/images/front-desk.avif",
+    bio: "Our care coordinators, Jolene Laumbach, Leeanna Miller, and Shari Willet, are here to help make your experience at Wyoming Clinic of Integrated Health as smooth and welcoming as possible. From scheduling appointments and answering questions to helping coordinate the details of your visit, they are an important part of keeping our clinic running smoothly and ensuring patients feel well cared for from the moment they walk through the door.",
   },
   {
     name: "Our Care Coordinators",
@@ -73,17 +90,26 @@ export function MeetOurTeam() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member) => (
             <article key={member.name} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                {member.image ? (
-                  <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
-                ) : (
-                  <div className="flex h-full items-center justify-center bg-primary/5">
-                    <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">
-                      {initials(member.name)}
-                    </span>
-                  </div>
-                )}
-              </div>
+              {member.images && member.images.length > 0 ? (
+                <TeamMemberCarousel
+                  images={member.images}
+                  imagePositions={member.imagePositions}
+                  name={member.name}
+                  title={member.title}
+                />
+              ) : (
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  {member.image ? (
+                    <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-primary/5">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">
+                        {initials(member.name)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-serif text-xl font-semibold leading-tight text-foreground">{member.name}</h3>
                 <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
