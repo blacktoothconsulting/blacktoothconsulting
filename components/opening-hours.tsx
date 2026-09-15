@@ -17,18 +17,19 @@ const scheduleGroups = [
 
 type OpeningHoursProps = {
   /** "default" for light surfaces (card/menu), "primary" for the dark primary background. */
-  tone?: "default" | "primary"
+  tone?: "default" | "primary" | "contact"
   /** Render the "Opening Hours" heading with a clock icon. */
   showHeading?: boolean
 }
 
 export function OpeningHours({ tone = "default", showHeading = true }: OpeningHoursProps) {
   const isPrimary = tone === "primary"
-  const headingClass = isPrimary ? "text-primary-foreground" : "text-foreground"
-  const iconClass = isPrimary ? "text-primary-foreground" : "text-primary"
-  const labelClass = isPrimary ? "text-accent" : "text-primary"
-  const dayClass = isPrimary ? "text-accent" : "text-muted-foreground"
-  const timeClass = isPrimary ? "text-accent" : "text-foreground"
+  const isContact = tone === "contact"
+  const headingClass = isPrimary || isContact ? "text-primary-foreground" : "text-foreground"
+  const iconClass = isPrimary || isContact ? "text-primary-foreground" : "text-primary"
+  const labelClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-primary"
+  const dayClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-muted-foreground"
+  const timeClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-foreground"
 
   return (
     <div>

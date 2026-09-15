@@ -2,13 +2,11 @@ import { Header } from "@/components/header"
 import { AnnouncementBanner } from "@/components/announcement-banner"
 import { Hero } from "@/components/hero"
 import { ProvidersOverview } from "@/components/providers-overview"
-import { MeetTeamCta } from "@/components/meet-team-cta"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonials"
 import { NewPatients } from "@/components/new-patients"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
-import { isTeamPageEnabled } from "@/lib/site-features"
 
 export default function Home() {
   return (
@@ -18,7 +16,6 @@ export default function Home() {
         <AnnouncementBanner />
         <Hero />
         <ProvidersOverview />
-        {isTeamPageEnabled && <MeetTeamCta />}
         <About />
         <Testimonials />
         <NewPatients />

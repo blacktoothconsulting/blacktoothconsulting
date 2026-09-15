@@ -4,11 +4,9 @@ import { PageHero } from "@/components/page-hero"
 import { MassageTherapists } from "@/components/massage-therapists"
 import { MassageServices } from "@/components/massage-services"
 import { AppointmentRequest } from "@/components/appointment-request"
-import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { isTeamPageEnabled } from "@/lib/site-features"
 
 export const metadata: Metadata = {
   title: "Massage Therapy | Wyoming Clinic of Integrated Health | Sheridan, WY",
@@ -51,7 +49,6 @@ export default function MassagePage() {
             "Tell us your pressure preference and problem areas up front",
           ]}
         />
-        {isTeamPageEnabled && <MeetTeamCta />}
         <Contact />
       </main>
       <Footer />

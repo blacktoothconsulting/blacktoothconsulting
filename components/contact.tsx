@@ -125,19 +125,18 @@ export function Contact() {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium mb-3">Hours</p>
-                    <OpeningHours tone="primary" showHeading={false} />
+                    <OpeningHours tone="contact" showHeading={false} />
+                    <div className="mt-4 text-left pl-[18px]">
+                      <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild>
+                        <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                          <Star className="mr-2 h-4 w-4" />
+                          Leave a Review
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="pt-2">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild>
-                <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
-                  <Star className="mr-2 h-4 w-4" />
-                  Leave a Review
-                </a>
-              </Button>
             </div>
           </div>
 
