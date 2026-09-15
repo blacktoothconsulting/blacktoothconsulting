@@ -21,19 +21,15 @@ export function TeamMemberCarousel({ images, imagePositions, name, title }: Team
 
   return (
     <div className="group relative aspect-[4/3] overflow-hidden bg-muted">
-      {images.map((src, i) => (
-        <Image
-          key={src}
-          src={src || "/placeholder.svg"}
-          alt={`${name}, ${title} — photo ${i + 1} of ${total}`}
-          fill
-          className={`object-cover transition-opacity duration-500 ${
-            i === index ? "opacity-100" : "opacity-0"
-          }}`}
-          style={{ objectPosition: imagePositions?.[i] ?? "center top" }}
-          aria-hidden={i === index ? undefined : true}
-        />
-      ))}
+      <Image
+        key={images[index]}
+        src={images[index] || "/placeholder.svg"}
+        alt={`${name}, ${title} — photo ${index + 1} of ${total}`}
+        fill
+        className="object-cover transition-opacity duration-500"
+        style={{ objectPosition: imagePositions?.[index] ?? "center top" }}
+        priority={index === 0}
+      />
 
       {total > 1 ? (
         <>
