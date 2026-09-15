@@ -84,13 +84,46 @@ export function MeetOurTeam() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {teamMembers.map((member) =>
-            member.wide ? (
-              <article
-                key={member.name}
-                className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:col-span-2 lg:col-span-3 lg:flex-row"
+        <div className="flex flex-col gap-6">
+          {teamMemberRows.map((row, rowIndex) =>
+            row.wide ? (
+              <WideMemberCard key={row.members[0].name} member={row.members[0]} />
+            ) : (
+              <div
+                key={`row-${rowIndex}`}
+                className="mx-auto grid w-full gap-6 sm:grid-cols-2 lg:max-w-3xl"
               >
+                {row.members.map((member) => (
+                  <StandardMemberCard key={member.name} member={member} />
+                ))}
+              </div>
+            ),
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+type TeamMemberRow = { wide: true; members: [TeamMember] } | { wide: false; members: TeamMember[] }
+
+const teamMemberRows: TeamMemberRow[] = teamMembers.reduce<TeamMemberRow[]>((rows, member) => {
+  if (member.wide) {
+    rows.push({ wide: true, members: [member] })
+    return rows
+  }
+  const lastRow = rows[rows.length - 1]
+  if (lastRow && !lastRow.wide) {
+    lastRow.members.push(member)
+  } else {
+    rows.push({ wide: false, members: [member] })
+  }
+  return rows
+}, [])
+
+function WideMemberCard({ member }: { member: TeamMember }) {
+  return (
+              <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm lg:flex-row">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted lg:aspect-auto lg:w-80 lg:shrink-0">
                   {member.image ? (
                     <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
@@ -136,8 +169,12 @@ export function MeetOurTeam() {
                   ) : null}
                 </div>
               </article>
-            ) : (
-              <article key={member.name} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+  )
+}
+
+function StandardMemberCard({ member }: { member: TeamMember }) {
+  return (
+              <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
                 {member.images && member.images.length > 0 ? (
                   <TeamMemberCarousel
                     images={member.images}
@@ -172,10 +209,5 @@ export function MeetOurTeam() {
                   ) : null}
                 </div>
               </article>
-            ),
-          )}
-        </div>
-      </div>
-    </section>
   )
 }
