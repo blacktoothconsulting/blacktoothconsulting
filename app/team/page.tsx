@@ -6,15 +6,15 @@ import { MeetOurTeam } from "@/components/meet-our-team"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { isTeamPageEnabled } from "@/lib/site-features"
 
 export const metadata: Metadata = {
   title: "Meet Our Team | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
     "Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+  robots: isTeamPageEnabled
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 }
 
 export default function TeamPage() {
