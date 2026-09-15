@@ -128,7 +128,7 @@ export function NewPatients() {
                 <Link href="/medical-care#schedule">Schedule Medical Visit</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="#contact">Request Chiropractic Visit</Link>
+                <Link href="/chiropractic#request">Request Chiropractic Visit</Link>
               </Button>
             </div>
           </div>
