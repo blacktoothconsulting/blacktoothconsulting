@@ -135,7 +135,11 @@ export function NewPatients() {
               >
                 <Link href="/chiropractic#request">Request Chiropractic Visit</Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:col-span-2" asChild>
+              <Button
+                size="lg"
+                className="w-full sm:col-span-2 sm:border sm:bg-background sm:text-foreground sm:shadow-xs sm:hover:bg-accent sm:hover:text-accent-foreground sm:dark:bg-input/30 sm:dark:border-input sm:dark:hover:bg-input/50"
+                asChild
+              >
                 <Link href="/massage#request">Schedule Massage Session</Link>
               </Button>
             </div>
