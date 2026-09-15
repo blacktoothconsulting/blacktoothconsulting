@@ -11,7 +11,7 @@ export function AnnouncementBanner() {
           </span>
           <p className="text-sm font-medium text-balance sm:text-base">
             <span className="font-semibold">Now offering medical care</span> with Gordon Hendrickson,
-            PA-C <span className="hidden sm:inline">— chiropractic and healthcare under one roof.</span>
+            PA-C <span className="hidden sm:inline">, chiropractic and primary care under one roof.</span>
           </p>
           <Link
             href="#providers"
