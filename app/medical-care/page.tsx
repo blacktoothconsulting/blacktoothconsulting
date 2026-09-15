@@ -5,6 +5,7 @@ import { GordonProfile } from "@/components/gordon-profile"
 import { GordonBio } from "@/components/gordon-bio"
 import { MedicalScheduler } from "@/components/medical-scheduler"
 import { MedicalServices } from "@/components/medical-services"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Pricing } from "@/components/pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -42,6 +43,7 @@ export default function MedicalCarePage() {
         <GordonBio />
         <MedicalScheduler />
         <MedicalServices />
+        <MeetTeamCta />
         <Pricing />
         <Contact />
       </main>
