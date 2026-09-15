@@ -123,14 +123,14 @@ export function NewPatients() {
               ))}
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 flex flex-col gap-3 sm:grid sm:grid-cols-2">
               <Button size="lg" className="w-full" asChild>
                 <Link href="/medical-care#schedule">Schedule Medical Visit</Link>
               </Button>
               <Button size="lg" variant="outline" className="w-full" asChild>
                 <Link href="/chiropractic#request">Request Chiropractic Visit</Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:col-span-2" asChild>
                 <Link href="/massage#request">Schedule Massage Session</Link>
               </Button>
             </div>
