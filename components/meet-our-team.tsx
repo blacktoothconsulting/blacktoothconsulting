@@ -11,6 +11,7 @@ type TeamMember = {
   bio?: string
   personalNote?: string
   wide?: boolean
+  groupMembers?: { name: string; title: string; image?: string }[]
 }
 
 const teamMembers: TeamMember[] = [
@@ -43,16 +44,15 @@ const teamMembers: TeamMember[] = [
     bio: "Gordon Hendrickson provides primary and same-day medical care for adults and children, with a personal approach and time to listen, explain, and answer your questions.",
   },
   {
-    name: "Kerry Baros",
-    title: "Massage Therapist",
-  },
-  {
-    name: "Susan Kopman",
-    title: "Massage Therapist",
-  },
-  {
-    name: "Nina Charlson",
-    title: "Massage Therapist",
+    name: "Massage Therapists",
+    title: "Kerry Baros, Susan Kopman, and Nina Charlson",
+    bio: "Kerry Baros, Susan Kopman, and Nina Charlson offer therapeutic massage to help ease pain, reduce tension, and support recovery alongside our chiropractic and medical care.",
+    wide: true,
+    groupMembers: [
+      { name: "Kerry Baros", title: "Massage Therapist" },
+      { name: "Susan Kopman", title: "Massage Therapist" },
+      { name: "Nina Charlson", title: "Massage Therapist" },
+    ],
   },
 ]
 
@@ -107,6 +107,32 @@ export function MeetOurTeam() {
                   <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
                   {member.bio ? (
                     <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
+                  ) : null}
+                  {member.groupMembers && member.groupMembers.length > 0 ? (
+                    <div className="mt-6 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:gap-6">
+                      {member.groupMembers.map((groupMember) => (
+                        <div key={groupMember.name} className="flex items-center gap-3">
+                          <div className="relative flex h-14 w-14 shrink-0 overflow-hidden rounded-full bg-primary/5">
+                            {groupMember.image ? (
+                              <Image
+                                src={groupMember.image}
+                                alt={`${groupMember.name}, ${groupMember.title}`}
+                                fill
+                                className="object-cover object-top"
+                              />
+                            ) : (
+                              <span className="flex h-full w-full items-center justify-center font-serif text-sm font-semibold text-primary">
+                                {initials(groupMember.name)}
+                              </span>
+                            )}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold leading-tight text-foreground">{groupMember.name}</p>
+                            <p className="text-xs text-muted-foreground">{groupMember.title}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   ) : null}
                 </div>
               </article>
