@@ -24,6 +24,12 @@ const teamMembers: TeamMember[] = [
     bio: "Gordon Hendrickson provides straightforward primary and same-day medical care for adults and children, with time for clear answers.",
   },
   {
+    name: "Care Coordinators",
+    title: "Jolene Laumbach, Leeanna Miller, and Shari Willet",
+    image: "/images/front-desk.avif",
+    bio: "Our care coordinators, Jolene Laumbach, Leeanna Miller, and Shari Willet, are here to help make your experience at Wyoming Clinic of Integrated Health as smooth and welcoming as possible. From scheduling appointments and answering questions to helping coordinate the details of your visit, they are an important part of keeping our clinic running smoothly and ensuring patients feel well cared for from the moment they walk through the door.",
+  },
+  {
     name: "Kerry Baros",
     title: "Massage Therapist",
   },
