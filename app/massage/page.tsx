@@ -8,6 +8,7 @@ import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { OpeningHours } from "@/components/opening-hours"
 
 export const metadata: Metadata = {
   title: "Massage Therapy | Wyoming Clinic of Integrated Health | Sheridan, WY",
@@ -44,13 +45,13 @@ export default function MassagePage() {
           eyebrow="Book Your Session"
           title="Request a Massage Appointment"
           description="Send your details and preferred times and our team will reach out to confirm your session. Let us know what's bothering you so we can match you with the right therapist."
+          hoursService="massage"
           points={[
             "Deep tissue, sport & recovery, or relaxation massage",
             "Book on its own or alongside your chiropractic visits",
             "Tell us your pressure preference and problem areas up front",
           ]}
         />
-        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />
