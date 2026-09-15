@@ -28,7 +28,7 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Primary and same-day acute care with clear, upfront pricing. You see the price before you agree to anything.",
+      "Primary and same-day medical care for adults and children.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
