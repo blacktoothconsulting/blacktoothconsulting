@@ -21,7 +21,7 @@ const teamMembers: TeamMember[] = [
     name: "Gordon Hendrickson, PA-C",
     title: "Physician Assistant",
     image: "/images/gordon.png",
-    bio: "Gordon Hendrickson provides straightforward primary and same-day medical care for adults and children, with time for clear answers.",
+    bio: "Gordon Hendrickson provides primary and same-day medical care for adults and children, with a personal approach and time to listen, explain, and answer your questions.",
   },
   {
     name: "Care Coordinators",
