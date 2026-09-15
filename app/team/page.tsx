@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { MeetOurTeam } from "@/components/meet-our-team"
-import { NewPatients } from "@/components/new-patients"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -21,7 +20,7 @@ export default function TeamPage() {
         <PageHero
           eyebrow="About Us"
           title="Meet Our Team"
-          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health — the people who welcome you at the door and walk alongside your care."
+          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health, the people who welcome you at the door and walk alongside your care."
         >
           <Button size="lg" asChild>
             <a href="tel:307-655-8775">Call 307.655.8775</a>
@@ -36,7 +35,6 @@ export default function TeamPage() {
           </Button>
         </PageHero>
         <MeetOurTeam />
-        <NewPatients />
         <Contact />
       </main>
       <Footer />
