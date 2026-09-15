@@ -13,7 +13,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Collin Redinger, D.C.",
     title: "Doctor of Chiropractic",
-    image: "/images/collin-headshot.avif",
+    image: "/images/collin-horse.jpeg",
     bio: "Dr. Collin Redinger brings Gonstead chiropractic care to families in Sheridan, with a focus on specific, individualized care and long-term health.",
     personalNote: "Family, ranch life, and the Sheridan community",
   },
