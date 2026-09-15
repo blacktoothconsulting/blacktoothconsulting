@@ -1,10 +1,12 @@
 import Image from "next/image"
 import { MapPin, UserRound } from "lucide-react"
+import { TeamMemberCarousel } from "@/components/team-member-carousel"
 
 type TeamMember = {
   name: string
   title: string
   image?: string
+  images?: string[]
   bio?: string
   personalNote?: string
 }
@@ -13,7 +15,13 @@ const teamMembers: TeamMember[] = [
   {
     name: "Collin Redinger, D.C.",
     title: "Doctor of Chiropractic",
-    image: "/images/collin-horse.jpeg",
+    images: [
+      "/images/collin-horse.jpeg",
+      "/images/collin-hunt-creek.jpeg",
+      "/images/collin-alpine.jpeg",
+      "/images/collin-kids-turkey.jpeg",
+      "/images/collin-cattle.jpeg",
+    ],
     bio: "Dr. Collin Redinger brings Gonstead chiropractic care to families in Sheridan, with a focus on specific, individualized care and long-term health.",
     personalNote: "Family, ranch life, and the Sheridan community",
   },
@@ -74,17 +82,21 @@ export function MeetOurTeam() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member) => (
             <article key={member.name} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                {member.image ? (
-                  <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
-                ) : (
-                  <div className="flex h-full items-center justify-center bg-primary/5">
-                    <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">
-                      {initials(member.name)}
-                    </span>
-                  </div>
-                )}
-              </div>
+              {member.images && member.images.length > 0 ? (
+                <TeamMemberCarousel images={member.images} name={member.name} title={member.title} />
+              ) : (
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  {member.image ? (
+                    <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-primary/5">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">
+                        {initials(member.name)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-serif text-xl font-semibold leading-tight text-foreground">{member.name}</h3>
                 <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
