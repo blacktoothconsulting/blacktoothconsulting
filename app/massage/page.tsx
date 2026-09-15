@@ -4,7 +4,6 @@ import { PageHero } from "@/components/page-hero"
 import { MassageTherapists } from "@/components/massage-therapists"
 import { MassageServices } from "@/components/massage-services"
 import { AppointmentRequest } from "@/components/appointment-request"
-import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -50,7 +49,6 @@ export default function MassagePage() {
             "Tell us your pressure preference and problem areas up front",
           ]}
         />
-        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />

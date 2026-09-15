@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
 import { OurApproach } from "@/components/our-approach"
@@ -18,6 +19,10 @@ export const metadata: Metadata = {
 }
 
 export default function TeamPage() {
+  if (!isTeamPageEnabled) {
+    notFound()
+  }
+
   return (
     <div className="min-h-screen">
       <Header />
