@@ -10,8 +10,11 @@ export function AnnouncementBanner() {
             <Sparkles className="h-4 w-4" aria-hidden="true" />
           </span>
           <p className="text-sm font-medium text-balance sm:text-base">
-            <span className="font-semibold">Now offering medical care</span> with Gordon Hendrickson,
-            PA-C <span className="hidden sm:inline">, chiropractic and primary care under one roof.</span>
+            <span className="font-semibold">Now scheduling primary and same-day care visits</span> with Gordon
+            Hendrickson, PA-C{" "}
+            <span className="hidden sm:inline">
+              — convenient, personal medical care alongside chiropractic services, all under one roof.
+            </span>
           </p>
           <Link
             href="#providers"
