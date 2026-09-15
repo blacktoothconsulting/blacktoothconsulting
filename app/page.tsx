@@ -3,7 +3,6 @@ import { AnnouncementBanner } from "@/components/announcement-banner"
 import { Hero } from "@/components/hero"
 import { ProvidersOverview } from "@/components/providers-overview"
 import { About } from "@/components/about"
-import { MeetOurTeam } from "@/components/meet-our-team"
 import { Testimonials } from "@/components/testimonials"
 import { NewPatients } from "@/components/new-patients"
 import { Contact } from "@/components/contact"
@@ -18,7 +17,6 @@ export default function Home() {
         <Hero />
         <ProvidersOverview />
         <About />
-        <MeetOurTeam />
         <Testimonials />
         <NewPatients />
         <Contact />
