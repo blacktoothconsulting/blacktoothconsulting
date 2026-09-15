@@ -23,6 +23,17 @@ const teamMembers: TeamMember[] = [
     wide: true,
   },
   {
+    name: "Massage Therapists",
+    title: "Kerry Baros, Susan Kopman, and Nina Charlson",
+    bio: "Kerry Baros, Susan Kopman, and Nina Charlson offer therapeutic massage to help ease pain, reduce tension, and support recovery alongside our chiropractic and medical care.",
+    wide: true,
+    groupMembers: [
+      { name: "Kerry Baros", title: "Massage Therapist" },
+      { name: "Susan Kopman", title: "Massage Therapist" },
+      { name: "Nina Charlson", title: "Massage Therapist" },
+    ],
+  },
+  {
     name: "Collin Redinger, D.C.",
     title: "Doctor of Chiropractic",
     images: [
@@ -42,17 +53,6 @@ const teamMembers: TeamMember[] = [
     title: "Physician Assistant",
     image: "/images/gordon.png",
     bio: "Gordon Hendrickson provides primary and same-day medical care for adults and children, with a personal approach and time to listen, explain, and answer your questions.",
-  },
-  {
-    name: "Massage Therapists",
-    title: "Kerry Baros, Susan Kopman, and Nina Charlson",
-    bio: "Kerry Baros, Susan Kopman, and Nina Charlson offer therapeutic massage to help ease pain, reduce tension, and support recovery alongside our chiropractic and medical care.",
-    wide: true,
-    groupMembers: [
-      { name: "Kerry Baros", title: "Massage Therapist" },
-      { name: "Susan Kopman", title: "Massage Therapist" },
-      { name: "Nina Charlson", title: "Massage Therapist" },
-    ],
   },
 ]
 
