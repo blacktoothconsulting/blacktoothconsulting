@@ -6,11 +6,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type TeamMemberCarouselProps = {
   images: string[]
+  imagePositions?: string[]
   name: string
   title: string
 }
 
-export function TeamMemberCarousel({ images, name, title }: TeamMemberCarouselProps) {
+export function TeamMemberCarousel({ images, imagePositions, name, title }: TeamMemberCarouselProps) {
   const [index, setIndex] = useState(0)
   const total = images.length
 
@@ -26,9 +27,10 @@ export function TeamMemberCarousel({ images, name, title }: TeamMemberCarouselPr
           src={src || "/placeholder.svg"}
           alt={`${name}, ${title} — photo ${i + 1} of ${total}`}
           fill
-          className={`object-cover object-top transition-opacity duration-500 ${
+          className={`object-cover transition-opacity duration-500 ${
             i === index ? "opacity-100" : "opacity-0"
-          }`}
+          }}`}
+          style={{ objectPosition: imagePositions?.[i] ?? "center top" }}
           aria-hidden={i === index ? undefined : true}
         />
       ))}

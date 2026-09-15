@@ -7,6 +7,7 @@ type TeamMember = {
   title: string
   image?: string
   images?: string[]
+  imagePositions?: string[]
   bio?: string
   personalNote?: string
 }
@@ -22,6 +23,7 @@ const teamMembers: TeamMember[] = [
       "/images/collin-kids-turkey.jpeg",
       "/images/collin-cattle.jpeg",
     ],
+    imagePositions: ["center 32%", "center top", "center top", "center 32%", "center top"],
     bio: "Dr. Collin Redinger brings Gonstead chiropractic care to families in Sheridan, with a focus on specific, individualized care and long-term health.",
     personalNote: "Family, ranch life, and the Sheridan community",
   },
@@ -83,7 +85,12 @@ export function MeetOurTeam() {
           {teamMembers.map((member) => (
             <article key={member.name} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               {member.images && member.images.length > 0 ? (
-                <TeamMemberCarousel images={member.images} name={member.name} title={member.title} />
+                <TeamMemberCarousel
+                  images={member.images}
+                  imagePositions={member.imagePositions}
+                  name={member.name}
+                  title={member.title}
+                />
               ) : (
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   {member.image ? (
