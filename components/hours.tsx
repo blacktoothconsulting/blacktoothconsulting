@@ -1,10 +1,34 @@
-import { Clock } from "lucide-react"
+import { Clock, Activity, Stethoscope } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { CHIROPRACTIC_SCHEDULE, MEDICAL_SCHEDULE } from "@/lib/clinic"
 
 const schedules = [
-  { name: "Chiropractic", hours: CHIROPRACTIC_SCHEDULE },
-  { name: "Medical Care", hours: MEDICAL_SCHEDULE },
+  {
+    name: "Chiropractic & Massage",
+    icon: Activity,
+    hours: [
+      { day: "Monday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Tuesday", time: "8:00am – 5:00pm", isOpen: true },
+      { day: "Wednesday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Thursday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Friday", time: "8:00am – 12:00pm", isOpen: true },
+      { day: "Saturday", time: "CLOSED", isOpen: false },
+      { day: "Sunday", time: "CLOSED", isOpen: false },
+    ],
+  },
+  {
+    name: "Medical Care",
+    icon: Stethoscope,
+    hours: [
+      { day: "Monday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Tuesday", time: "8:00am – 5:00pm", isOpen: true },
+      { day: "Wednesday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Thursday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Friday", time: "8:00am – 6:00pm", isOpen: true },
+      { day: "Saturday", time: "CLOSED", isOpen: false },
+      { day: "Sunday", time: "CLOSED", isOpen: false },
+    ],
+  },
 ]
 
 export function Hours() {
@@ -21,13 +45,18 @@ export function Hours() {
           </h2>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {schedules.map((schedule) => (
             <Card key={schedule.name} className="border-border/50">
               <CardContent className="p-0">
-                <h3 className="border-b border-border px-6 py-4 font-serif text-xl font-semibold text-foreground">
-                  {schedule.name}
-                </h3>
+                <div className="flex items-center gap-3 px-6 py-4 border-b border-border">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <schedule.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-foreground">
+                    {schedule.name}
+                  </h3>
+                </div>
                 <div className="divide-y divide-border">
                   {schedule.hours.map((item) => (
                     <div
@@ -37,11 +66,7 @@ export function Hours() {
                       }`}
                     >
                       <span className="font-medium text-foreground">{item.day}</span>
-                      <span
-                        className={
-                          item.isOpen ? "text-muted-foreground" : "text-muted-foreground/60"
-                        }
-                      >
+                      <span className={item.isOpen ? "text-muted-foreground" : "text-muted-foreground/60"}>
                         {item.time}
                       </span>
                     </div>
@@ -51,9 +76,6 @@ export function Hours() {
             </Card>
           ))}
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
-          Massage availability varies by therapist. Call 307.655.8775 for current appointment times.
-        </p>
       </div>
     </section>
   )

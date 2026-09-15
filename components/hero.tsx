@@ -5,18 +5,17 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
-import { CHIROPRACTIC_HOURS, MEDICAL_HOURS } from "@/lib/clinic"
+import { OpeningHours } from "@/components/opening-hours"
 
 const bannerImages = [
-  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin-headshot.avif", alt: "Collin Redinger, D.C. at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
   { src: "/images/front-entry.avif", alt: "Front entry of the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray1.avif", alt: "Digital X-ray imaging at the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
 ]
 
 export function Hero() {
@@ -30,9 +29,14 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Image Carousel */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative overflow-hidden bg-foreground sm:min-h-[500px] lg:min-h-[560px]">
+      {/*
+        Mobile: image sits in a natural-aspect band at the top so the landscape
+        photo isn't cropped into an extreme zoom.
+        Desktop (sm+): image is absolutely positioned and letterboxed within a
+        centered max-w-4xl band, with the content overlaid on top.
+      */}
+      <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:z-0 sm:mx-auto sm:aspect-auto sm:max-w-4xl">
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
@@ -53,7 +57,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:py-40 lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
         <div className="max-w-2xl">
           <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
             Sheridan, Wyoming
@@ -64,7 +68,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
             Our mission is to create a community that takes an active role in their own
             health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you &mdash; to listen, to explain, and to get you answers.
+            always have time for you, to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
@@ -80,7 +84,7 @@ export function Hero() {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="mt-12 flex gap-2">
+        <div className="mt-8 flex gap-2 sm:mt-12">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
@@ -126,14 +130,13 @@ export function Hero() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4 py-6 px-4">
+            <div className="flex items-start gap-4 py-6 px-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
-              <div>
-                <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Chiropractic: {CHIROPRACTIC_HOURS}</p>
-                <p className="text-sm text-muted-foreground">Medical: {MEDICAL_HOURS}</p>
+              <div className="flex-1">
+                <p className="font-medium text-foreground mb-3">Hours</p>
+                <OpeningHours showHeading={false} />
               </div>
             </div>
           </div>

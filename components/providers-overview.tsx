@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { CROSS_REFERRAL_NOTE } from "@/lib/clinic"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const careLines = [
   {
@@ -28,11 +28,11 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Primary and same-day acute care, paid in cash. You see the price before you agree to anything.",
+      "Primary and same-day medical care for adults and children.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
-      "Transparent cash-pay pricing",
+      "Clear, upfront pricing",
     ],
     href: "/medical-care",
     cta: "Explore Medical Care",
@@ -68,8 +68,8 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Gonstead chiropractic, cash-pay medical care, and massage therapy &mdash; all at
-            528 Coffeen Ave.
+            Gonstead chiropractic, straightforward medical care, and massage therapy, all at one
+            location.
           </p>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
             {CROSS_REFERRAL_NOTE}
@@ -79,11 +79,12 @@ export function ProvidersOverview() {
         {/* Two care-line cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {careLines.map((line) => (
-            <div
+            <Link
               key={line.href}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300"
+              href={line.href}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <Image
                   src={line.image || "/placeholder.svg"}
                   alt={line.imageAlt}
@@ -93,7 +94,13 @@ export function ProvidersOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               </div>
 
-              <div className="flex flex-1 flex-col p-6 lg:p-8">
+              <div
+                className={cn(
+                  "flex flex-1 flex-col p-6 lg:p-8",
+                  line.href === "/chiropractic" && "pl-5 pr-[18px] lg:p-8",
+                  line.href === "/massage" && "pl-5 pr-[19px] lg:p-8",
+                )}
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
                     <line.icon className="h-6 w-6 text-primary" aria-hidden="true" />
@@ -125,18 +132,33 @@ export function ProvidersOverview() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-2 mt-auto">
-                  <Button asChild className="w-full sm:w-auto">
-                    <Link href={line.href}>
-                      {line.cta}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                <div
+                  className={cn(
+                    "mt-8 pt-2 mt-auto",
+                    line.href === "/chiropractic" && "pt-3.5",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      buttonVariants({ size: "default" }),
+                      "w-full sm:w-auto pointer-events-none",
+                    )}
+                    aria-hidden="true"
+                  >
+                    {line.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
+
+        <p className="mt-12 mx-auto max-w-3xl text-center text-sm text-muted-foreground leading-relaxed">
+          Medical, chiropractic, and massage services are available under one roof and may
+          complement one another when appropriate. Each service can also be scheduled
+          independently.
+        </p>
       </div>
     </section>
   )

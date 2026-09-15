@@ -2,19 +2,27 @@ import Image from "next/image"
 import Link from "next/link"
 import { Phone, MapPin, Mail } from "lucide-react"
 
+/*
+  Google review link. Replace with the clinic's exact "write a review" URL
+  from their Google Business Profile. Until confirmed, this opens the clinic
+  on Google Maps where the Reviews tab / "Write a review" button live.
+*/
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/maps/search/?api=1&query=Wyoming+Clinic+of+Integrated+Health+Sheridan+WY"
+
 const navigation = {
   main: [
     { name: "Home", href: "/" },
     { name: "Chiropractic", href: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care" },
     { name: "Massage", href: "/massage" },
-    { name: "About", href: "/chiropractic#about" },
+    { name: "About", href: "/#about" },
     { name: "New Patients", href: "/#new-patients" },
     { name: "Contact", href: "/#contact" },
+    { name: "Leave a Review", href: GOOGLE_REVIEW_URL, external: true },
   ],
   services: [
     { name: "Gonstead Chiropractic", href: "/chiropractic" },
-    { name: "Chiropractic Pricing", href: "/chiropractic#chiropractic-pricing" },
     { name: "General Medical Care", href: "/medical-care" },
     { name: "Medical Pricing Menu", href: "/medical-care#pricing" },
     { name: "Massage Therapy", href: "/massage" },
@@ -40,7 +48,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Chiropractic, massage, and cash-pay medical care for the whole family in Sheridan, Wyoming.
+              Chiropractic, massage, and straightforward medical care for the whole family in Sheridan, Wyoming.
             </p>
           </div>
 
@@ -52,12 +60,23 @@ export function Footer() {
             <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    href={item.href} 
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
-                    {item.name}
-                  </Link>
+                  {"external" in item && item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-background/70 hover:text-background transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      href={item.href} 
+                      className="text-sm text-background/70 hover:text-background transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

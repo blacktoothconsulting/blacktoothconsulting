@@ -1,22 +1,24 @@
+import Image from "next/image"
 import { User } from "lucide-react"
 
-// PLACEHOLDER CONTENT — replace each entry below with the real therapist's
-// name, credentials, and bio. To add a photo, save it to /public/images/ and
-// set `image` to that path (e.g. "/images/therapist-name.jpg").
 const therapists = [
   {
-    name: "Therapist Name",
-    credentials: "LMT",
+    name: "Kerry Baros",
+    title: "Massage Therapist",
     image: null as string | null,
-    bio: "Bio coming soon.",
-    focus: ["Modality", "Modality", "Modality"],
+    bio: "Biography coming soon.",
   },
   {
-    name: "Therapist Name",
-    credentials: "LMT",
+    name: "Susan Kopman",
+    title: "Massage Therapist",
     image: null as string | null,
-    bio: "Bio coming soon.",
-    focus: ["Modality", "Modality", "Modality"],
+    bio: "Biography coming soon.",
+  },
+  {
+    name: "Nina Charlson",
+    title: "Massage Therapist",
+    image: null as string | null,
+    bio: "Biography coming soon.",
   },
 ]
 
@@ -37,25 +39,27 @@ export function MassageTherapists() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {therapists.map((therapist, index) => (
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {therapists.map((therapist) => (
             <div
-              key={index}
+              key={therapist.name}
               className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm sm:flex-row"
             >
               <div className="relative flex aspect-[4/3] shrink-0 items-center justify-center bg-muted sm:aspect-auto sm:w-40">
                 {therapist.image ? (
-                  <img
-                    src={therapist.image}
-                    alt={`${therapist.name}, ${therapist.credentials}`}
-                    className="h-full w-full object-cover"
+                  <Image
+                    src={therapist.image || "/placeholder.svg"}
+                    alt={`${therapist.name}, ${therapist.title}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 160px"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="flex flex-col items-center gap-2 p-6 text-center">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
                       <User className="h-7 w-7 text-primary" aria-hidden="true" />
                     </div>
-                    <span className="text-xs text-muted-foreground">Photo coming soon</span>
+                    <span className="text-xs text-muted-foreground">Headshot coming soon</span>
                   </div>
                 )}
               </div>
@@ -64,20 +68,10 @@ export function MassageTherapists() {
                 <h3 className="font-serif text-xl font-semibold text-foreground leading-tight">
                   {therapist.name}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-primary">{therapist.credentials}</p>
+                <p className="mt-1 text-sm font-medium text-primary">{therapist.title}</p>
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                   {therapist.bio}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {therapist.focus.map((item, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

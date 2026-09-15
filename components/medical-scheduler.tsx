@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react"
+import { Phone, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const SCHEDULING_URL =
@@ -21,16 +21,43 @@ export function MedicalScheduler() {
           </p>
         </div>
 
-        <div className="mx-auto w-full max-w-[650px] overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        {/* Mobile: a tall embedded iframe is a scroll trap on touch, so offer a
+            full-screen "open scheduler" action instead. The embed shows from md up. */}
+        <div className="mx-auto max-w-md md:hidden">
+          <div className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Open the scheduler to pick a time. It works best full-screen on your phone.
+            </p>
+            <Button size="lg" className="mt-5 w-full" asChild>
+              <a href={SCHEDULING_URL} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Open Scheduler
+              </a>
+            </Button>
+            <div className="my-4 flex items-center gap-3 text-xs text-muted-foreground">
+              <span className="h-px flex-1 bg-border" />
+              or
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <Button size="lg" variant="outline" className="w-full" asChild>
+              <a href="tel:307-655-8775">
+                <Phone className="mr-2 h-4 w-4" />
+                Call 307.655.8775
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="mx-auto hidden w-full max-w-[650px] overflow-hidden rounded-2xl border border-border bg-card p-4 shadow-sm md:block sm:p-6 lg:max-w-4xl lg:p-8">
           <iframe
             src={SCHEDULING_URL}
             title="Schedule an appointment with Gordon Hendrickson, PA-C"
-            className="block h-[900px] w-full border-0"
+            className="block h-[70vh] max-h-[900px] min-h-[600px] w-full rounded-lg border-0"
             loading="lazy"
           />
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 hidden text-center md:block">
           <p className="text-sm text-muted-foreground mb-4">
             Having trouble with the scheduler, or need a same-day visit?
           </p>

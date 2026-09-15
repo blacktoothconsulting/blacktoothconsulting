@@ -5,16 +5,16 @@ import { GordonProfile } from "@/components/gordon-profile"
 import { GordonBio } from "@/components/gordon-bio"
 import { MedicalScheduler } from "@/components/medical-scheduler"
 import { MedicalServices } from "@/components/medical-services"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Pricing } from "@/components/pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Medical Care | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Cash-pay primary and acute medical care in Sheridan, Wyoming, with Gordon Hendrickson, PA-C. Transparent pricing, same-day visits, in-office testing and procedures.",
+    "Straightforward primary and same-day care for adults and children in Sheridan, Wyoming, with Gordon Hendrickson, PA-C. Transparent pricing, same-day visits, in-office testing and procedures.",
 }
 
 export default function MedicalCarePage() {
@@ -25,7 +25,7 @@ export default function MedicalCarePage() {
         <PageHero
           eyebrow="Primary & Acute Medical Care"
           title="Straightforward Medical Care, Clear Prices"
-          description="Cash-pay primary and acute care with Gordon Hendrickson, PA-C — same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
+          description="Primary & same-day care for adults and children with Gordon Hendrickson, PA-C, same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
         >
           <Button size="lg" asChild>
             <a href="#schedule">Schedule Online</a>
@@ -38,19 +38,12 @@ export default function MedicalCarePage() {
           >
             <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
-          <Button
-            size="lg"
-            variant="ghost"
-            asChild
-            className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-          >
-            <Link href="/chiropractic">Looking for Chiropractic?</Link>
-          </Button>
         </PageHero>
         <GordonProfile />
         <GordonBio />
         <MedicalScheduler />
         <MedicalServices />
+        <MeetTeamCta />
         <Pricing />
         <Contact />
       </main>

@@ -3,22 +3,35 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X, Phone, Clock } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { Menu, X, Phone } from "lucide-react"
+import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
-import { CHIROPRACTIC_HOURS, MEDICAL_HOURS } from "@/lib/clinic"
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Chiropractic", href: "/chiropractic" },
-  { name: "Medical Care", href: "/medical-care" },
-  { name: "Massage", href: "/massage" },
-  { name: "About", href: "/chiropractic#about" },
-  { name: "New Patients", href: "/#new-patients" },
-  { name: "Contact", href: "/#contact" },
-]
+import { isTeamPageEnabled } from "@/lib/site-features"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // The "About" link points to the about section on whatever page you're on.
+  const aboutHref =
+    pathname === "/chiropractic"
+      ? "/chiropractic#about"
+      : pathname === "/medical-care"
+        ? "/medical-care#about"
+        : "/#about"
+
+  // Only page routes drive the active state; anchor links never highlight.
+  const navigation = [
+    { name: "Home", href: "/", match: "/" },
+    { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
+    { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
+    { name: "Massage", href: "/massage", match: "/massage" },
+    { name: "Our Team", href: "/team", match: "/team" },
+    { name: "About", href: aboutHref },
+  ]
+
+  const isActive = (match?: string) => match !== undefined && pathname === match
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -44,7 +57,7 @@ export function Header() {
               height={120}
               className="h-12 w-auto shrink-0 mix-blend-multiply sm:h-16"
             />
-            <div className="min-w-0">
+            <div className="min-w-0 text-center">
               <p className="font-serif text-base font-semibold text-foreground leading-tight sm:text-lg">
                 Wyoming Clinic
               </p>
@@ -57,10 +70,15 @@ export function Header() {
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-lg p-2.5 text-foreground hover:bg-muted transition-colors"
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-expanded={mobileMenuOpen}
           >
-            <span className="sr-only">Open main menu</span>
-            <Menu className="h-6 w-6" aria-hidden="true" />
+            <span className="sr-only">{mobileMenuOpen ? "Close main menu" : "Open main menu"}</span>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </div>
 
@@ -69,7 +87,12 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              aria-current={isActive(item.match) ? "page" : undefined}
+              className={`text-sm font-medium transition-colors ${
+                isActive(item.match)
+                  ? "text-primary underline decoration-2 underline-offset-8"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               {item.name}
             </Link>
@@ -92,20 +115,25 @@ export function Header() {
 
       {/* Mobile dropdown menu */}
       <div 
-        className={`lg:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
+        className={`lg:hidden absolute top-full left-0 right-0 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain bg-card border-b border-border shadow-lg transform transition-all duration-200 ease-out origin-top ${
           mobileMenuOpen 
             ? "opacity-100 scale-y-100" 
             : "opacity-0 scale-y-0 pointer-events-none"
         }`}
       >
-        <div className="px-4 py-4">
+        <div className="px-4 pt-4 pb-24">
           {/* Navigation links */}
           <nav className="space-y-1 mb-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                aria-current={isActive(item.match) ? "page" : undefined}
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                  isActive(item.match)
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground hover:bg-primary/10 hover:text-primary"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -116,26 +144,9 @@ export function Header() {
           {/* Divider */}
           <div className="border-t border-border my-4" />
 
-          {/* Hours section - styled like original site */}
+          {/* Hours section - shared source of truth */}
           <div className="px-4 mb-4">
-            <p className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
-              Opening Hours
-            </p>
-            <dl className="grid gap-3 text-sm">
-              <div>
-                <dt className="font-medium text-foreground">Chiropractic</dt>
-                <dd className="text-muted-foreground">{CHIROPRACTIC_HOURS}</dd>
-              </div>
-              <div>
-                <dt className="font-medium text-foreground">Medical Care</dt>
-                <dd className="text-muted-foreground">{MEDICAL_HOURS}</dd>
-              </div>
-              <div>
-                <dt className="font-medium text-foreground">Massage</dt>
-                <dd className="text-muted-foreground">Call for therapist availability</dd>
-              </div>
-            </dl>
+            <OpeningHours />
           </div>
 
           {/* Contact info */}
