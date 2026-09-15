@@ -102,7 +102,7 @@ export function NewPatients() {
               What to Expect on Your First Visit
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Chiropractic, massage, or medical care &mdash; every first visit starts the same
+              Chiropractic, massage, or medical care: every first visit starts the same
               way. Here is how it goes.
             </p>
 
@@ -123,12 +123,24 @@ export function NewPatients() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild>
+            <div className="mt-10 flex flex-col gap-3 sm:grid sm:grid-cols-2">
+              <Button size="lg" className="w-full" asChild>
                 <Link href="/medical-care#schedule">Schedule Medical Visit</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="#contact">Request Chiropractic Visit</Link>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:border-transparent sm:bg-primary sm:text-primary-foreground sm:shadow-none sm:hover:bg-primary/90 sm:dark:bg-primary sm:dark:hover:bg-primary/90"
+                asChild
+              >
+                <Link href="/chiropractic#request">Request Chiropractic Visit</Link>
+              </Button>
+              <Button
+                size="lg"
+                className="w-full sm:col-span-2 sm:border sm:bg-background sm:text-foreground sm:shadow-xs sm:hover:bg-accent sm:hover:text-accent-foreground sm:dark:bg-input/30 sm:dark:border-input sm:dark:hover:bg-input/50"
+                asChild
+              >
+                <Link href="/massage#request">Schedule Massage Session</Link>
               </Button>
             </div>
           </div>

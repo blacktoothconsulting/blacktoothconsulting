@@ -1,16 +1,20 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
+import { OurApproach } from "@/components/our-approach"
 import { MeetOurTeam } from "@/components/meet-our-team"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { isTeamPageEnabled } from "@/lib/site-features"
 
 export const metadata: Metadata = {
   title: "Meet Our Team | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Meet the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming — the people who welcome you, guide your care, and keep you moving.",
+    "Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming.",
+  robots: isTeamPageEnabled
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 }
 
 export default function TeamPage() {
@@ -21,7 +25,7 @@ export default function TeamPage() {
         <PageHero
           eyebrow="About Us"
           title="Meet Our Team"
-          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health — the people who welcome you at the door and walk alongside your care."
+          description="Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health, the people who welcome you at the door and walk alongside your care."
         >
           <Button size="lg" asChild>
             <a href="tel:307-655-8775">Call 307.655.8775</a>
@@ -30,11 +34,12 @@ export default function TeamPage() {
             size="lg"
             variant="outline"
             asChild
-            className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground"
+            className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground"
           >
-            <Link href="/#contact">Get in Touch</Link>
+            <a href="#contact">Get in Touch</a>
           </Button>
         </PageHero>
+        <OurApproach />
         <MeetOurTeam />
         <Contact />
       </main>

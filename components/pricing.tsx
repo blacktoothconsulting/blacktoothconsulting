@@ -91,7 +91,7 @@ export function Pricing() {
             Straightforward medical care with no surprise clinic bills. Payment is due at the time
             of service. You may request an itemized receipt or superbill to submit to your insurance
             plan; reimbursement is not guaranteed. This menu highlights our most common services and
-            is not a complete list &mdash; please call to ask about a specific service.
+            is not a complete list; please call to ask about a specific service.
           </p>
         </div>
 

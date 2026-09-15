@@ -5,11 +5,10 @@ import { CollinProfile } from "@/components/collin-profile"
 import { GonsteadProcess } from "@/components/gonstead-process"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
-import { MeetTeamCta } from "@/components/meet-team-cta"
+import { AppointmentRequest } from "@/components/appointment-request"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Chiropractic Care | Wyoming Clinic of Integrated Health | Sheridan, WY",
@@ -25,10 +24,10 @@ export default function ChiropracticPage() {
         <PageHero
           eyebrow="Chiropractic Care"
           title="Gonstead Chiropractic for the Whole Family"
-          description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort — so you can move well, feel better, and live the life you deserve."
+          description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort, so you can move well, feel better, and live the life you deserve."
         >
           <Button size="lg" asChild>
-            <a href="tel:307-655-8775">Call 307.655.8775</a>
+            <a href="#request">Request Appointment</a>
           </Button>
           <Button
             size="lg"
@@ -36,14 +35,24 @@ export default function ChiropracticPage() {
             asChild
             className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground"
           >
-            <Link href="/medical-care">Looking for Medical Care?</Link>
+            <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
         </PageHero>
         <CollinProfile />
         <GonsteadProcess />
         <Services />
         <XrayResults />
-        <MeetTeamCta />
+        <AppointmentRequest
+          service="Chiropractic"
+          eyebrow="Book Your Visit"
+          title="Request a Chiropractic Appointment"
+          description="New patients welcome. Send your details and preferred times and our team will call or email you to confirm — no online account needed."
+          points={[
+            "Gonstead care for the whole family, from newborns to grandparents",
+            "We'll match you with a time that fits your schedule",
+            "Questions about your condition? Add them and we'll come prepared",
+          ]}
+        />
         <Contact />
       </main>
       <Footer />

@@ -46,7 +46,7 @@ export function CollinProfile() {
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               With the Gonstead System, every patient is unique and has to be examined and
-              adjusted very specifically to get the best results &mdash; nothing is generalized,
+              adjusted very specifically to get the best results; nothing is generalized,
               because no two problems are the same. His care often includes specific, gentle
               adjustments, education on home care and lifestyle modifications, diet and supplement
               guidance, lab work review, and at-home exercises that enhance the stability of the

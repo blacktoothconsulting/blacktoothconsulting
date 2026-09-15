@@ -4,8 +4,10 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Phone, Clock } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
+import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
+import { isTeamPageEnabled } from "@/lib/site-features"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,16 +21,17 @@ export function Header() {
         ? "/medical-care#about"
         : "/#about"
 
+  // Only page routes drive the active state; anchor links never highlight.
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Chiropractic", href: "/chiropractic" },
-    { name: "Medical Care", href: "/medical-care" },
-    { name: "Massage", href: "/massage" },
-    { name: "Our Team", href: "/team" },
+    { name: "Home", href: "/", match: "/" },
+    { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
+    { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
+    { name: "Massage", href: "/massage", match: "/massage" },
+    ...(isTeamPageEnabled ? [{ name: "Our Team", href: "/team", match: "/team" }] : []),
     { name: "About", href: aboutHref },
-    { name: "New Patients", href: "/#new-patients" },
-    { name: "Contact", href: "/#contact" },
   ]
+
+  const isActive = (match?: string) => match !== undefined && pathname === match
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -84,7 +87,12 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              aria-current={isActive(item.match) ? "page" : undefined}
+              className={`text-sm font-medium transition-colors ${
+                isActive(item.match)
+                  ? "text-primary underline decoration-2 underline-offset-8"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               {item.name}
             </Link>
@@ -120,7 +128,12 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                aria-current={isActive(item.match) ? "page" : undefined}
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                  isActive(item.match)
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground hover:bg-primary/10 hover:text-primary"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -131,38 +144,9 @@ export function Header() {
           {/* Divider */}
           <div className="border-t border-border my-4" />
 
-          {/* Hours section - styled like original site */}
+          {/* Hours section - shared source of truth */}
           <div className="px-4 mb-4">
-            <p className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
-              Opening Hours
-            </p>
-            <div className="mb-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
-                Chiropractic &amp; Massage
-              </p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                <span className="text-muted-foreground">Mon, Wed, Thu</span>
-                <span className="text-foreground">8:00am - 6:00pm</span>
-                <span className="text-muted-foreground">Tuesday</span>
-                <span className="text-foreground">8:00am - 5:00pm</span>
-                <span className="text-muted-foreground">Friday</span>
-                <span className="text-foreground">8:00am - 12:00pm</span>
-                <span className="text-muted-foreground">Sat &amp; Sun</span>
-                <span className="text-foreground">CLOSED</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
-                Medical Care
-              </p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                <span className="text-muted-foreground">Mon &ndash; Fri</span>
-                <span className="text-foreground">8:00am - 6:00pm</span>
-                <span className="text-muted-foreground">Sat &amp; Sun</span>
-                <span className="text-foreground">CLOSED</span>
-              </div>
-            </div>
+            <OpeningHours />
           </div>
 
           {/* Contact info */}
@@ -175,7 +159,7 @@ export function Header() {
               307.655.8775
             </a>
             <Button asChild className="w-full">
-              <Link href="/medical-care#schedule" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
                 Book Appointment
               </Link>
             </Button>

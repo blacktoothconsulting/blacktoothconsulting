@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
+import { OpeningHours } from "@/components/opening-hours"
 
 const bannerImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
@@ -67,7 +68,7 @@ export function Hero() {
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
             Our mission is to create a community that takes an active role in their own
             health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you &mdash; to listen, to explain, and to get you answers.
+            always have time for you, to listen, to explain, and to get you answers.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
@@ -83,7 +84,7 @@ export function Hero() {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="mt-12 flex gap-2">
+        <div className="mt-8 flex gap-2 sm:mt-12">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
@@ -129,14 +130,13 @@ export function Hero() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4 py-6 px-4">
+            <div className="flex items-start gap-4 py-6 px-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
-              <div>
-                <p className="font-medium text-foreground">Hours</p>
-                <p className="text-sm text-muted-foreground">Chiropractic: Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm</p>
-                <p className="text-sm text-muted-foreground">Medical: Mon&ndash;Fri 8am&ndash;6pm</p>
+              <div className="flex-1">
+                <p className="font-medium text-foreground mb-3">Hours</p>
+                <OpeningHours showHeading={false} />
               </div>
             </div>
           </div>
