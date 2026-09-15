@@ -41,11 +41,6 @@ const teamMembers: TeamMember[] = [
     bio: "Our care coordinators, Jolene Laumbach, Leeanna Miller, and Shari Willet, are here to help make your experience at Wyoming Clinic of Integrated Health as smooth and welcoming as possible. From scheduling appointments and answering questions to helping coordinate the details of your visit, they are an important part of keeping our clinic running smoothly and ensuring patients feel well cared for from the moment they walk through the door.",
   },
   {
-    name: "Our Care Coordinators",
-    title: "Care Coordinators",
-    bio: "Team introduction coming soon.",
-  },
-  {
     name: "Kerry Baros",
     title: "Massage Therapist",
   },
