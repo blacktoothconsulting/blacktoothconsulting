@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, MapPin, Mail, Clock, Star, Activity, Stethoscope, Hand } from "lucide-react"
+import { Phone, MapPin, Mail, Clock, Star, Bone, Stethoscope, Hand } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { OpeningHours } from "@/components/opening-hours"
@@ -9,7 +9,7 @@ const GOOGLE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
 
 const bookingOptions = [
   {
-    icon: Activity,
+    icon: Bone,
     title: "Chiropractic",
     description: "Request a Gonstead chiropractic appointment with Collin Redinger, D.C.",
     href: "/chiropractic#request",
@@ -126,7 +126,7 @@ export function Contact() {
                   <div className="flex-1">
                     <p className="font-medium mb-3">Hours</p>
                     <OpeningHours tone="contact" showHeading={false} />
-                    <div className="mt-4 text-left pl-[18px]">
+                    <div className="mt-4 flex justify-center">
                       <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild>
                         <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
                           <Star className="mr-2 h-4 w-4" />
@@ -141,7 +141,7 @@ export function Contact() {
           </div>
 
           {/* Clinic location */}
-          <Card className="overflow-hidden border-0 shadow-xl">
+          <Card className="overflow-hidden rounded-[17px] border-0 pt-[67px] pb-[35px] shadow-xl">
             <CardContent className="p-0">
               <div className="sr-only">
                 <h3>Find us in Sheridan</h3>
