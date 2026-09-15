@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
+import { OurApproach } from "@/components/our-approach"
 import { MeetOurTeam } from "@/components/meet-our-team"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -34,6 +35,7 @@ export default function TeamPage() {
             <a href="#contact">Get in Touch</a>
           </Button>
         </PageHero>
+        <OurApproach />
         <MeetOurTeam />
         <Contact />
       </main>
