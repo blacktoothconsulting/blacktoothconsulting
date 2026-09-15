@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Meet Our Team | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
     "Get to know the providers and care coordinators behind the Wyoming Clinic of Integrated Health in Sheridan, Wyoming.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function TeamPage() {
