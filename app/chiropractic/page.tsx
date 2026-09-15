@@ -6,6 +6,7 @@ import { GonsteadProcess } from "@/components/gonstead-process"
 import { Services } from "@/components/services"
 import { XrayResults } from "@/components/xray-results"
 import { AppointmentRequest } from "@/components/appointment-request"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -53,6 +54,7 @@ export default function ChiropracticPage() {
             "Questions about your condition? Add them and we'll come prepared",
           ]}
         />
+        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />
