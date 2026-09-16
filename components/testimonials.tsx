@@ -9,7 +9,7 @@ const GOOGLE_READ_REVIEWS_URL =
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-muted/50 py-20 lg:py-28">
+    <section id="testimonials" className="bg-muted/50 py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">

@@ -54,6 +54,26 @@ export function Hero() {
           </div>
         ))}
         <div className="absolute inset-0 bg-foreground/60" />
+
+        {/*
+          Carousel Indicators — a vertical stack pinned near the top-right of the
+          image itself. Anchored near the top (rather than the bottom of the full
+          hero section, which can exceed the viewport height) so they stay visible
+          on load without requiring a scroll.
+        */}
+        <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
+          {bannerImages.map((image, index) => (
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              className={`w-1 rounded-full transition-all duration-300 ${
+                index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content */}
@@ -72,7 +92,7 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
-              <Link href="#contact">Schedule Your Visit</Link>
+              <Link href="#contact">Request Appointment</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
               <a href="tel:307-655-8775">
@@ -81,21 +101,6 @@ export function Hero() {
               </a>
             </Button>
           </div>
-        </div>
-
-        {/* Carousel Indicators */}
-        <div className="mt-8 flex gap-2 sm:mt-12">
-          {bannerImages.map((image, index) => (
-            <button
-              key={image.src}
-              type="button"
-              onClick={() => setCurrent(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
-              }`}
-              aria-label={`Show image ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
 
