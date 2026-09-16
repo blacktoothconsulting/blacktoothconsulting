@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, MapPin, Mail } from "lucide-react"
+import { OpeningHours } from "@/components/opening-hours"
 
 /*
   Google review link. Replace with the clinic's exact "write a review" URL
@@ -102,6 +103,10 @@ export function Footer() {
           </div>
 
           {/* Contact */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Hours</h3>
+            <OpeningHours tone="primary" showHeading={false} />
+          </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
               Contact Us

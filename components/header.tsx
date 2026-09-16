@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
-import { isTeamPageEnabled } from "@/lib/site-features"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -27,7 +26,6 @@ export function Header() {
     { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
     { name: "Massage", href: "/massage", match: "/massage" },
-    ...(isTeamPageEnabled ? [{ name: "Our Team", href: "/team", match: "/team" }] : []),
     { name: "About", href: aboutHref },
   ]
 
