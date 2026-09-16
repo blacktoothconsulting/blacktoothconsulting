@@ -10,7 +10,7 @@ const features = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-background">
+    <section id="about" className="py-16 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative lg:order-1">

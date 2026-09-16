@@ -63,7 +63,10 @@ export function CollinProfile() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
-                <a href="tel:307-655-8775">Call 307.655.8775 to Schedule</a>
+                <a href="#request">Request Appointment</a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="tel:307-655-8775">Call 307.655.8775</a>
               </Button>
             </div>
           </div>

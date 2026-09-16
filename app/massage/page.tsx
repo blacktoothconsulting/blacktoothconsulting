@@ -24,6 +24,11 @@ export default function MassagePage() {
           eyebrow="Therapeutic Massage"
           title="Massage Therapy in Sheridan"
           description="Licensed massage therapists, in the same building as your chiropractor. Call to book a session, and tell us what is bothering you when you do."
+          image={{
+            src: "/images/massage-room.png",
+            alt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
+          }}
+          imagePosition="left"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
