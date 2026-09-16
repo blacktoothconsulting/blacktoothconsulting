@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { Reveal } from "@/components/reveal"
 
 const careLines = [
   {
@@ -60,7 +61,7 @@ export function ProvidersOverview() {
     <section id="providers" className="py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
             Three Kinds of Care, One Clinic
           </p>
@@ -71,13 +72,13 @@ export function ProvidersOverview() {
             Gonstead chiropractic, straightforward medical care, and massage therapy, all at one
             location.
           </p>
-        </div>
+        </Reveal>
 
         {/* Two care-line cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {careLines.map((line) => (
+          {careLines.map((line, index) => (
+            <Reveal key={line.href} delay={index * 100}>
             <Link
-              key={line.href}
               href={line.href}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
@@ -148,6 +149,7 @@ export function ProvidersOverview() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
 

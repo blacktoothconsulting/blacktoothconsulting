@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 
 // Direct "write a review" link for the clinic's Google Business Profile.
 const GOOGLE_WRITE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
@@ -11,7 +12,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="bg-muted/50 py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-4 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
             Patient Experiences
           </p>
@@ -21,9 +22,9 @@ export function Testimonials() {
           <p className="mt-4 leading-relaxed text-muted-foreground">
             We are grateful for the trust our patients place in the Wyoming Clinic of Integrated Health.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        <Reveal delay={150} className="mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           <div className="flex flex-col items-center gap-6 p-8 text-center sm:p-12">
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
               <Quote className="h-7 w-7 text-primary" aria-hidden="true" />
@@ -38,12 +39,17 @@ export function Testimonials() {
               honored if you shared your experience.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
                 <a href={GOOGLE_READ_REVIEWS_URL} target="_blank" rel="noreferrer">
                   Read Our Google Reviews
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
                 <a href={GOOGLE_WRITE_REVIEW_URL} target="_blank" rel="noreferrer">
                   <Star className="mr-2 h-4 w-4" />
                   Leave a Review
@@ -51,7 +57,7 @@ export function Testimonials() {
               </Button>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

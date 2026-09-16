@@ -13,6 +13,7 @@ import {
   Hand,
   Sparkles,
 } from "lucide-react"
+import { Reveal } from "@/components/reveal"
 
 const sharedSteps = [
   {
@@ -94,7 +95,7 @@ export function NewPatients() {
     <section id="new-patients" className="py-20 lg:py-28 bg-muted/50">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <Reveal direction="left">
             <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
               New Patients
             </p>
@@ -107,8 +108,8 @@ export function NewPatients() {
             </p>
 
             <div className="mt-8 space-y-6">
-              {sharedSteps.map((step) => (
-                <div key={step.number} className="flex gap-4">
+              {sharedSteps.map((step, index) => (
+                <Reveal key={step.number} delay={index * 80} className="flex gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-semibold text-sm">
                     {step.number}
                   </div>
@@ -119,7 +120,7 @@ export function NewPatients() {
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
 
@@ -143,9 +144,9 @@ export function NewPatients() {
                 <Link href="/massage#request">Schedule Massage Session</Link>
               </Button>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="space-y-8">
+          <Reveal direction="right" delay={100} className="space-y-8">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/front-desk.avif"
@@ -164,9 +165,10 @@ export function NewPatients() {
               </p>
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {providerPaths.map((path) => (
-                  <div
+                {providerPaths.map((path, index) => (
+                  <Reveal
                     key={path.label}
+                    delay={index * 100}
                     className={`flex flex-col rounded-2xl border border-border bg-card p-5 ${
                       path.wide ? "sm:col-span-2" : ""
                     }`}
@@ -192,11 +194,11 @@ export function NewPatients() {
                     >
                       {path.cta}
                     </Link>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -42,8 +42,8 @@ export default function MassagePage() {
             <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
         </PageHero>
-        <MassageServices />
         <MassageTherapists />
+        <MassageServices />
         <AppointmentRequest
           service="Massage"
           eyebrow="Book Your Session"
