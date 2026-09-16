@@ -84,14 +84,14 @@ export function Hero() {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="mt-8 flex gap-2 sm:mt-12">
+        <div className="mt-6 flex gap-1.5 sm:mt-10">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
               type="button"
               onClick={() => setCurrent(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
+              className={`h-1 rounded-full transition-all duration-300 ${
+                index === current ? "w-6 bg-primary-foreground/80" : "w-2.5 bg-primary-foreground/30"
               }`}
               aria-label={`Show image ${index + 1}`}
             />
