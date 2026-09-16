@@ -28,6 +28,7 @@ export default function MassagePage() {
             src: "/images/massage-room.png",
             alt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
           }}
+          imagePosition="left"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
