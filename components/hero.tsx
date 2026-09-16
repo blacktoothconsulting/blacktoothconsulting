@@ -72,7 +72,7 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
-              <Link href="#contact">Schedule Your Visit</Link>
+              <Link href="#contact">Request Appointment</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
               <a href="tel:307-655-8775">

@@ -106,7 +106,7 @@ export function Header() {
             307.655.8775
           </a>
           <Button asChild>
-            <Link href="/#contact">Book Appointment</Link>
+            <Link href="/#contact">Request Appointment</Link>
           </Button>
         </div>
       </nav>
@@ -158,7 +158,7 @@ export function Header() {
             </a>
             <Button asChild className="w-full">
               <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
-                Book Appointment
+                Request Appointment
               </Link>
             </Button>
           </div>
