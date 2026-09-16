@@ -30,8 +30,8 @@ const scheduleGroups = {
 }
 
 type OpeningHoursProps = {
-  /** "default" for light surfaces (card/menu), "primary" for the dark primary background. */
-  tone?: "default" | "primary" | "contact"
+  /** "default" for light surfaces (card/menu), "primary" for the dark primary background, "footer" for the dark footer surface. */
+  tone?: "default" | "primary" | "contact" | "footer"
   /** Which service schedule to show. */
   service?: "all" | "chiropractic" | "massage" | "medical"
   /** Render the "Opening Hours" heading with a clock icon. */
@@ -41,11 +41,30 @@ type OpeningHoursProps = {
 export function OpeningHours({ tone = "default", service = "all", showHeading = true }: OpeningHoursProps) {
   const isPrimary = tone === "primary"
   const isContact = tone === "contact"
-  const headingClass = isPrimary || isContact ? "text-primary-foreground" : "text-foreground"
-  const iconClass = isPrimary || isContact ? "text-primary-foreground" : "text-primary"
-  const labelClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-primary"
-  const dayClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-muted-foreground"
-  const timeClass = isContact ? "text-primary-foreground" : isPrimary ? "text-accent" : "text-foreground"
+  const isFooter = tone === "footer"
+  const headingClass = isPrimary || isContact || isFooter ? "text-primary-foreground" : "text-foreground"
+  const iconClass = isPrimary || isContact || isFooter ? "text-primary-foreground" : "text-primary"
+  const labelClass = isContact
+    ? "text-primary-foreground"
+    : isFooter
+      ? "text-background/50"
+      : isPrimary
+        ? "text-accent"
+        : "text-primary"
+  const dayClass = isContact
+    ? "text-primary-foreground"
+    : isFooter
+      ? "text-background/70"
+      : isPrimary
+        ? "text-accent"
+        : "text-muted-foreground"
+  const timeClass = isContact
+    ? "text-primary-foreground"
+    : isFooter
+      ? "text-background/70"
+      : isPrimary
+        ? "text-accent"
+        : "text-foreground"
 
   return (
     <div>

@@ -3,7 +3,7 @@ import { Sparkles, ArrowRight } from "lucide-react"
 
 export function AnnouncementBanner() {
   return (
-    <section className="bg-accent text-accent-foreground">
+    <section className="animate-slide-down bg-accent text-accent-foreground">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-3 sm:py-5">
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center sm:gap-4 sm:text-left">
           <span className="hidden h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-foreground/15 sm:flex">

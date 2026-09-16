@@ -124,3 +124,53 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*
+  Entrance keyframes for above-the-fold content (hero, announcement banner).
+  Scoped inside `prefers-reduced-motion: no-preference` so reduced-motion
+  users see the final state immediately with no animation at all.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  @layer utilities {
+    .animate-fade-up {
+      animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .animate-slide-down {
+      animation: slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .animate-hero-zoom {
+      animation: hero-zoom 6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}

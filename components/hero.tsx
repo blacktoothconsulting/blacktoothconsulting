@@ -40,7 +40,7 @@ export function Hero() {
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -48,7 +48,7 @@ export function Hero() {
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
               fill
-              className="object-cover"
+              className={`object-cover ${index === current ? "animate-hero-zoom" : ""}`}
               priority={index === 0}
             />
           </div>
@@ -79,22 +79,39 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
+          <p
+            className="animate-fade-up text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4"
+            style={{ animationDelay: "0ms" }}
+          >
             Sheridan, Wyoming
           </p>
-          <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+          <h1
+            className="animate-fade-up font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance"
+            style={{ animationDelay: "90ms" }}
+          >
             Chiropractic, Massage &amp; Medical Care for the Whole Family
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
+          <p
+            className="animate-fade-up mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl"
+            style={{ animationDelay: "180ms" }}
+          >
             Our mission is to create a community that takes an active role in their own
             health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
             always have time for you, to listen, to explain, and to get you answers.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
+          <div
+            className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4"
+            style={{ animationDelay: "270ms" }}
+          >
+            <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
               <Link href="#contact">Request Appointment</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
               <a href="tel:307-655-8775">
                 <Phone className="mr-2 h-4 w-4" />
                 Call 307.655.8775
@@ -105,7 +122,7 @@ export function Hero() {
       </div>
 
       {/* Info Cards */}
-      <div className="relative z-10 bg-card border-t border-border">
+      <div className="animate-fade-up relative z-10 bg-card border-t border-border" style={{ animationDelay: "360ms" }}>
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             <div className="flex items-center gap-4 py-6 px-4">
