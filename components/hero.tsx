@@ -54,6 +54,21 @@ export function Hero() {
           </div>
         ))}
         <div className="absolute inset-0 bg-foreground/60" />
+
+        {/* Carousel Indicators — overlaid on the image itself, not competing with hero text */}
+        <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5 sm:bottom-4">
+          {bannerImages.map((image, index) => (
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                index === current ? "w-5 bg-primary-foreground/70" : "w-1.5 bg-primary-foreground/30"
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content */}
@@ -81,21 +96,6 @@ export function Hero() {
               </a>
             </Button>
           </div>
-        </div>
-
-        {/* Carousel Indicators */}
-        <div className="mt-6 flex gap-1.5 sm:mt-10">
-          {bannerImages.map((image, index) => (
-            <button
-              key={image.src}
-              type="button"
-              onClick={() => setCurrent(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                index === current ? "w-6 bg-primary-foreground/80" : "w-2.5 bg-primary-foreground/30"
-              }`}
-              aria-label={`Show image ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
 
