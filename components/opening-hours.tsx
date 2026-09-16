@@ -49,21 +49,21 @@ export function OpeningHours({ tone = "default", service = "all", showHeading = 
     : isFooter
       ? "text-background/50"
       : isPrimary
-        ? "text-accent"
+        ? "text-primary-foreground"
         : "text-primary"
   const dayClass = isContact
     ? "text-primary-foreground"
     : isFooter
       ? "text-background/70"
       : isPrimary
-        ? "text-accent"
+        ? "text-primary-foreground/70"
         : "text-muted-foreground"
   const timeClass = isContact
     ? "text-primary-foreground"
     : isFooter
       ? "text-background/70"
       : isPrimary
-        ? "text-accent"
+        ? "text-primary-foreground"
         : "text-foreground"
 
   return (
