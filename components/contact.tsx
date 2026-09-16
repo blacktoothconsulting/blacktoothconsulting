@@ -3,6 +3,7 @@ import { Phone, MapPin, Mail, Clock, Star, Bone, Stethoscope, Hand } from "lucid
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { OpeningHours } from "@/components/opening-hours"
+import { Reveal } from "@/components/reveal"
 
 // Direct "write a review" link for the clinic's Google Business Profile.
 const GOOGLE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
@@ -35,7 +36,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-primary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <Reveal className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance">
             Get Your Life Back!
           </h2>
@@ -46,13 +47,13 @@ export function Contact() {
             </a>{" "}
             anytime.
           </p>
-        </div>
+        </Reveal>
 
         {/* Service-specific booking paths */}
         <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {bookingOptions.map((option) => (
+          {bookingOptions.map((option, index) => (
+            <Reveal key={option.title} delay={index * 100}>
             <Card
-              key={option.title}
               className="border-0 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
             >
               <Link href={option.href} className="block h-full rounded-xl focus:outline-none">
@@ -70,12 +71,13 @@ export function Contact() {
                 </CardContent>
               </Link>
             </Card>
+            </Reveal>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <Reveal direction="left" className="space-y-8">
             <div>
               <h3 className="text-xl font-semibold text-primary-foreground mb-6">
                 Contact Information
@@ -138,24 +140,26 @@ export function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Clinic location */}
-          <Card className="overflow-hidden rounded-[17px] border-0 pt-[67px] pb-[35px] shadow-xl">
-            <CardContent className="p-0">
-              <div className="sr-only">
-                <h3>Find us in Sheridan</h3>
-                <p>Visit Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, Wyoming.</p>
-              </div>
-              <iframe
-                title="Map showing Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, WY"
-                src="https://www.google.com/maps?q=528+Coffeen+Ave,+Sheridan,+WY&output=embed"
-                className="h-[320px] w-full border-0 sm:h-[380px]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </CardContent>
-          </Card>
+          <Reveal direction="right" delay={100}>
+            <Card className="overflow-hidden rounded-[17px] border-0 pt-[67px] pb-[35px] shadow-xl">
+              <CardContent className="p-0">
+                <div className="sr-only">
+                  <h3>Find us in Sheridan</h3>
+                  <p>Visit Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, Wyoming.</p>
+                </div>
+                <iframe
+                  title="Map showing Wyoming Clinic of Integrated Health at 528 Coffeen Ave, Sheridan, WY"
+                  src="https://www.google.com/maps?q=528+Coffeen+Ave,+Sheridan,+WY&output=embed"
+                  className="h-[320px] w-full border-0 sm:h-[380px]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </CardContent>
+            </Card>
+          </Reveal>
         </div>
       </div>
     </section>
