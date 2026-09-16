@@ -10,6 +10,7 @@ type AppointmentRequestProps = {
   title: string
   description: string
   points?: string[]
+  hoursService?: "chiropractic" | "massage" | "medical"
 }
 
 export function AppointmentRequest({
@@ -18,6 +19,7 @@ export function AppointmentRequest({
   title,
   description,
   points = [],
+  hoursService = "chiropractic",
 }: AppointmentRequestProps) {
   return (
     <section id="request" className="scroll-mt-20 bg-muted/50 py-20 lg:py-28">
@@ -53,7 +55,7 @@ export function AppointmentRequest({
                 307.655.8775
               </a>
               <div className="mt-5">
-                <OpeningHours tone="primary" showHeading={false} />
+                <OpeningHours tone="primary" service={hoursService} showHeading={false} />
               </div>
             </div>
           </div>
