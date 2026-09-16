@@ -105,7 +105,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Hours</h3>
-            <OpeningHours tone="primary" showHeading={false} />
+            <OpeningHours tone="footer" showHeading={false} />
           </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
