@@ -27,7 +27,7 @@ export default function ChiropracticPage() {
           description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort, so you can move well, feel better, and live the life you deserve."
           image={{
             src: "/images/hero-chiro.jpg",
-            alt: "Gonstead chiropractic adjustment at the Wyoming Clinic of Integrated Health",
+            alt: "Chiropractic treatment room with a Gonstead adjustment table at the Wyoming Clinic of Integrated Health",
           }}
         >
           <Button size="lg" asChild>
