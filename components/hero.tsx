@@ -55,15 +55,20 @@ export function Hero() {
         ))}
         <div className="absolute inset-0 bg-foreground/60" />
 
-        {/* Carousel Indicators — overlaid on the image itself, not competing with hero text */}
-        <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5 sm:bottom-4">
+        {/*
+          Carousel Indicators — a vertical stack pinned near the top-right of the
+          image itself. Anchored near the top (rather than the bottom of the full
+          hero section, which can exceed the viewport height) so they stay visible
+          on load without requiring a scroll.
+        */}
+        <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
               type="button"
               onClick={() => setCurrent(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                index === current ? "w-5 bg-primary-foreground/70" : "w-1.5 bg-primary-foreground/30"
+              className={`w-1 rounded-full transition-all duration-300 ${
+                index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
               }`}
               aria-label={`Show image ${index + 1}`}
             />
