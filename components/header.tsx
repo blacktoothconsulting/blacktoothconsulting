@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
-import { isTeamPageEnabled } from "@/lib/site-features"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,7 +18,7 @@ export function Header() {
     { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
     { name: "Massage", href: "/massage", match: "/massage" },
-    ...(isTeamPageEnabled ? [{ name: "Our Team", href: "/team", match: "/team" }] : []),
+    { name: "About", href: aboutHref },
   ]
 
   const isActive = (match?: string) => match !== undefined && pathname === match
@@ -99,7 +98,7 @@ export function Header() {
             307.655.8775
           </a>
           <Button asChild>
-            <Link href="/#contact">Book Appointment</Link>
+            <Link href="/#contact">Request Appointment</Link>
           </Button>
         </div>
       </nav>
@@ -151,7 +150,7 @@ export function Header() {
             </a>
             <Button asChild className="w-full">
               <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>
-                Book Appointment
+                Request Appointment
               </Link>
             </Button>
           </div>

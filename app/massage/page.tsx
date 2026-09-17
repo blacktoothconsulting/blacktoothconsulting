@@ -8,6 +8,7 @@ import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { OpeningHours } from "@/components/opening-hours"
 
 export const metadata: Metadata = {
   title: "Massage Therapy | Wyoming Clinic of Integrated Health | Sheridan, WY",
@@ -24,6 +25,11 @@ export default function MassagePage() {
           eyebrow="Therapeutic Massage"
           title="Massage Therapy in Sheridan"
           description="Licensed massage therapists, in the same building as your chiropractor. Call to book a session, and tell us what is bothering you when you do."
+          image={{
+            src: "/images/massage-room.png",
+            alt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
+          }}
+          imagePosition="left"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
@@ -37,13 +43,14 @@ export default function MassagePage() {
             <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
         </PageHero>
-        <MassageServices />
         <MassageTherapists />
+        <MassageServices />
         <AppointmentRequest
           service="Massage"
           eyebrow="Book Your Session"
           title="Request a Massage Appointment"
           description="Send your details and preferred times and our team will reach out to confirm your session. Let us know what's bothering you so we can match you with the right therapist."
+          hoursService="massage"
           points={[
             "Deep tissue, sport & recovery, or relaxation massage",
             "Book on its own or alongside your chiropractic visits",
