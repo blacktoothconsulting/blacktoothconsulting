@@ -18,7 +18,6 @@ export function Header() {
     { name: "Chiropractic", href: "/chiropractic", match: "/chiropractic" },
     { name: "Medical Care", href: "/medical-care", match: "/medical-care" },
     { name: "Massage", href: "/massage", match: "/massage" },
-    { name: "About", href: aboutHref },
   ]
 
   const isActive = (match?: string) => match !== undefined && pathname === match
