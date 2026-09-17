@@ -48,7 +48,10 @@ export function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            At the Wyoming Clinic, your care is individualized and tailored to your needs, from chiropractic care to corrective exercises and nutrition. Massage therapy has its own page; 
+            At the Wyoming Clinic, your care is individualized and tailored to your needs, 
+            from chiropractic care to corrective exercises and nutrition. 
+            Massage therapy has
+            its own page:{" "}
             <Link
               href="/massage"
               className="font-medium text-primary underline underline-offset-4 hover:text-accent transition-colors"

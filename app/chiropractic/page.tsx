@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "Chiropractic Care | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Specific Gonstead chiropractic care for the whole family in Sheridan, Wyoming, with Collin Redinger, D.C. — corrective exercises, spinal and postural screenings, digital X-ray, and more.",
+    "Specific Gonstead chiropractic care for the whole family in Sheridan, Wyoming, with Collin Redinger, D.C. Corrective exercises, spinal and postural screenings, digital X-ray, and more.",
 }
 
 export default function ChiropracticPage() {
@@ -51,7 +51,7 @@ export default function ChiropracticPage() {
           service="Chiropractic"
           eyebrow="Book Your Visit"
           title="Request a Chiropractic Appointment"
-          description="New patients welcome. Send your details and preferred times and our team will call or email you to confirm — no online account needed."
+          description="New patients welcome. Send your details and preferred times and our team will call or email you to confirm. No online account needed."
           points={[
             "Gonstead care for the whole family, from newborns to grandparents",
             "We'll match you with a time that fits your schedule",

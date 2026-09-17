@@ -39,14 +39,14 @@ const priceGroups: { title: string; note?: string; items: PriceItem[] }[] = [
       { service: "Laceration repair", price: "$175–295" },
       { service: "Abscess drainage", price: "$125–175" },
       { service: "Ingrown toenail partial removal", price: "$200" },
-      { service: "Earwax removal — one ear", price: "$65" },
-      { service: "Earwax removal — both ears", price: "$85" },
-      { service: "Cryotherapy — 1–14 lesions", price: "$50" },
-      { service: "Cryotherapy — 15+ lesions", price: "$75" },
+      { service: "Earwax removal (one ear)", price: "$65" },
+      { service: "Earwax removal (both ears)", price: "$85" },
+      { service: "Cryotherapy (1–14 lesions)", price: "$50" },
+      { service: "Cryotherapy (15+ lesions)", price: "$75" },
       { service: "Large joint injection", price: "$150" },
       { service: "Small joint or bursa injection", price: "$125" },
-      { service: "Trigger-point injection — 1–2 muscles", price: "$125" },
-      { service: "Trigger-point injection — 3+ muscles", price: "$175" },
+      { service: "Trigger-point injection (1–2 muscles)", price: "$125" },
+      { service: "Trigger-point injection (3+ muscles)", price: "$175" },
       { service: "Skin biopsy", price: "$150" },
     ],
   },
@@ -91,7 +91,7 @@ export function Pricing() {
             Straightforward medical care with no surprise clinic bills. Payment is due at the time
             of service. You may request an itemized receipt or superbill to submit to your insurance
             plan; reimbursement is not guaranteed. This menu highlights our most common services and
-            is not a complete list; please call to ask about a specific service.
+            is not a complete list. Please call to ask about a specific service.
           </p>
         </div>
 

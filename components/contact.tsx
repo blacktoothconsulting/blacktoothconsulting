@@ -19,7 +19,7 @@ const bookingOptions = [
   {
     icon: Stethoscope,
     title: "Medical Care",
-    description: "Book online with Gordon Hendrickson, PA-C.  Pick a time that works for you.",
+    description: "Book online with Gordon Hendrickson, PA-C. Pick a time that works for you.",
     href: "/medical-care#schedule",
     cta: "Book Medical Online",
   },

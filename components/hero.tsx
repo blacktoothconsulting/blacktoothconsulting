@@ -97,7 +97,7 @@ export function Hero() {
           >
             Our mission is to create a community that takes an active role in their own
             health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you, to listen, to explain, and to get you answers.
+            always have time for you: to listen, to explain, and to get you answers.
           </p>
           <div
             className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4"

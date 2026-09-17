@@ -91,7 +91,7 @@ export function AppointmentForm({
       >
         <span className="flex items-center gap-2 text-base font-semibold text-foreground">
           <CheckCircle2 className="h-5 w-5 text-primary" aria-hidden="true" />
-          Thank you — your {isAppointment ? "request" : "message"} is on its way.
+          Thank you. Your {isAppointment ? "request" : "message"} is on its way.
         </span>
         <p>
           {isAppointment

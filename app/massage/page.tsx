@@ -13,7 +13,7 @@ import { OpeningHours } from "@/components/opening-hours"
 export const metadata: Metadata = {
   title: "Massage Therapy | Wyoming Clinic of Integrated Health | Sheridan, WY",
   description:
-    "Therapeutic massage in Sheridan, Wyoming, with licensed massage therapists. Deep tissue, sport and recovery, and relaxation massage — on its own or alongside Gonstead chiropractic care.",
+    "Therapeutic massage in Sheridan, Wyoming, with licensed massage therapists. Deep tissue, sport and recovery, and relaxation massage, on its own or alongside Gonstead chiropractic care.",
 }
 
 export default function MassagePage() {
