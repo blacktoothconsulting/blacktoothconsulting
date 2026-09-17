@@ -12,14 +12,6 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  // The "About" link points to the about section on whatever page you're on.
-  const aboutHref =
-    pathname === "/chiropractic"
-      ? "/chiropractic#about"
-      : pathname === "/medical-care"
-        ? "/medical-care#about"
-        : "/#about"
-
   // Only page routes drive the active state; anchor links never highlight.
   const navigation = [
     { name: "Home", href: "/", match: "/" },
