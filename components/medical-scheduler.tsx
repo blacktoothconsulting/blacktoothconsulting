@@ -1,5 +1,6 @@
 import { Phone, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { OpeningHours } from "@/components/opening-hours"
 
 const SCHEDULING_URL =
   "https://drchrono.com/scheduling/offices/dGhpcyBpcyAxNiBjaGFyc_pMJs8vsByeL-uGI-2sbBI="
@@ -39,7 +40,10 @@ export function MedicalScheduler() {
               or
               <span className="h-px flex-1 bg-border" />
             </div>
-            <Button size="lg" variant="outline" className="w-full" asChild>
+            <div className="mt-6 rounded-xl bg-primary p-5 text-left">
+              <OpeningHours tone="primary" service="medical" showHeading={false} />
+            </div>
+            <Button size="lg" variant="outline" className="mt-4 w-full" asChild>
               <a href="tel:307-655-8775">
                 <Phone className="mr-2 h-4 w-4" />
                 Call 307.655.8775
@@ -58,6 +62,9 @@ export function MedicalScheduler() {
         </div>
 
         <div className="mt-10 hidden text-center md:block">
+          <div className="mx-auto mb-6 max-w-md rounded-xl bg-primary p-5 text-left">
+            <OpeningHours tone="primary" service="medical" showHeading={false} />
+          </div>
           <p className="text-sm text-muted-foreground mb-4">
             Having trouble with the scheduler, or need a same-day visit?
           </p>

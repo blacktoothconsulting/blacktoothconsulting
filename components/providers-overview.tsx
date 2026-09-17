@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Activity, Stethoscope, Hand, ArrowRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { Reveal } from "@/components/reveal"
 
 const careLines = [
   {
@@ -28,7 +29,7 @@ const careLines = [
     image: "/images/gordon.png",
     imageAlt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     description:
-      "Primary and same-day acute care with clear, upfront pricing. You see the price before you agree to anything.",
+      "Primary and same-day medical care for adults and children.",
     highlights: [
       "Primary & same-day acute care",
       "In-office testing & procedures",
@@ -60,7 +61,7 @@ export function ProvidersOverview() {
     <section id="providers" className="py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
             Three Kinds of Care, One Clinic
           </p>
@@ -68,16 +69,16 @@ export function ProvidersOverview() {
             Meet Our Providers
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Gonstead chiropractic, straightforward medical care, and massage therapy, all at
-            528 Coffeen Ave.
+            Gonstead chiropractic, straightforward medical care, and massage therapy, all at one
+            location.
           </p>
-        </div>
+        </Reveal>
 
         {/* Two care-line cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {careLines.map((line) => (
+          {careLines.map((line, index) => (
+            <Reveal key={line.href} delay={index * 100}>
             <Link
-              key={line.href}
               href={line.href}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
@@ -91,7 +92,13 @@ export function ProvidersOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               </div>
 
-              <div className="flex flex-1 flex-col p-6 lg:p-8">
+              <div
+                className={cn(
+                  "flex flex-1 flex-col p-6 lg:p-8",
+                  line.href === "/chiropractic" && "pl-5 pr-[18px] lg:p-8",
+                  line.href === "/massage" && "pl-5 pr-[19px] lg:p-8",
+                )}
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
                     <line.icon className="h-6 w-6 text-primary" aria-hidden="true" />
@@ -123,7 +130,12 @@ export function ProvidersOverview() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-2 mt-auto">
+                <div
+                  className={cn(
+                    "mt-8 pt-2 mt-auto",
+                    line.href === "/chiropractic" && "pt-3.5",
+                  )}
+                >
                   <span
                     className={cn(
                       buttonVariants({ size: "default" }),
@@ -137,6 +149,7 @@ export function ProvidersOverview() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
 

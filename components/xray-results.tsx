@@ -55,7 +55,7 @@ export function XrayResults() {
                   </p>
                 </div>
               </div>
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed">{c.note}</p>
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed text-center">{c.note}</p>
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { CheckCircle } from "lucide-react"
+import { Reveal } from "@/components/reveal"
 
 const features = [
   "Gonstead Chiropractic Care",
@@ -10,10 +11,10 @@ const features = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-background">
+    <section id="about" className="py-16 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative lg:order-1">
+          <Reveal direction="left" className="relative lg:order-1">
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
@@ -36,9 +37,9 @@ export function About() {
               <p className="text-3xl font-bold font-serif">Integrated</p>
               <p className="text-sm opacity-90">Whole-Family Care</p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:order-2">
+          <Reveal direction="right" delay={150} className="lg:order-2">
             <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
               About Our Clinic
             </p>
@@ -46,15 +47,17 @@ export function About() {
               Integrated Care for the Whole Family
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              The Wyoming Clinic of Integrated Health brings Gonstead chiropractic, straightforward
-              general medical care, and therapeutic massage together under one roof in Sheridan.
-              Our mission is to create a community that takes an active role in their own health.
+              The Wyoming Clinic of Integrated Health brings Gonstead chiropractic, practical medical
+              care, and therapeutic massage together under one roof in Sheridan. Our goal is to help
+              build a healthier community by giving people the time, information, and support they
+              need to take an active role in their own health.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Whether you see Dr. Collin Redinger for chiropractic, Gordon Hendrickson, PA-C for
-              straightforward medical care, or one of our massage therapists, we will always have
-              time for you: to listen, to explain, and to find and correct the root cause so
-              you can stay well for the long run.
+              Whether you see Dr. Collin Redinger for chiropractic care, Gordon Hendrickson, PA-C for
+              medical care, or one of our massage therapists, you can expect a personal approach
+              centered around listening, explaining, and understanding what’s contributing to your
+              concerns. We want you to leave each visit with a clear plan and the support you need
+              to feel better and stay well for the long run.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -65,7 +68,7 @@ export function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

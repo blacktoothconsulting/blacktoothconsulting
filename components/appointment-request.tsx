@@ -1,5 +1,6 @@
-import { Phone, Clock, CalendarCheck } from "lucide-react"
+import { Phone, CalendarCheck } from "lucide-react"
 import { AppointmentForm } from "@/components/appointment-form"
+import { OpeningHours } from "@/components/opening-hours"
 
 type Service = "Chiropractic" | "Massage"
 
@@ -9,6 +10,7 @@ type AppointmentRequestProps = {
   title: string
   description: string
   points?: string[]
+  hoursService?: "chiropractic" | "massage" | "medical"
 }
 
 export function AppointmentRequest({
@@ -17,6 +19,7 @@ export function AppointmentRequest({
   title,
   description,
   points = [],
+  hoursService = "chiropractic",
 }: AppointmentRequestProps) {
   return (
     <section id="request" className="scroll-mt-20 bg-muted/50 py-20 lg:py-28">
@@ -40,21 +43,20 @@ export function AppointmentRequest({
               </ul>
             )}
 
-            <div className="mt-8 space-y-3 rounded-2xl border border-border bg-card p-6">
-              <p className="flex items-center gap-2 text-sm font-medium text-foreground">
+            <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+              <p className="mb-0.5 flex items-center gap-2 text-sm font-medium text-foreground">
                 <Phone className="h-4 w-4 text-primary" aria-hidden="true" />
                 Prefer to book by phone?
               </p>
               <a
                 href="tel:307-655-8775"
-                className="font-serif text-2xl font-semibold text-primary underline underline-offset-4"
+                className="mb-[26px] block font-serif text-2xl font-semibold text-primary underline underline-offset-4"
               >
                 307.655.8775
               </a>
-              <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Clock className="h-4 w-4 text-primary" aria-hidden="true" />
-                Mon/Wed/Thu 8am&ndash;6pm, Tue 8am&ndash;5pm, Fri 8am&ndash;12pm
-              </p>
+              <div className="mt-5">
+                <OpeningHours tone="primary" service={hoursService} showHeading={false} />
+              </div>
             </div>
           </div>
 

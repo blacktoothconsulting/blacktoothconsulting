@@ -5,8 +5,8 @@ import { GordonProfile } from "@/components/gordon-profile"
 import { GordonBio } from "@/components/gordon-bio"
 import { MedicalScheduler } from "@/components/medical-scheduler"
 import { MedicalServices } from "@/components/medical-services"
-import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Pricing } from "@/components/pricing"
+import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -25,7 +25,11 @@ export default function MedicalCarePage() {
         <PageHero
           eyebrow="Primary & Acute Medical Care"
           title="Straightforward Medical Care, Clear Prices"
-          description="Primary and same-day care for adults and children with Gordon Hendrickson, PA-C. Same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
+          description="Primary & same-day care for adults and children with Gordon Hendrickson, PA-C, same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
+          image={{
+            src: "/images/medical-exam-room.jpg",
+            alt: "Medical exam room at the Wyoming Clinic of Integrated Health",
+          }}
         >
           <Button size="lg" asChild>
             <a href="#schedule">Schedule Online</a>
@@ -43,8 +47,8 @@ export default function MedicalCarePage() {
         <GordonBio />
         <MedicalScheduler />
         <MedicalServices />
-        <MeetTeamCta />
         <Pricing />
+        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />

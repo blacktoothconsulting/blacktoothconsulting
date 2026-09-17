@@ -40,7 +40,7 @@ export function Hero() {
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -48,50 +48,27 @@ export function Hero() {
               src={image.src || "/placeholder.svg"}
               alt={image.alt}
               fill
-              className="object-cover"
+              className={`object-cover ${index === current ? "animate-hero-zoom" : ""}`}
               priority={index === 0}
             />
           </div>
         ))}
         <div className="absolute inset-0 bg-foreground/60" />
-      </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4">
-            Sheridan, Wyoming
-          </p>
-          <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Chiropractic, Massage &amp; Medical Care for the Whole Family
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl">
-            Our mission is to create a community that takes an active role in their own
-            health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you: to listen, to explain, and to get you answers.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
-              <Link href="#contact">Schedule Your Visit</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground">
-              <a href="tel:307-655-8775">
-                <Phone className="mr-2 h-4 w-4" />
-                Call 307.655.8775
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Carousel Indicators */}
-        <div className="mt-8 flex gap-2 sm:mt-12">
+        {/*
+          Carousel Indicators — a vertical stack pinned near the top-right of the
+          image itself. Anchored near the top (rather than the bottom of the full
+          hero section, which can exceed the viewport height) so they stay visible
+          on load without requiring a scroll.
+        */}
+        <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
           {bannerImages.map((image, index) => (
             <button
               key={image.src}
               type="button"
               onClick={() => setCurrent(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === current ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/40"
+              className={`w-1 rounded-full transition-all duration-300 ${
+                index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
               }`}
               aria-label={`Show image ${index + 1}`}
             />
@@ -99,8 +76,53 @@ export function Hero() {
         </div>
       </div>
 
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
+        <div className="max-w-2xl">
+          <p
+            className="animate-fade-up text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4"
+            style={{ animationDelay: "0ms" }}
+          >
+            Sheridan, Wyoming
+          </p>
+          <h1
+            className="animate-fade-up font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance"
+            style={{ animationDelay: "90ms" }}
+          >
+            Chiropractic, Massage &amp; Medical Care for the Whole Family
+          </h1>
+          <p
+            className="animate-fade-up mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl"
+            style={{ animationDelay: "180ms" }}
+          >
+            Our mission is to create a community that takes an active role in their own
+            health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
+            always have time for you: to listen, to explain, and to get you answers.
+          </p>
+          <div
+            className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4"
+            style={{ animationDelay: "270ms" }}
+          >
+            <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
+              <Link href="#contact">Request Appointment</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <a href="tel:307-655-8775">
+                <Phone className="mr-2 h-4 w-4" />
+                Call 307.655.8775
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {/* Info Cards */}
-      <div className="relative z-10 bg-card border-t border-border">
+      <div className="animate-fade-up relative z-10 bg-card border-t border-border" style={{ animationDelay: "360ms" }}>
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
             <div className="flex items-center gap-4 py-6 px-4">
