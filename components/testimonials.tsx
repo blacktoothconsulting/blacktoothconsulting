@@ -96,8 +96,8 @@ export function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0 sm:-left-2" />
-            <CarouselNext className="right-0 sm:-right-2" />
+            <CarouselPrevious className="left-1 sm:left-4" />
+            <CarouselNext className="right-1 sm:right-4" />
           </Carousel>
 
           <div className="flex items-center justify-center gap-2 pb-8" role="tablist" aria-label="Select testimonial">
