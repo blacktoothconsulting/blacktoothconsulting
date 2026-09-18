@@ -5,7 +5,7 @@ type PageHeroProps = {
   eyebrow: string
   title: string
   description: string
-  image: {
+  image?: {
     src: string
     alt: string
   }
@@ -33,10 +33,10 @@ export function PageHero({
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/25 via-foreground to-foreground" />
       <div
         className={`relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 lg:gap-12 lg:py-20 lg:px-8 ${
-          isLeft ? "lg:grid-cols-[0.9fr_1.1fr]" : "lg:grid-cols-[1.1fr_0.9fr]"
+          image ? (isLeft ? "lg:grid-cols-[0.9fr_1.1fr]" : "lg:grid-cols-[1.1fr_0.9fr]") : ""
         }`}
       >
-        <div className={isLeft ? "lg:order-2" : "lg:order-1"}>
+        <div className={image ? (isLeft ? "lg:order-2" : "lg:order-1") : "max-w-2xl text-center mx-auto"}>
           <p className="text-primary-foreground/80 text-sm font-medium uppercase tracking-wider mb-4">
             {eyebrow}
           </p>
@@ -46,15 +46,23 @@ export function PageHero({
           <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90 text-pretty">
             {description}
           </p>
-          {children && <div className="mt-10 flex flex-col sm:flex-row gap-4">{children}</div>}
+          {children && (
+            <div
+              className={`mt-10 flex flex-col sm:flex-row gap-4 ${image ? "" : "justify-center"}`}
+            >
+              {children}
+            </div>
+          )}
         </div>
-        <div
-          className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl lg:aspect-[5/4] ${
-            isLeft ? "lg:order-1" : "lg:order-2"
-          }`}
-        >
-          <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority className="object-cover" />
-        </div>
+        {image && (
+          <div
+            className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl lg:aspect-[5/4] ${
+              isLeft ? "lg:order-1" : "lg:order-2"
+            }`}
+          >
+            <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority className="object-cover" />
+          </div>
+        )}
       </div>
     </section>
   )
