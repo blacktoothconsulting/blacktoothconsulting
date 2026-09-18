@@ -13,6 +13,12 @@ type AppointmentRequestProps = {
   hoursService?: "chiropractic" | "massage" | "medical"
 }
 
+const hoursLabels: Record<NonNullable<AppointmentRequestProps["hoursService"]>, string> = {
+  chiropractic: "Chiropractic Hours:",
+  massage: "Massage Hours:",
+  medical: "Medical Hours:",
+}
+
 export function AppointmentRequest({
   service,
   eyebrow,
@@ -55,7 +61,12 @@ export function AppointmentRequest({
                 307.655.8775
               </a>
               <div className="mt-5">
-                <OpeningHours tone="primary" service={hoursService} showHeading={false} />
+                <OpeningHours
+                  tone="primary"
+                  service={hoursService}
+                  showHeading={false}
+                  label={hoursLabels[hoursService]}
+                />
               </div>
             </div>
           </div>
