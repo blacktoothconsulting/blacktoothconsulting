@@ -62,7 +62,7 @@ export function AppointmentRequest({
               </a>
               <div className="mt-5">
                 <OpeningHours
-                  tone="primary"
+                  tone="default"
                   service={hoursService}
                   showHeading={false}
                   label={hoursLabels[hoursService]}
