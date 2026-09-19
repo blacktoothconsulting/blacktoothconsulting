@@ -5,7 +5,6 @@ import { ProvidersOverview } from "@/components/providers-overview"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonials"
 import { NewPatients } from "@/components/new-patients"
-import { MeetTeamCta } from "@/components/meet-team-cta"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
@@ -20,7 +19,6 @@ export default function Home() {
         <About />
         <Testimonials />
         <NewPatients />
-        <MeetTeamCta />
         <Contact />
       </main>
       <Footer />

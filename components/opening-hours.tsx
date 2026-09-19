@@ -36,9 +36,11 @@ type OpeningHoursProps = {
   service?: "all" | "chiropractic" | "massage" | "medical"
   /** Render the "Opening Hours" heading with a clock icon. */
   showHeading?: boolean
+  /** Override the schedule group label (only applies when a single service is shown). */
+  label?: string
 }
 
-export function OpeningHours({ tone = "default", service = "all", showHeading = true }: OpeningHoursProps) {
+export function OpeningHours({ tone = "default", service = "all", showHeading = true, label }: OpeningHoursProps) {
   const isPrimary = tone === "primary"
   const isContact = tone === "contact"
   const isFooter = tone === "footer"
@@ -78,7 +80,7 @@ export function OpeningHours({ tone = "default", service = "all", showHeading = 
         {(service === "all" ? [scheduleGroups.chiropractic, scheduleGroups.medical] : [scheduleGroups[service]]).map((group) => (
           <div key={group.name}>
             <p className={`mb-[11px] text-sm font-semibold uppercase tracking-wider ${labelClass}`}>
-              {group.name}
+              {label ?? group.name}
             </p>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
               {group.rows.map((row) => (
