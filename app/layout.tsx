@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   description: 'Gonstead chiropractic, therapeutic massage, and straightforward medical care for the whole family in Sheridan, Wyoming. Now scheduling general medical care with Gordon Hendrickson, PA-C.',
   keywords: 'chiropractor, chiropractic, physician assistant, primary care, straightforward medical care, medical clinic, Sheridan, Wyoming, Gonstead, spinal care, back pain, massage therapy, Gordon Hendrickson',
   icons: {
-    icon: '/images/logo.avif',
-    apple: '/images/logo.avif',
+    icon: '/horse-favicon.png',
+    apple: '/horse-favicon.png',
   },
 }
 
