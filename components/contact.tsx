@@ -144,7 +144,7 @@ export function Contact() {
 
           {/* Clinic location */}
           <Reveal direction="right" delay={100}>
-            <Card className="overflow-hidden rounded-[17px] border-0 pt-[67px] pb-[35px] shadow-xl">
+            <Card className="w-full overflow-hidden rounded-[17px] border-0 pt-[73px] pb-[69px] shadow-xl lg:w-[380.6px]">
               <CardContent className="p-0">
                 <div className="sr-only">
                   <h3>Find us in Sheridan</h3>
