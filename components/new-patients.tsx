@@ -59,7 +59,7 @@ const providerPaths = [
     extra: "X-rays are taken if necessary to get a complete picture of your spine.",
     extraIcon: FileImage,
     href: "/chiropractic",
-    cta: "Chiropractic care",
+    cta: "Chiropractic Care",
     wide: false,
   },
   {
@@ -72,12 +72,12 @@ const providerPaths = [
       "In-office testing, imaging, or procedures may be done the same day, with prices shared up front.",
     extraIcon: FlaskConical,
     href: "/medical-care",
-    cta: "Medical care",
+    cta: "Medical Care",
     wide: false,
   },
   {
     label: "Massage Therapy",
-    provider: "with a licensed massage therapist",
+    provider: "with a Licensed Massage Therapist",
     icon: Hand,
     detail:
       "Your therapist asks what is bothering you, what you want worked on, and how much pressure you like.",
@@ -85,7 +85,7 @@ const providerPaths = [
       "You undress only to your comfort level and stay covered by a sheet the whole time.",
     extraIcon: Sparkles,
     href: "/massage",
-    cta: "Massage therapy",
+    cta: "Massage Therapy",
     wide: true,
   },
 ]
@@ -141,7 +141,7 @@ export function NewPatients() {
                 className="w-full sm:col-span-2 sm:border sm:bg-background sm:text-foreground sm:shadow-xs sm:hover:bg-accent sm:hover:text-accent-foreground sm:dark:bg-input/30 sm:dark:border-input sm:dark:hover:bg-input/50"
                 asChild
               >
-                <Link href="/massage#request">Schedule Massage Session</Link>
+                <Link href="/massage#request">Request Massage Session</Link>
               </Button>
             </div>
           </Reveal>
