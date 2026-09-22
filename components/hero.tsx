@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -25,7 +25,6 @@ const desktopImages = [
   },
   { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
   { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/entryway-2.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
   { src: "/images/waiting-area-2.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
 
@@ -54,10 +53,26 @@ type BannerImage = { src: string; alt: string; position?: string }
 // of sharing one `current` index.
 function useCarousel(images: BannerImage[]) {
   const [current, setCurrent] = useState(0)
+  // One "activation count" per slide, bumped only when that slide becomes
+  // current again. It's used as part of the <Image> key below so the zoom
+  // animation remounts (and restarts from scale(1)) only for the slide that
+  // just became active, while every other slide keeps whatever scale it last
+  // reached. Without this, toggling the animate-hero-zoom class off for the
+  // outgoing slide snapped its scale back to 1 mid-zoom instead of holding
+  // its current size through the fade-out.
+  const [activations, setActivations] = useState<number[]>(() => images.map(() => 0))
+  const currentRef = useRef(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length)
+      const next = (currentRef.current + 1) % images.length
+      currentRef.current = next
+      setCurrent(next)
+      setActivations((prev) => {
+        const updated = [...prev]
+        updated[next] += 1
+        return updated
+      })
     }, 5000)
     return () => clearInterval(interval)
   }, [images.length])
@@ -70,10 +85,11 @@ function useCarousel(images: BannerImage[]) {
       }`}
     >
       <Image
+        key={activations[index]}
         src={image.src || "/placeholder.svg"}
         alt={image.alt}
         fill
-        className={`object-cover ${image.position ?? ""} ${index === current ? "animate-hero-zoom" : ""}`}
+        className={`object-cover animate-hero-zoom ${image.position ?? ""}`}
         priority={index === 0}
       />
     </div>
