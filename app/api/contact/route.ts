@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { Resend } from "resend"
 import { z } from "zod"
 
-const CLINIC_EMAIL = "info@wyochiro.com"
+const CLINIC_EMAIL = "frontdesk@thewyomingclinic.com"
 
 const submissionSchema = z.object({
   // "message" = general contact form, "appointment" = service appointment request
