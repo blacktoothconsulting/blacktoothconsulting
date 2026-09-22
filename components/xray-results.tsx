@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
+import { X } from "lucide-react"
 import {
   Carousel,
   CarouselContent,
@@ -10,6 +11,8 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
+
+type ZoomedImage = { src: string; alt: string }
 
 type SplitCase = {
   label: string
@@ -60,6 +63,7 @@ const cases: (SplitCase | CombinedCase)[] = [
 export function XrayResults() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
+  const [zoomedImage, setZoomedImage] = useState<ZoomedImage | null>(null)
 
   const handleSetApi = (nextApi: CarouselApi) => {
     setApi(nextApi)
@@ -67,6 +71,23 @@ export function XrayResults() {
     setCurrent(nextApi.selectedScrollSnap())
     nextApi.on("select", () => setCurrent(nextApi.selectedScrollSnap()))
   }
+
+  useEffect(() => {
+    if (!zoomedImage) return
+
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setZoomedImage(null)
+    }
+    window.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [zoomedImage])
 
   return (
     <section className="py-20 lg:py-28 bg-background">
@@ -98,27 +119,37 @@ export function XrayResults() {
                     {c.layout === "split" ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                          <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground">
+                          <button
+                            type="button"
+                            onClick={() => setZoomedImage(c.before)}
+                            aria-label={`Enlarge ${c.before.alt}`}
+                            className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-foreground cursor-zoom-in transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                          >
                             <Image
                               src={c.before.src || "/placeholder.svg"}
                               alt={c.before.alt}
                               fill
                               className="object-contain"
                             />
-                          </div>
+                          </button>
                           <p className="mt-3 text-center text-sm font-medium text-muted-foreground uppercase tracking-wider">
                             Before
                           </p>
                         </div>
                         <div>
-                          <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground">
+                          <button
+                            type="button"
+                            onClick={() => setZoomedImage(c.after)}
+                            aria-label={`Enlarge ${c.after.alt}`}
+                            className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-foreground cursor-zoom-in transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                          >
                             <Image
                               src={c.after.src || "/placeholder.svg"}
                               alt={c.after.alt}
                               fill
                               className="object-contain"
                             />
-                          </div>
+                          </button>
                           <p className="mt-3 text-center text-sm font-medium text-muted-foreground uppercase tracking-wider">
                             After
                           </p>
@@ -128,14 +159,19 @@ export function XrayResults() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {c.images.map((image, index) => (
                           <div key={image.src}>
-                            <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-foreground">
+                            <button
+                              type="button"
+                              onClick={() => setZoomedImage(image)}
+                              aria-label={`Enlarge ${image.alt}`}
+                              className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-foreground cursor-zoom-in transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                            >
                               <Image
                                 src={image.src || "/placeholder.svg"}
                                 alt={image.alt}
                                 fill
                                 className="object-contain"
                               />
-                            </div>
+                            </button>
                             <p className="mt-3 text-center text-sm font-medium text-muted-foreground uppercase tracking-wider">
                               Before &amp; After
                             </p>
@@ -188,6 +224,40 @@ export function XrayResults() {
           </div>
         </div>
       </div>
+
+      {zoomedImage && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={zoomedImage.alt}
+          onClick={() => setZoomedImage(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 p-4 backdrop-blur-sm animate-in fade-in duration-200 sm:p-8"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomedImage(null)}
+            aria-label="Close enlarged image"
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-card text-foreground shadow-lg transition-colors hover:bg-muted sm:right-6 sm:top-6"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setZoomedImage(null)}
+            aria-label="Close enlarged image"
+            className="relative h-full w-full max-w-5xl cursor-zoom-out"
+          >
+            <Image
+              src={zoomedImage.src || "/placeholder.svg"}
+              alt={zoomedImage.alt}
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          </button>
+        </div>
+      )}
     </section>
   )
 }
