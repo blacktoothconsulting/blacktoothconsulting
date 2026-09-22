@@ -187,7 +187,7 @@ export function NewPatients() {
                     />
                     {path.extra}
                   </p>
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto pt-4 lg:hidden">
                     <Link
                       href={path.href}
                       className="inline-flex text-sm font-medium text-primary underline underline-offset-4"
