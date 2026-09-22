@@ -16,6 +16,7 @@ type PageHeroProps = {
    * different structure instead of every page repeating an identical template.
    */
   imagePosition?: "left" | "right"
+  imageClassName?: string
 }
 
 export function PageHero({
@@ -25,6 +26,7 @@ export function PageHero({
   image,
   children,
   imagePosition = "right",
+  imageClassName = "",
 }: PageHeroProps) {
   const isLeft = imagePosition === "left"
 
@@ -53,7 +55,7 @@ export function PageHero({
             isLeft ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority className="object-cover" />
+          <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority className={`object-cover ${imageClassName}`} />
         </div>
       </div>
     </section>

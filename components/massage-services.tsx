@@ -88,7 +88,7 @@ export function MassageServices() {
         <Reveal className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div className="relative aspect-[16/7] overflow-hidden rounded-2xl bg-muted shadow-sm lg:col-span-2">
             <Image
-              src="/images/massage-room.png"
+              src="/images/massage-1.jpeg"
               alt="Massage treatment room at the Wyoming Clinic of Integrated Health"
               fill
               className="object-cover"

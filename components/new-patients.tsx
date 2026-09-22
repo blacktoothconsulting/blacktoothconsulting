@@ -51,7 +51,7 @@ const sharedSteps = [
 
 const providerPaths = [
   {
-    label: "Chiropractic",
+    label: "Chiropractic Care",
     provider: "with Collin Redinger, D.C.",
     icon: Activity,
     detail:
@@ -61,6 +61,8 @@ const providerPaths = [
     href: "/chiropractic",
     cta: "Chiropractic Care",
     wide: false,
+    scheduleHref: "/chiropractic#request",
+    scheduleLabel: "Request Chiropractic Visit",
   },
   {
     label: "Medical Care",
@@ -74,6 +76,8 @@ const providerPaths = [
     href: "/medical-care",
     cta: "Medical Care",
     wide: false,
+    scheduleHref: "/medical-care#schedule",
+    scheduleLabel: "Schedule Medical Visit",
   },
   {
     label: "Massage Therapy",
@@ -87,6 +91,8 @@ const providerPaths = [
     href: "/massage",
     cta: "Massage Therapy",
     wide: true,
+    scheduleHref: "/massage#request",
+    scheduleLabel: "Request Massage Session",
   },
 ]
 
@@ -96,6 +102,15 @@ export function NewPatients() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal direction="left">
+            <div className="aspect-[4/3] relative mb-8 rounded-2xl overflow-hidden shadow-xl lg:hidden">
+              <Image
+                src="/images/waiting-area-2-new.jpeg"
+                alt="Front desk at the Wyoming Clinic of Integrated Health"
+                fill
+                className="object-cover"
+              />
+            </div>
+
             <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
               New Patients
             </p>
@@ -124,32 +139,12 @@ export function NewPatients() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col gap-3 sm:grid sm:grid-cols-2">
-              <Button size="lg" className="w-full" asChild>
-                <Link href="/medical-care#schedule">Schedule Medical Visit</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:border-transparent sm:bg-primary sm:text-primary-foreground sm:shadow-none sm:hover:bg-primary/90 sm:dark:bg-primary sm:dark:hover:bg-primary/90"
-                asChild
-              >
-                <Link href="/chiropractic#request">Request Chiropractic Visit</Link>
-              </Button>
-              <Button
-                size="lg"
-                className="w-full sm:col-span-2 sm:border sm:bg-background sm:text-foreground sm:shadow-xs sm:hover:bg-accent sm:hover:text-accent-foreground sm:dark:bg-input/30 sm:dark:border-input sm:dark:hover:bg-input/50"
-                asChild
-              >
-                <Link href="/massage#request">Request Massage Session</Link>
-              </Button>
-            </div>
           </Reveal>
 
           <Reveal direction="right" delay={100} className="space-y-8">
-            <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="hidden aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl lg:block">
               <Image
-                src="/images/front-desk.avif"
+                src="/images/waiting-area-2-new.jpeg"
                 alt="Front desk at the Wyoming Clinic of Integrated Health"
                 fill
                 className="object-cover"
@@ -194,6 +189,9 @@ export function NewPatients() {
                     >
                       {path.cta}
                     </Link>
+                    <Button size="sm" className="mt-4 w-full" asChild>
+                      <Link href={path.scheduleHref}>{path.scheduleLabel}</Link>
+                    </Button>
                   </Reveal>
                 ))}
               </div>

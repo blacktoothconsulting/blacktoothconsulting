@@ -25,10 +25,11 @@ export default function MassagePage() {
           title="Massage Therapy in Sheridan"
           description="Licensed massage therapists, in the same building as your chiropractor. Call to book a session, and tell us what is bothering you when you do."
           image={{
-            src: "/images/massage-room.png",
+            src: "/images/massage-2.jpeg",
             alt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
           }}
           imagePosition="left"
+          imageClassName="brightness-125 contrast-105"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
