@@ -12,38 +12,38 @@ import { OpeningHours } from "@/components/opening-hours"
 // photo. Nudging the focal point up tightens that headroom to match.
 const GORDON_POSITION = "object-[50%_20%]"
 
-// Desktop carousel: the old front-entry/fireplace shot and the first two
-// x-ray photos are dropped in favor of the newer waiting-area/entryway shots.
+// Desktop carousel: front exterior, then the fireplace, then Gordon and
+// Collin's portraits, followed by the remaining clinic shots. The trailing
+// waiting-area-2 shot is dropped as a duplicate of waiting-area-1.
 const desktopImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
   {
     src: "/images/gordon.png",
     alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     position: GORDON_POSITION,
   },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
   { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/waiting-area-2.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
 
-// Mobile carousel: the old front-entry/fireplace shot and the first x-ray
-// photo are dropped, keeping one more x-ray image than the desktop version.
+// Mobile carousel: same lead-in order as desktop (front exterior, fireplace,
+// Gordon, Collin), then the remaining clinic shots. The trailing entryway-2
+// and waiting-area-2 shots are dropped as duplicates of entryway-1 and
+// waiting-area-1.
 const mobileImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
   {
     src: "/images/gordon.png",
     alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
     position: GORDON_POSITION,
   },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
   { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/entryway-2.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/waiting-area-2.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
 
 type BannerImage = { src: string; alt: string; position?: string }
