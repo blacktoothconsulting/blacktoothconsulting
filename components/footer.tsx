@@ -123,11 +123,11 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="mailto:info@wyochiro.com" 
+                  href="mailto:frontdesk@thewyomingclinic.com" 
                   className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  info@wyochiro.com
+                  frontdesk@thewyomingclinic.com
                 </a>
               </li>
               <li>

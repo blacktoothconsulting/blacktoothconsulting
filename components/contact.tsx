@@ -110,7 +110,7 @@ export function Contact() {
                   </div>
                 </a>
                 <a
-                  href="mailto:info@wyochiro.com"
+                  href="mailto:frontdesk@thewyomingclinic.com"
                   className="flex items-center gap-4 text-primary-foreground/90 hover:text-primary-foreground transition-colors"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-foreground/10">
@@ -118,7 +118,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-primary-foreground/80">info@wyochiro.com</p>
+                    <p className="text-primary-foreground/80">frontdesk@thewyomingclinic.com</p>
                   </div>
                 </a>
                 <div className="flex items-start gap-4 text-primary-foreground/90">

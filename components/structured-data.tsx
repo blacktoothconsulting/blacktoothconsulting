@@ -2,7 +2,7 @@
  * LocalBusiness (MedicalClinic) structured data for Google Search & Maps.
  *
  * TODO — confirm before/after launch:
- *   1. SITE_URL must match the live domain exactly (inferred from info@wyochiro.com).
+ *   1. SITE_URL must match the live domain exactly (inferred from frontdesk@thewyomingclinic.com).
  *   2. POSTAL_CODE is Sheridan's main ZIP — confirm it matches the Coffeen Ave suite.
  *   3. OPENING_HOURS reflects overall clinic availability. Chiropractic/massage
  *      run Mon/Wed/Thu 8am-6pm, Tue 8am-5pm, Fri 8am-12pm; medical runs
@@ -19,7 +19,7 @@ const CITY = "Sheridan"
 const REGION = "WY"
 const POSTAL_CODE = "82801"
 const PHONE = "+1-307-655-8775"
-const EMAIL = "info@wyochiro.com"
+const EMAIL = "frontdesk@thewyomingclinic.com"
 const MAP_URL = "https://maps.google.com/?q=528+Coffeen+Ave,+Sheridan,+WY"
 
 /**

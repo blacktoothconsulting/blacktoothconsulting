@@ -187,15 +187,17 @@ export function NewPatients() {
                     />
                     {path.extra}
                   </p>
-                  <Link
-                    href={path.href}
-                    className="mt-4 inline-flex text-sm font-medium text-primary underline underline-offset-4"
-                  >
-                    {path.cta}
-                  </Link>
-                  <Button size="sm" className="mt-4 w-full" asChild>
-                    <Link href={path.scheduleHref}>{path.scheduleLabel}</Link>
-                  </Button>
+                  <div className="mt-auto pt-4">
+                    <Link
+                      href={path.href}
+                      className="inline-flex text-sm font-medium text-primary underline underline-offset-4"
+                    >
+                      {path.cta}
+                    </Link>
+                    <Button size="sm" className="mt-4 w-full" asChild>
+                      <Link href={path.scheduleHref}>{path.scheduleLabel}</Link>
+                    </Button>
+                  </div>
                 </Reveal>
               ))}
             </div>
