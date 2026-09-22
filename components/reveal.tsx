@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils"
 type RevealDirection = "up" | "left" | "right" | "none"
 
 const directionOffsets: Record<RevealDirection, string> = {
-  up: "translate-y-6",
-  left: "-translate-x-6",
-  right: "translate-x-6",
+  up: "sm:translate-y-6",
+  left: "sm:-translate-x-6",
+  right: "sm:translate-x-6",
   none: "",
 }
 
@@ -51,8 +51,9 @@ export function Reveal({ children, className, delay = 0, direction = "up" }: Rev
     <div
       ref={ref}
       className={cn(
-        "transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
-        visible ? "opacity-100 translate-x-0 translate-y-0" : cn("opacity-0", directionOffsets[direction]),
+        "opacity-100 translate-x-0 translate-y-0",
+        "sm:transition-[opacity,transform] sm:duration-700 sm:ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+        visible ? "sm:opacity-100 sm:translate-x-0 sm:translate-y-0" : cn("sm:opacity-0", directionOffsets[direction]),
         className,
       )}
       style={visible && delay ? { transitionDelay: `${delay}ms` } : undefined}
