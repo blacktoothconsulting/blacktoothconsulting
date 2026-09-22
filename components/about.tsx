@@ -18,7 +18,7 @@ export function About() {
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/office.avif"
+                  src="/images/collins-office.jpeg"
                   alt="Reception and office at the Wyoming Clinic of Integrated Health"
                   fill
                   className="object-cover"

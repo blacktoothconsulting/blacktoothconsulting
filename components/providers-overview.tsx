@@ -42,7 +42,7 @@ const careLines = [
     eyebrow: "Massage Therapy",
     provider: "Licensed Massage Therapists",
     icon: Hand,
-    image: "/images/massage-room.png",
+    image: "/images/massage-3.jpeg",
     imageAlt: "Massage treatment room at the Wyoming Clinic of Integrated Health",
     description:
       "Massage for the muscles around your spine. Book it on its own, or add it to your chiropractic visits.",
