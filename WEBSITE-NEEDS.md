@@ -87,8 +87,8 @@ call for pricing.
 
 ## FOR BOTH — BUSINESS DETAILS
 
-- CONFIRM THE WEBSITE DOMAIN. We used www.wyochiro.com, inferred from the
-  info@wyochiro.com email address. This is now embedded in the Google and Maps
+- WEBSITE DOMAIN CONFIRMED. We use www.thewyomingclinic.com, inferred from the
+  frontdesk@thewyomingclinic.com email address. This is now embedded in the Google and Maps
   listing data. A wrong domain means a wrong search listing.
 - Confirm the ZIP code. We assumed 82801.
 - Suite or unit number for 528 Coffeen Ave, if there is one.
@@ -126,7 +126,7 @@ Noting these so nobody chases them:
 - Collin's bio no longer displays "[Placeholder bio]" on the live site.
 - The contact form no longer loses messages. It previously showed a fake
   "Thank you" message and discarded the submission. It now opens the visitor's
-  email app with the message pre-filled to info@wyochiro.com, with the phone
+  email app with the message pre-filled to frontdesk@thewyomingclinic.com, with the phone
   number shown for anything urgent.
 - Clinic hours are now included in the Google and Maps listing data.
 - Real clinic photos are already on the site (front entry, front desk, office,
