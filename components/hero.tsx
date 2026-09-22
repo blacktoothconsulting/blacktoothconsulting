@@ -7,29 +7,62 @@ import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 
-const bannerImages = [
+// Gordon's portrait is much narrower than the carousel frame, so the default
+// centered crop leaves uneven headroom above his head compared to Collin's
+// photo. Nudging the focal point up tightens that headroom to match.
+const GORDON_POSITION = "object-[50%_20%]"
+
+// Desktop carousel: the old front-entry/fireplace shot and the first two
+// x-ray photos are dropped in favor of the newer waiting-area/entryway shots.
+const desktopImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/front-entry.avif", alt: "Front entry of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  {
+    src: "/images/gordon.png",
+    alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
+    position: GORDON_POSITION,
+  },
+  { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-2.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/waiting-area-2.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
+]
+
+// Mobile carousel: the old front-entry/fireplace shot and the first x-ray
+// photo are dropped, keeping one more x-ray image than the desktop version.
+const mobileImages = [
+  { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
+  {
+    src: "/images/gordon.png",
+    alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
+    position: GORDON_POSITION,
+  },
+  { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-2.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/waiting-area-2.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
 
-export function Hero() {
+type BannerImage = { src: string; alt: string; position?: string }
+
+// The mobile/tablet overlay hero and the desktop side-by-side hero show
+// different image sets, so each carousel gets its own rotation state instead
+// of sharing one `current` index.
+function useCarousel(images: BannerImage[]) {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % bannerImages.length)
+      setCurrent((prev) => (prev + 1) % images.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [images.length])
 
-  // Shared between the mobile/tablet overlay hero and the desktop side-by-side
-  // hero below, so both carousels stay in sync with the same `current` state.
-  const carouselSlides = bannerImages.map((image, index) => (
+  const slides = images.map((image, index) => (
     <div
       key={image.src}
       className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
@@ -40,7 +73,7 @@ export function Hero() {
         src={image.src || "/placeholder.svg"}
         alt={image.alt}
         fill
-        className={`object-cover ${index === current ? "animate-hero-zoom" : ""}`}
+        className={`object-cover ${image.position ?? ""} ${index === current ? "animate-hero-zoom" : ""}`}
         priority={index === 0}
       />
     </div>
@@ -50,9 +83,9 @@ export function Hero() {
   // image itself. Anchored near the top (rather than the bottom of the full
   // hero section, which can exceed the viewport height) so they stay visible
   // on load without requiring a scroll.
-  const carouselIndicators = (
+  const indicators = (
     <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
-      {bannerImages.map((image, index) => (
+      {images.map((image, index) => (
         <button
           key={image.src}
           type="button"
@@ -65,6 +98,13 @@ export function Hero() {
       ))}
     </div>
   )
+
+  return { slides, indicators }
+}
+
+export function Hero() {
+  const mobileCarousel = useCarousel(mobileImages)
+  const desktopCarousel = useCarousel(desktopImages)
 
   const heroCopy = (
     <>
@@ -126,9 +166,9 @@ export function Hero() {
           height is used there.
         */}
         <div className="relative aspect-[4/5] w-full sm:absolute sm:inset-x-0 sm:top-1/2 sm:z-0 sm:mx-auto sm:aspect-[4/3] sm:h-auto sm:max-w-xl sm:-translate-y-1/2">
-          {carouselSlides}
+          {mobileCarousel.slides}
           <div className="absolute inset-0 bg-foreground/60" />
-          {carouselIndicators}
+          {mobileCarousel.indicators}
         </div>
 
         <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px]">
@@ -146,8 +186,8 @@ export function Hero() {
       <div className="relative z-10 mx-auto hidden max-w-7xl grid-cols-[1.1fr_0.9fr] items-center gap-12 px-8 py-20 lg:grid lg:min-h-[560px]">
         <div className="max-w-2xl">{heroCopy}</div>
         <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-xl">
-          {carouselSlides}
-          {carouselIndicators}
+          {desktopCarousel.slides}
+          {desktopCarousel.indicators}
         </div>
       </div>
 
