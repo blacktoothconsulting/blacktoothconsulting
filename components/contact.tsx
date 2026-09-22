@@ -129,7 +129,7 @@ export function Contact() {
                     <p className="font-medium mb-3">Hours</p>
                     <OpeningHours tone="contact" showHeading={false} />
                     <div className="mt-4 flex justify-center">
-                      <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild>
+                      <Button size="lg" variant="secondary" className="w-auto" asChild>
                         <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
                           <Star className="mr-2 h-4 w-4" />
                           Leave a Review
@@ -143,7 +143,7 @@ export function Contact() {
           </Reveal>
 
           {/* Clinic location */}
-          <Reveal direction="right" delay={100}>
+          <Reveal direction="right" delay={100} className="hidden lg:block">
             <Card className="w-full overflow-hidden rounded-[17px] border-0 pt-[73px] pb-[69px] shadow-xl lg:w-[380.6px]">
               <CardContent className="p-0">
                 <div className="sr-only">
