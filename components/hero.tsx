@@ -1,123 +1,209 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, MapPin, Clock } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 
-const bannerImages = [
+// Gordon's portrait is much narrower than the carousel frame, so the default
+// centered crop leaves uneven headroom above his head compared to Collin's
+// photo. Nudging the focal point up tightens that headroom to match.
+const GORDON_POSITION = "object-[50%_20%]"
+
+// Desktop carousel: front exterior, then the fireplace, then Gordon and
+// Collin's portraits, followed by the remaining clinic shots. The trailing
+// waiting-area-2 shot is dropped as a duplicate of waiting-area-1.
+const desktopImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/front-entry.avif", alt: "Front entry of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray1.avif", alt: "Digital X-ray imaging at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  {
+    src: "/images/gordon.png",
+    alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
+    position: GORDON_POSITION,
+  },
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/gordon.png", alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/collin2.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
 
-export function Hero() {
+// Mobile carousel: same lead-in order as desktop (front exterior, fireplace,
+// Gordon, Collin), then the remaining clinic shots. The trailing entryway-2
+// and waiting-area-2 shots are dropped as duplicates of entryway-1 and
+// waiting-area-1.
+const mobileImages = [
+  { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
+  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
+  {
+    src: "/images/gordon.png",
+    alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
+    position: GORDON_POSITION,
+  },
+  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
+  { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
+]
+
+type BannerImage = { src: string; alt: string; position?: string }
+
+// The mobile/tablet overlay hero and the desktop side-by-side hero show
+// different image sets, so each carousel gets its own rotation state instead
+// of sharing one `current` index.
+function useCarousel(images: BannerImage[]) {
   const [current, setCurrent] = useState(0)
+  // One "activation count" per slide, bumped only when that slide becomes
+  // current again. It's used as part of the <Image> key below so the zoom
+  // animation remounts (and restarts from scale(1)) only for the slide that
+  // just became active, while every other slide keeps whatever scale it last
+  // reached. Without this, toggling the animate-hero-zoom class off for the
+  // outgoing slide snapped its scale back to 1 mid-zoom instead of holding
+  // its current size through the fade-out.
+  const [activations, setActivations] = useState<number[]>(() => images.map(() => 0))
+  const currentRef = useRef(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % bannerImages.length)
+      const next = (currentRef.current + 1) % images.length
+      currentRef.current = next
+      setCurrent(next)
+      setActivations((prev) => {
+        const updated = [...prev]
+        updated[next] += 1
+        return updated
+      })
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [images.length])
+
+  const slides = images.map((image, index) => (
+    <div
+      key={image.src}
+      className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
+        index === current ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Image
+        key={activations[index]}
+        src={image.src || "/placeholder.svg"}
+        alt={image.alt}
+        fill
+        className={`object-cover animate-hero-zoom ${image.position ?? ""}`}
+        priority={index === 0}
+      />
+    </div>
+  ))
+
+  // Carousel Indicators — a vertical stack pinned near the top-right of the
+  // image itself. Anchored near the top (rather than the bottom of the full
+  // hero section, which can exceed the viewport height) so they stay visible
+  // on load without requiring a scroll.
+  const indicators = (
+    <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
+      {images.map((image, index) => (
+        <button
+          key={image.src}
+          type="button"
+          onClick={() => setCurrent(index)}
+          className={`w-1 rounded-full transition-all duration-300 ${
+            index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
+          }`}
+          aria-label={`Show image ${index + 1}`}
+        />
+      ))}
+    </div>
+  )
+
+  return { slides, indicators }
+}
+
+export function Hero() {
+  const mobileCarousel = useCarousel(mobileImages)
+  const desktopCarousel = useCarousel(desktopImages)
+
+  const heroCopy = (
+    <>
+      <p
+        className="animate-fade-up text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4"
+        style={{ animationDelay: "0ms" }}
+      >
+        Sheridan, Wyoming
+      </p>
+      <h1
+        className="animate-fade-up font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance"
+        style={{ animationDelay: "90ms" }}
+      >
+        Chiropractic, Massage &amp; Medical Care for the Whole Family
+      </h1>
+      <p
+        className="animate-fade-up mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl"
+        style={{ animationDelay: "180ms" }}
+      >
+        Our mission is to create a community that takes an active role in their own
+        health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
+        always have time for you: to listen, to explain, and to get you answers.
+      </p>
+      <div className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "270ms" }}>
+        <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
+          <Link href="#contact">Request Appointment</Link>
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          asChild
+          className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+        >
+          <a href="tel:307-655-8775">
+            <Phone className="mr-2 h-4 w-4" />
+            Call 307.655.8775
+          </a>
+        </Button>
+      </div>
+    </>
+  )
 
   return (
-    <section className="relative overflow-hidden bg-foreground sm:min-h-[500px] lg:min-h-[560px]">
+    <section className="relative overflow-hidden bg-foreground">
       {/*
-        Mobile: image sits in a natural-aspect band at the top so the landscape
-        photo isn't cropped into an extreme zoom.
-        Desktop (sm+): image is absolutely positioned and letterboxed within a
-        centered max-w-4xl band, with the content overlaid on top.
+        Mobile & tablet (below lg): the original overlay hero, unchanged —
+        the carousel is the section's background with the copy layered on
+        top of it. Hidden at lg and up, where the side-by-side layout below
+        takes over.
       */}
-      <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:z-0 sm:mx-auto sm:aspect-auto sm:max-w-4xl">
-        {bannerImages.map((image, index) => (
-          <div
-            key={image.src}
-            className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={image.src || "/placeholder.svg"}
-              alt={image.alt}
-              fill
-              className={`object-cover ${index === current ? "animate-hero-zoom" : ""}`}
-              priority={index === 0}
-            />
-          </div>
-        ))}
-        <div className="absolute inset-0 bg-foreground/60" />
-
+      <div className="relative sm:min-h-[500px] lg:hidden">
         {/*
-          Carousel Indicators — a vertical stack pinned near the top-right of the
-          image itself. Anchored near the top (rather than the bottom of the full
-          hero section, which can exceed the viewport height) so they stay visible
-          on load without requiring a scroll.
+          Most banner photos are close to a 4:3 ratio. At the sm breakpoint
+          the band is given that fixed aspect ratio and vertically centered
+          within this wrapper (rather than stretched to fill its full
+          height), so object-cover only trims a small margin instead of
+          cropping deep into faces to fill an oversized frame. Below sm it
+          keeps a portrait 4:5 ratio, which is closer to how the wrapper's
+          height is used there.
         */}
-        <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
-          {bannerImages.map((image, index) => (
-            <button
-              key={image.src}
-              type="button"
-              onClick={() => setCurrent(index)}
-              className={`w-1 rounded-full transition-all duration-300 ${
-                index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
-              }`}
-              aria-label={`Show image ${index + 1}`}
-            />
-          ))}
+        <div className="relative aspect-[4/5] w-full sm:absolute sm:inset-x-0 sm:top-1/2 sm:z-0 sm:mx-auto sm:aspect-[4/3] sm:h-auto sm:max-w-xl sm:-translate-y-1/2">
+          {mobileCarousel.slides}
+          <div className="absolute inset-0 bg-foreground/60" />
+          {mobileCarousel.indicators}
+        </div>
+
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px]">
+          <div className="max-w-2xl">{heroCopy}</div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 py-10 sm:h-full sm:min-h-[500px] lg:min-h-[560px] lg:px-8">
-        <div className="max-w-2xl">
-          <p
-            className="animate-fade-up text-primary-foreground/90 text-sm font-medium uppercase tracking-wider mb-4"
-            style={{ animationDelay: "0ms" }}
-          >
-            Sheridan, Wyoming
-          </p>
-          <h1
-            className="animate-fade-up font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance"
-            style={{ animationDelay: "90ms" }}
-          >
-            Chiropractic, Massage &amp; Medical Care for the Whole Family
-          </h1>
-          <p
-            className="animate-fade-up mt-6 text-lg leading-relaxed text-primary-foreground/90 max-w-xl"
-            style={{ animationDelay: "180ms" }}
-          >
-            Our mission is to create a community that takes an active role in their own
-            health! From trusted Gonstead chiropractic to general medical care, we&apos;ll
-            always have time for you: to listen, to explain, and to get you answers.
-          </p>
-          <div
-            className="animate-fade-up mt-10 flex flex-col sm:flex-row gap-4"
-            style={{ animationDelay: "270ms" }}
-          >
-            <Button size="lg" asChild className="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
-              <Link href="#contact">Request Appointment</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <a href="tel:307-655-8775">
-                <Phone className="mr-2 h-4 w-4" />
-                Call 307.655.8775
-              </a>
-            </Button>
-          </div>
+      {/*
+        Desktop (lg and up): the carousel is its own boxed panel beside the
+        copy, matching the image-next-to-text layout used on the service
+        pages (see PageHero), instead of sitting behind the text as a
+        full-bleed background.
+      */}
+      <div className="absolute inset-0 z-0 hidden bg-gradient-to-br from-primary/25 via-foreground to-foreground lg:block" />
+      <div className="relative z-10 mx-auto hidden max-w-7xl grid-cols-[1.1fr_0.9fr] items-center gap-12 px-8 py-20 lg:grid lg:min-h-[560px]">
+        <div className="max-w-2xl">{heroCopy}</div>
+        <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-xl">
+          {desktopCarousel.slides}
+          {desktopCarousel.indicators}
         </div>
       </div>
 
