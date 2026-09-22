@@ -26,9 +26,10 @@ export default function ChiropracticPage() {
           title="Gonstead Chiropractic for the Whole Family"
           description="Specific, hands-on chiropractic care focused on finding and correcting the root cause of your discomfort, so you can move well, feel better, and live the life you deserve."
           image={{
-            src: "/images/hero-chiro.jpg",
+            src: "/images/collins-office.jpeg",
             alt: "Chiropractic treatment room with a Gonstead adjustment table at the Wyoming Clinic of Integrated Health",
           }}
+          imagePosition="right"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
