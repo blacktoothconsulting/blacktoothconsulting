@@ -29,7 +29,7 @@ export default function ChiropracticPage() {
             src: "/images/collins-office.jpeg",
             alt: "Chiropractic treatment room with a Gonstead adjustment table at the Wyoming Clinic of Integrated Health",
           }}
-          imagePosition="right"
+          imagePosition="left"
         >
           <Button size="lg" asChild>
             <a href="#request">Request Appointment</a>
