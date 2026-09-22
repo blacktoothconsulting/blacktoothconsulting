@@ -87,7 +87,7 @@ call for pricing.
 
 ## FOR BOTH — BUSINESS DETAILS
 
-- CONFIRM THE WEBSITE DOMAIN. We used www.wyochiro.com, inferred from the
+- WEBSITE DOMAIN CONFIRMED. We use www.thewyomingclinic.com, inferred from the
   frontdesk@thewyomingclinic.com email address. This is now embedded in the Google and Maps
   listing data. A wrong domain means a wrong search listing.
 - Confirm the ZIP code. We assumed 82801.

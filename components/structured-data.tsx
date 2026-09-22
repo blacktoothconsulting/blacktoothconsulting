@@ -12,7 +12,7 @@
  *      Facebook, etc.) once those are known — both improve local ranking.
  */
 
-const SITE_URL = "https://www.wyochiro.com"
+const SITE_URL = "https://www.thewyomingclinic.com"
 
 const STREET_ADDRESS = "528 Coffeen Ave"
 const CITY = "Sheridan"
