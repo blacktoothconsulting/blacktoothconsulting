@@ -31,12 +31,14 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-foreground sm:min-h-[500px] lg:min-h-[560px]">
       {/*
-        Mobile: image sits in a natural-aspect band at the top so the landscape
-        photo isn't cropped into an extreme zoom.
+        Most banner photos are portrait (taller than wide). The band's aspect
+        ratio is kept close to that natural portrait ratio on both mobile and
+        desktop so object-cover only trims a small margin instead of cropping
+        away nearly half of each photo to fill a wide landscape frame.
         Desktop (sm+): image is absolutely positioned and letterboxed within a
-        centered max-w-4xl band, with the content overlaid on top.
+        centered max-w-xl band, with the content overlaid on top.
       */}
-      <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:z-0 sm:mx-auto sm:aspect-auto sm:max-w-4xl">
+      <div className="relative aspect-[4/5] w-full sm:absolute sm:inset-0 sm:z-0 sm:mx-auto sm:aspect-auto sm:max-w-xl">
         {bannerImages.map((image, index) => (
           <div
             key={image.src}
