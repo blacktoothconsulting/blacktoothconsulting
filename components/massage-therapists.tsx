@@ -3,7 +3,7 @@ import { User } from "lucide-react"
 
 const therapists = [
   {
-    name: "Kerry Baros",
+    name: "Kerry Smith",
     title: "Massage Therapist",
     image: null as string | null,
     bio: "Biography coming soon.",

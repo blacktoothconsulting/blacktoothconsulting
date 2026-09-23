@@ -24,11 +24,11 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Massage Therapists",
-    title: "Kerry Baros, Susan Kopman, and Nina Charlson",
-    bio: "Kerry Baros, Susan Kopman, and Nina Charlson offer therapeutic massage to help ease pain, reduce tension, and support recovery alongside our chiropractic and medical care.",
+    title: "Kerry Smith, Susan Kopman, and Nina Charlson",
+    bio: "Kerry Smith, Susan Kopman, and Nina Charlson offer therapeutic massage to help ease pain, reduce tension, and support recovery alongside our chiropractic and medical care.",
     wide: true,
     groupMembers: [
-      { name: "Kerry Baros", title: "Massage Therapist" },
+      { name: "Kerry Smith", title: "Massage Therapist" },
       { name: "Susan Kopman", title: "Massage Therapist" },
       { name: "Nina Charlson", title: "Massage Therapist" },
     ],
