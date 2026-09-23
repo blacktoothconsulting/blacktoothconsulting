@@ -12,10 +12,11 @@ import { OpeningHours } from "@/components/opening-hours"
 // photo. Nudging the focal point up tightens that headroom to match.
 const GORDON_POSITION = "object-[50%_20%]"
 
-// Desktop carousel: front exterior, then the fireplace, then Gordon and
-// Collin's portraits, followed by the remaining clinic shots. The trailing
-// waiting-area-2 shot is dropped as a duplicate of waiting-area-1.
-const desktopImages = [
+// Both the mobile overlay hero and the desktop boxed hero draw from this one
+// image set. Sharing a single list (instead of two near-identical arrays)
+// keeps the network payload to one download per photo: the two <Image> trees
+// reference identical URLs, so the browser fetches each source only once.
+const heroImages = [
   { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
   { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
   {
@@ -24,24 +25,6 @@ const desktopImages = [
     position: GORDON_POSITION,
   },
   { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
-]
-
-// Mobile carousel: same lead-in order as desktop (front exterior, fireplace,
-// Gordon, Collin), then the remaining clinic shots. The trailing entryway-2
-// and waiting-area-2 shots are dropped as duplicates of entryway-1 and
-// waiting-area-1.
-const mobileImages = [
-  { src: "/images/front-door.avif", alt: "Front door of the Wyoming Clinic of Integrated Health" },
-  { src: "/images/entryway-1.jpg", alt: "Entryway and fireplace at the Wyoming Clinic of Integrated Health" },
-  {
-    src: "/images/gordon.png",
-    alt: "Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health",
-    position: GORDON_POSITION,
-  },
-  { src: "/images/collin1.avif", alt: "Chiropractic care at the Wyoming Clinic of Integrated Health" },
-  { src: "/images/xray2.avif", alt: "Digital X-ray equipment at the Wyoming Clinic of Integrated Health" },
   { src: "/images/xray3.avif", alt: "X-ray imaging room at the Wyoming Clinic of Integrated Health" },
   { src: "/images/waiting-area-1.jpg", alt: "Waiting area at the Wyoming Clinic of Integrated Health" },
 ]
@@ -100,17 +83,21 @@ function useCarousel(images: BannerImage[]) {
   // hero section, which can exceed the viewport height) so they stay visible
   // on load without requiring a scroll.
   const indicators = (
-    <div className="absolute right-3 top-3 flex flex-col gap-1.5 sm:right-4 sm:top-4">
+    <div className="absolute right-0 top-1 flex flex-col sm:top-2">
       {images.map((image, index) => (
         <button
           key={image.src}
           type="button"
           onClick={() => setCurrent(index)}
-          className={`w-1 rounded-full transition-all duration-300 ${
-            index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
-          }`}
+          className="flex h-11 w-11 items-center justify-end pr-3 sm:pr-4"
           aria-label={`Show image ${index + 1}`}
-        />
+        >
+          <span
+            className={`w-1 rounded-full transition-all duration-300 ${
+              index === current ? "h-5 bg-primary-foreground/70" : "h-1.5 bg-primary-foreground/30"
+            }`}
+          />
+        </button>
       ))}
     </div>
   )
@@ -119,8 +106,8 @@ function useCarousel(images: BannerImage[]) {
 }
 
 export function Hero() {
-  const mobileCarousel = useCarousel(mobileImages)
-  const desktopCarousel = useCarousel(desktopImages)
+  const mobileCarousel = useCarousel(heroImages)
+  const desktopCarousel = useCarousel(heroImages)
 
   const heroCopy = (
     <>

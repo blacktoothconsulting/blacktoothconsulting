@@ -20,7 +20,7 @@ export default function ChiropracticPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1} className="outline-none">
         <PageHero
           eyebrow="Chiropractic Care"
           title="Gonstead Chiropractic for the Whole Family"

@@ -19,7 +19,7 @@ export default function MassagePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1} className="outline-none">
         <PageHero
           eyebrow="Therapeutic Massage"
           title="Massage Therapy in Sheridan"

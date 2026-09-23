@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { StructuredData } from '@/components/structured-data'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -31,12 +32,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <StructuredData />
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-        <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <a
+            href="#main-content"
+            className="sr-only rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:shadow-lg"
+          >
+            Skip to content
+          </a>
+          <StructuredData />
+          {children}
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   )
