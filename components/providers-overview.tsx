@@ -75,12 +75,12 @@ export function ProvidersOverview() {
         </Reveal>
 
         {/* Two care-line cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
           {careLines.map((line, index) => (
-            <Reveal key={line.href} delay={index * 100}>
+            <Reveal key={line.href} delay={index * 100} className="h-full">
             <Link
               href={line.href}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <Image
