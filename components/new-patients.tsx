@@ -107,8 +107,9 @@ export function NewPatients() {
                 <Image
                   src="/images/waiting-area-2-new.jpeg"
                   alt="Front desk at the Wyoming Clinic of Integrated Health"
-                  fill
-                  className="object-cover"
+  fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
                 />
               </div>
 
@@ -146,8 +147,9 @@ export function NewPatients() {
                 <Image
                   src="/images/waiting-area-2-new.jpeg"
                   alt="Front desk at the Wyoming Clinic of Integrated Health"
-                  fill
-                  className="object-cover"
+  fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
                 />
               </div>
             </Reveal>

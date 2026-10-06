@@ -11,8 +11,9 @@ export function CollinProfile() {
               <Image
                 src="/images/collin-headshot.avif"
                 alt="Collin Redinger, D.C. at the Wyoming Clinic of Integrated Health"
-                fill
-                className="object-cover object-top"
+  fill
+          sizes="(min-width: 1024px) 45vw, 100vw"
+          className="object-cover object-top"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg hidden sm:block">

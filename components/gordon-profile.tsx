@@ -13,6 +13,7 @@ export function GordonProfile() {
                 src="/images/gordon.png"
                 alt="Gordon Hendrickson, PA-C at the Wyoming Clinic of Integrated Health"
                 fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover object-top"
               />
             </div>

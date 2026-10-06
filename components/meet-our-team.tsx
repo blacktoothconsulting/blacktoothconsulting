@@ -126,7 +126,7 @@ function WideMemberCard({ member }: { member: TeamMember }) {
               <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm lg:flex-row">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted lg:aspect-auto lg:w-80 lg:shrink-0">
                   {member.image ? (
-                    <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
+                    <Image src={member.image} alt={`${member.name}, ${member.title}`} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-top" />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-primary/5">
                       <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">
@@ -150,8 +150,9 @@ function WideMemberCard({ member }: { member: TeamMember }) {
                               <Image
                                 src={groupMember.image}
                                 alt={`${groupMember.name}, ${groupMember.title}`}
-                                fill
-                                className="object-cover object-top"
+  fill
+                  sizes="160px"
+                  className="object-cover object-top"
                               />
                             ) : (
                               <span className="flex h-full w-full items-center justify-center font-serif text-sm font-semibold text-primary">
@@ -185,7 +186,7 @@ function StandardMemberCard({ member }: { member: TeamMember }) {
                 ) : (
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     {member.image ? (
-                      <Image src={member.image} alt={`${member.name}, ${member.title}`} fill className="object-cover object-top" />
+                      <Image src={member.image} alt={`${member.name}, ${member.title}`} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-top" />
                     ) : (
                       <div className="flex h-full items-center justify-center bg-primary/5">
                         <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-semibold text-primary">

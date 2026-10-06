@@ -87,6 +87,7 @@ export function ProvidersOverview() {
                   src={line.image || "/placeholder.svg"}
                   alt={line.imageAlt}
                   fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />

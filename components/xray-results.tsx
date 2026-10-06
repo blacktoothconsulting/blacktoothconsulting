@@ -129,6 +129,7 @@ export function XrayResults() {
                               src={c.before.src || "/placeholder.svg"}
                               alt={c.before.alt}
                               fill
+                              sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
                               className="object-contain"
                             />
                           </button>
@@ -147,6 +148,7 @@ export function XrayResults() {
                               src={c.after.src || "/placeholder.svg"}
                               alt={c.after.alt}
                               fill
+                              sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
                               className="object-contain"
                             />
                           </button>
@@ -169,6 +171,7 @@ export function XrayResults() {
                                 src={image.src || "/placeholder.svg"}
                                 alt={image.alt}
                                 fill
+                                sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
                                 className="object-contain"
                               />
                             </button>

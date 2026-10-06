@@ -26,9 +26,9 @@ export function TeamMemberCarousel({ images, imagePositions, name, title }: Team
         src={images[index] || "/placeholder.svg"}
         alt={`${name}, ${title} — photo ${index + 1} of ${total}`}
         fill
+        sizes="(min-width: 1024px) 40vw, 100vw"
         className="object-cover transition-opacity duration-500"
         style={{ objectPosition: imagePositions?.[index] ?? "center top" }}
-        priority={index === 0}
       />
 
       {total > 1 ? (
