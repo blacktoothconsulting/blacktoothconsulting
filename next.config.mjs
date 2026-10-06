@@ -10,6 +10,15 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
   },
+  async redirects() {
+    return [
+      {
+        source: '/contact',
+        destination: '/#contact',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
