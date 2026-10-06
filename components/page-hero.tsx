@@ -55,7 +55,7 @@ export function PageHero({
             isLeft ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority className={`object-cover ${imageClassName}`} />
+          <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className={`object-cover ${imageClassName}`} />
         </div>
       </div>
     </section>

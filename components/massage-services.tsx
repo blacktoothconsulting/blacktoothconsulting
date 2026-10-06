@@ -67,6 +67,7 @@ export function MassageServices() {
               src="/images/massage-hands-shoulder.png"
               alt="Massage therapist performing deep tissue work on a client's shoulder"
               fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover"
             />
           </Reveal>
@@ -91,6 +92,7 @@ export function MassageServices() {
               src="/images/massage-1.jpeg"
               alt="Massage treatment room at the Wyoming Clinic of Integrated Health"
               fill
+              sizes="(min-width: 1024px) 66vw, 100vw"
               className="object-cover"
             />
           </div>

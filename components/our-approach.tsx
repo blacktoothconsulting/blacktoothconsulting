@@ -13,9 +13,8 @@ export function OurApproach() {
                 alt="Wyoming alpine landscape near Sheridan with granite peaks, evergreen forest, and golden meadows"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-                priority
-              />
+  className="object-cover"
+        />
             </div>
             <div className="flex flex-col justify-center gap-6 p-8 lg:p-12">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our Approach</p>

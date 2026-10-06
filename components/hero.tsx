@@ -48,6 +48,9 @@ const mobileImages = [
 
 type BannerImage = { src: string; alt: string; position?: string }
 
+// Shared by both carousels so the first slide produces one deduplicated preload.
+const HERO_SIZES = "(min-width: 1024px) 45vw, (min-width: 640px) 576px, 100vw"
+
 // The mobile/tablet overlay hero and the desktop side-by-side hero show
 // different image sets, so each carousel gets its own rotation state instead
 // of sharing one `current` index.
@@ -62,12 +65,37 @@ function useCarousel(images: BannerImage[]) {
   // its current size through the fade-out.
   const [activations, setActivations] = useState<number[]>(() => images.map(() => 0))
   const currentRef = useRef(0)
+  // Only the first slide is mounted up front. The next slide is mounted once
+  // the page has finished loading, and later slides are mounted as the
+  // rotation reaches them, so a phone never downloads the whole carousel
+  // while the LCP image is still in flight.
+  const [mounted, setMounted] = useState<number[]>([0])
+  const [started, setStarted] = useState(false)
 
   useEffect(() => {
+    if (document.readyState === "complete") {
+      setStarted(true)
+      return
+    }
+    const onLoad = () => setStarted(true)
+    window.addEventListener("load", onLoad, { once: true })
+    return () => window.removeEventListener("load", onLoad)
+  }, [])
+
+  const mount = (...indexes: number[]) =>
+    setMounted((prev) => {
+      const missing = indexes.filter((i) => !prev.includes(i))
+      return missing.length ? [...prev, ...missing] : prev
+    })
+
+  useEffect(() => {
+    if (!started) return
+    mount(1 % images.length)
     const interval = setInterval(() => {
       const next = (currentRef.current + 1) % images.length
       currentRef.current = next
       setCurrent(next)
+      mount(next, (next + 1) % images.length)
       setActivations((prev) => {
         const updated = [...prev]
         updated[next] += 1
@@ -75,25 +103,30 @@ function useCarousel(images: BannerImage[]) {
       })
     }, 5000)
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [started, images.length])
 
-  const slides = images.map((image, index) => (
-    <div
-      key={image.src}
-      className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
-        index === current ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      <Image
-        key={activations[index]}
-        src={image.src || "/placeholder.svg"}
-        alt={image.alt}
-        fill
-        className={`object-cover animate-hero-zoom ${image.position ?? ""}`}
-        priority={index === 0}
-      />
-    </div>
-  ))
+  const slides = images.map((image, index) =>
+    mounted.includes(index) ? (
+      <div
+        key={image.src}
+        className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ease-in-out ${
+          index === current ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Image
+          key={activations[index]}
+          src={image.src || "/placeholder.svg"}
+          alt={image.alt}
+          fill
+          sizes={HERO_SIZES}
+          className={`object-cover animate-hero-zoom ${image.position ?? ""}`}
+          priority={index === 0}
+          loading={index === 0 ? undefined : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
+        />
+      </div>
+    ) : null,
+  )
 
   // Carousel Indicators — a vertical stack pinned near the top-right of the
   // image itself. Anchored near the top (rather than the bottom of the full

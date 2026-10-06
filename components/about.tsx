@@ -21,6 +21,7 @@ export function About() {
                   src="/images/collins-office.jpeg"
                   alt="Reception and office at the Wyoming Clinic of Integrated Health"
                   fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -29,6 +30,7 @@ export function About() {
                   src="/images/medical-exam-room.jpg"
                   alt="Medical exam room at the Wyoming Clinic of Integrated Health"
                   fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover"
                 />
               </div>

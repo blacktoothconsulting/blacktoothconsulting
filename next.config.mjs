@@ -3,8 +3,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    inlineCss: true,
+  },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
   },
 }
 
