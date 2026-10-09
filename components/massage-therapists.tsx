@@ -3,8 +3,8 @@ import { User } from "lucide-react"
 
 const therapists = [
   {
-    name: "Kerry Baros",
-    title: "Massage Therapist",
+    name: "Kerry Smith",
+    title: "Bodywork Therapist",
     image: null as string | null,
     bio: "Biography coming soon.",
   },
@@ -31,7 +31,7 @@ export function MassageTherapists() {
             Our Team
           </p>
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Meet Our Massage Therapists
+            Meet Our Bodywork &amp; Massage Therapists
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Our therapists are licensed in Wyoming and work in the same office as Collin, so

@@ -15,9 +15,9 @@ import { Reveal } from "@/components/reveal"
 
 // Direct "write a review" link for the clinic's Google Business Profile.
 const GOOGLE_WRITE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
-// Google search results page listing the clinic's reviews.
+// Clean Google search link for the clinic's reviews (no tracking parameters).
 const GOOGLE_READ_REVIEWS_URL =
-  "https://www.google.com/search?hl=en&q=wyoming+clinic+of+chiropractic+reviews&uds=AJ5uw195tToiqL6ANOx-is4h96lHdnabsJC3UkotAG8a3Ykzp9nDY_Oh4Ny5RfaHzK5lJXRVNwIye2YK3wedRFjmlu_LEMlMioSpS6Gx1LUCmtjhENkPXpzxf1pIfJo2MJz9CwdGIc6mWwErtFDZd2dkZfh8y6PkV1uMv5mDPCEPR3y7Vz9H42-IijZB6k3XJv8tZSCOa_hoVarbNg2-CMkrW-ml_5YvCKf3B2NX7W5vmyilIjiU9v8MecX8wXn3qVE43ILiqXbkr4GXicSB1B-yq8sNw08TF2qBf14wClgiQMeNjdmHOU6Kfw_obFY8n705VXbCkW4MTcZcp6sK_zScWRNTzDP6yBVzetiuNuSiD8L8RJ8L9rgCLB4OUEVkOkI9y3WxcVH-HClqSa0Sqc-SNKQ45PHn0-WrQKYFzEUjrTFYkI2S92TU8611LYK5A6D6xMqdn5hFtlvq_d2j8EICCMeDqqpmsh3x4W25sZbAeTP_tbAM5rYk680I9GgAMkHUC8sUKSHh7nmrENL11hFAMSL6FO692IqZ1PwryznhE_cD3KtsO2M&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-XvU4xTV7Fc4ZzfrPduEGbN8637CsOM0ShjVVZNEUIazbRepBIkX2M9XFQ9F9K6RQBfrNMRDV2T_HNPRat61QqSo7IkEtVaKama2SvgwPYCM61XFQ%3D%3D&sa=X"
+  "https://www.google.com/search?q=Wyoming+Clinic+of+Chiropractic+reviews"
 
 type SuccessStory = {
   name: string
@@ -96,11 +96,15 @@ export function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-1 sm:left-4" />
-            <CarouselNext className="right-1 sm:right-4" />
+            <CarouselPrevious className="left-1 size-11 sm:left-4" />
+            <CarouselNext className="right-1 size-11 sm:right-4" />
           </Carousel>
 
-          <div className="flex items-center justify-center gap-2 pb-8" role="tablist" aria-label="Select testimonial">
+          <div
+            className="flex items-center justify-center gap-1 pb-6"
+            role="tablist"
+            aria-label="Select testimonial"
+          >
             {SUCCESS_STORIES.map((story, index) => (
               <button
                 key={story.name}
@@ -109,10 +113,14 @@ export function Testimonials() {
                 aria-selected={current === index}
                 aria-label={`Show testimonial from ${story.name}`}
                 onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full transition-colors ${
-                  current === index ? "bg-primary" : "bg-border"
-                }`}
-              />
+                className="flex h-11 w-11 items-center justify-center"
+              >
+                <span
+                  className={`h-2 w-2 rounded-full transition-colors ${
+                    current === index ? "bg-primary" : "bg-border"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </Reveal>

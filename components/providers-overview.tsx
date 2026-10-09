@@ -52,7 +52,7 @@ const careLines = [
       "Pairs with your chiropractic plan",
     ],
     href: "/massage",
-    cta: "Explore Massage Therapy",
+    cta: "Explore Bodywork",
   },
 ]
 

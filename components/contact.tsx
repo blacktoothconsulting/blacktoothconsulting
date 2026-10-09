@@ -28,7 +28,7 @@ const bookingOptions = [
     title: "Massage Therapy",
     description: "Request a session with one of our licensed massage therapists.",
     href: "/massage#request",
-    cta: "Request Massage",
+    cta: "Request Bodywork",
   },
 ]
 

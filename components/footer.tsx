@@ -3,13 +3,8 @@ import Link from "next/link"
 import { Phone, MapPin, Mail } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 
-/*
-  Google review link. Replace with the clinic's exact "write a review" URL
-  from their Google Business Profile. Until confirmed, this opens the clinic
-  on Google Maps where the Reviews tab / "Write a review" button live.
-*/
-const GOOGLE_REVIEW_URL =
-  "https://www.google.com/maps/search/?api=1&query=Wyoming+Clinic+of+Integrated+Health+Sheridan+WY"
+// Direct "write a review" link for the clinic's Google Business Profile.
+const GOOGLE_REVIEW_URL = "https://g.page/r/CS3mz2OaQCStEBM/review"
 
 const navigation = {
   main: [

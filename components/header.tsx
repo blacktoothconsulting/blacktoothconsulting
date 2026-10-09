@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { OpeningHours } from "@/components/opening-hours"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -55,7 +56,8 @@ export function Header() {
           </Link>
         </div>
 
-        <div className="flex lg:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-lg p-2.5 text-foreground hover:bg-muted transition-colors"
@@ -89,6 +91,7 @@ export function Header() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4 lg:ml-10 xl:ml-14">
+          <ThemeToggle />
           <a
             href="tel:307-655-8775"
             className="flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"

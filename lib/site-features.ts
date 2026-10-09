@@ -1,5 +1,5 @@
 export const siteFeatures = {
-  teamPage: true,
+  teamPage: false,
 } as const
 
 export const isTeamPageEnabled = siteFeatures.teamPage
