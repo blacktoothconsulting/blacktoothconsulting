@@ -92,7 +92,7 @@ const providerPaths = [
     cta: "Massage Therapy",
     wide: true,
     scheduleHref: "/massage#request",
-    scheduleLabel: "Request Massage Session",
+    scheduleLabel: "Request Bodywork Session",
   },
 ]
 

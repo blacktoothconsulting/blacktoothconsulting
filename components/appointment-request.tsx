@@ -15,7 +15,7 @@ type AppointmentRequestProps = {
 
 const hoursLabels: Record<NonNullable<AppointmentRequestProps["hoursService"]>, string> = {
   chiropractic: "Chiropractic Hours:",
-  massage: "Massage Hours:",
+  massage: "Bodywork Hours:",
   medical: "Medical Hours:",
 }
 

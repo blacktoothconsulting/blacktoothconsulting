@@ -13,7 +13,7 @@ const scheduleGroups = {
     ],
   },
   massage: {
-    name: "Massage Hours:",
+    name: "Bodywork Hours:",
     rows: [
       { day: "Mon, Wed, Thu", time: "8:00am - 6:00pm" },
       { day: "Tues", time: "8:00am - 5:00pm" },

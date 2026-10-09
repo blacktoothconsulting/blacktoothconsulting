@@ -21,7 +21,7 @@ export default function MassagePage() {
       <Header />
       <main id="main-content" tabIndex={-1} className="outline-none">
         <PageHero
-          eyebrow="Therapeutic Massage"
+          eyebrow="Therapeutic Bodywork & Massage"
           title="Massage Therapy in Sheridan"
           description="Licensed massage therapists, in the same building as your chiropractor. Call to book a session, and tell us what is bothering you when you do."
           image={{
@@ -48,7 +48,7 @@ export default function MassagePage() {
         <AppointmentRequest
           service="Massage"
           eyebrow="Book Your Session"
-          title="Request a Massage Appointment"
+          title="Request a Bodywork & Massage Appointment"
           description="Send your details and preferred times and our team will reach out to confirm your session. Let us know what's bothering you so we can match you with the right therapist."
           hoursService="massage"
           points={[
