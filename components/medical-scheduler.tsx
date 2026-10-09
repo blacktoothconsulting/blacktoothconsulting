@@ -41,7 +41,7 @@ export function MedicalScheduler() {
               <span className="h-px flex-1 bg-border" />
             </div>
             <div className="mt-6 rounded-xl bg-primary p-5 text-left">
-              <OpeningHours tone="primary" service="medical" showHeading={false} />
+              <OpeningHours tone="contact" service="medical" showHeading={false} />
             </div>
             <Button size="lg" variant="outline" className="mt-4 w-full" asChild>
               <a href="tel:307-655-8775">
@@ -63,7 +63,7 @@ export function MedicalScheduler() {
 
         <div className="mt-10 hidden text-center md:block">
           <div className="mx-auto mb-6 max-w-md rounded-xl bg-primary p-5 text-left">
-            <OpeningHours tone="primary" service="medical" showHeading={false} />
+            <OpeningHours tone="contact" service="medical" showHeading={false} />
           </div>
           <p className="text-sm text-muted-foreground mb-4">
             Having trouble with the scheduler, or need a same-day visit?

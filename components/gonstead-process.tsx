@@ -46,7 +46,7 @@ export function GonsteadProcess() {
             The 5-Step Examination Process
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Chiropractic works when applied properly; we have to be precise and only
+            Chiropractic works when applied properly. We have to be precise and only
             correct what is wrong. <span className="italic">Find it, fix it, leave it alone.</span>{" "}
             Before any adjustment occurs, Collin performs a thorough evaluation using five
             distinct criteria.
