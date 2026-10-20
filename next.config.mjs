@@ -13,17 +13,18 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/contact',
-        destination: '/#contact',
+        source: '/the-practice',
+        destination: 'https://www.thewyomingclinic.com/#about',
         permanent: true,
       },
-    ]
-  },
-  async redirects() {
-    return [
+      {
+        source: '/our-services',
+        destination: 'https://www.thewyomingclinic.com/',
+        permanent: true,
+      },
       {
         source: '/contact',
-        destination: '/#contact',
+        destination: 'https://www.thewyomingclinic.com/#contact',
         permanent: true,
       },
     ]
