@@ -1,9 +1,5 @@
-import { Stethoscope, FlaskConical, Scissors, Wallet, FileText, ExternalLink } from "lucide-react"
+import { Stethoscope, FlaskConical, Scissors } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-
-const MEDICARE_CONTRACT_URL =
-  "https://med.noridianmedicare.com/documents/10525/2052366/Opt-Out%2BPrivate%2BContract.pdf"
 
 const careGroups = [
   {
@@ -82,44 +78,6 @@ export function MedicalServices() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Cash-pay note */}
-        <div className="mt-12 flex flex-col sm:flex-row items-start gap-4 rounded-2xl bg-primary/5 border border-primary/15 p-6 lg:p-8">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-            <Wallet className="h-6 w-6 text-primary" aria-hidden="true" />
-          </div>
-          <div className="min-w-0">
-            <h3 className="font-semibold text-lg text-foreground">Straightforward Medical Care</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Insurance is not billed. Payment is due at the time of service. Superbills are
-              available upon request for patients to submit to their insurance. Insurance
-              reimbursement is not guaranteed.
-            </p>
-            <div className="mt-4 border-t border-primary/15 pt-4">
-              <div className="flex items-start gap-3">
-                <FileText className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-foreground">Medicare Patients (Opt-Out)</p>
-                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                    Medicare opt-out means that the medical provider has chosen not to bill
-                    Medicare. Medicare-covered services are provided through a private agreement
-                    between the patient and the provider, and Medicare generally does not reimburse
-                    the patient or provider for those services. Patients should review the agreement
-                    carefully and contact Medicare or their supplemental insurer with questions
-                    about coverage.
-                  </p>
-                  <Button variant="outline" size="sm" asChild className="mt-4 h-auto w-full sm:w-auto whitespace-normal text-left">
-                    <a href={MEDICARE_CONTRACT_URL} target="_blank" rel="noopener noreferrer">
-                      <FileText className="h-4 w-4 shrink-0" />
-                      <span>View Medicare Private-Pay Contract</span>
-                      <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
