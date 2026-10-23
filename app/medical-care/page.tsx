@@ -25,7 +25,12 @@ export default function MedicalCarePage() {
         <InsuranceBanner />
         <PageHero
           eyebrow="Primary & Acute Medical Care"
-          title="Less Waiting, More Care, All in One Place"
+          title={
+            <>
+              <span className="xl:block">Less Waiting, More Care,</span>{" "}
+              <span className="xl:block">All in One Place</span>
+            </>
+          }
           description="Primary & same-day care for adults and children with Gordon Hendrickson, PA-C, same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
           image={{
             src: "/images/medical-exam-room.jpg",
