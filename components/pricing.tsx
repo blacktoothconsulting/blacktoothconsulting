@@ -1,8 +1,5 @@
-import { Phone, FileText, ExternalLink } from "lucide-react"
+import { Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const MEDICARE_CONTRACT_URL =
-  "https://med.noridianmedicare.com/documents/10525/2052366/Opt-Out%2BPrivate%2BContract.pdf"
 
 type PriceItem = { service: string; price: string }
 
@@ -154,23 +151,6 @@ export function Pricing() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 border-t border-border pt-6">
-            <p className="text-sm font-semibold text-foreground">Medicare Patients (Opt-Out)</p>
-            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-              Medicare opt-out means that the medical provider has chosen not to bill Medicare.
-              Medicare-covered services are provided through a private agreement between the patient
-              and the provider, and Medicare generally does not reimburse the patient or provider
-              for those services. Patients should review the agreement carefully and contact
-              Medicare or their supplemental insurer with questions about coverage.
-            </p>
-            <Button variant="outline" size="sm" asChild className="mt-4 h-auto w-full sm:w-auto whitespace-normal text-left">
-              <a href={MEDICARE_CONTRACT_URL} target="_blank" rel="noopener noreferrer">
-                <FileText className="h-4 w-4 shrink-0" />
-                <span>View Medicare Private-Pay Contract</span>
-                <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-              </a>
-            </Button>
-          </div>
         </div>
 
         {/* CTA */}
