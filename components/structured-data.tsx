@@ -59,7 +59,6 @@ const clinic = {
     name: "Sheridan",
     containedInPlace: { "@type": "State", name: "Wyoming" },
   },
-  // Cash-pay clinic: insurance is not billed.
   paymentAccepted: "Cash, Check, Credit Card, Debit Card",
   currenciesAccepted: "USD",
   medicalSpecialty: "PrimaryCare",

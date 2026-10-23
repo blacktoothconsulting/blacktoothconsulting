@@ -86,9 +86,7 @@ export function Pricing() {
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Straightforward medical care with no surprise clinic bills. Payment is due at the time
-            of service. You may request an itemized receipt or superbill to submit to your insurance
-            plan; reimbursement is not guaranteed. This menu highlights our most common services and
-            is not a complete list. Please call to ask about a specific service.
+            of service. This menu highlights our most common services and is not a complete list. Please call to ask about a specific service.
           </p>
         </div>
 
