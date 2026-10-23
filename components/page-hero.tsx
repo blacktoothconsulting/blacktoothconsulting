@@ -3,7 +3,7 @@ import Image from "next/image"
 
 type PageHeroProps = {
   eyebrow: string
-  title: string
+  title: ReactNode
   description: string
   image: {
     src: string

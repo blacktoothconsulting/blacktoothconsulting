@@ -22,9 +22,15 @@ export default function MedicalCarePage() {
     <div className="min-h-screen">
       <Header />
       <main id="main-content" tabIndex={-1} className="outline-none">
+        <InsuranceBanner />
         <PageHero
           eyebrow="Primary & Acute Medical Care"
-          title="Less Waiting, More Care, All in One Place"
+          title={
+            <>
+              <span className="xl:block">Less Waiting, More Care,</span>{" "}
+              <span className="xl:block">All in One Place</span>
+            </>
+          }
           description="Primary & same-day care for adults and children with Gordon Hendrickson, PA-C, same-day visits, in-office testing and procedures, and transparent pricing with no surprise clinic bills."
           image={{
             src: "/images/medical-exam-room.jpg",
@@ -43,7 +49,6 @@ export default function MedicalCarePage() {
             <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
         </PageHero>
-        <InsuranceBanner />
         <GordonProfile />
         <GordonBio />
         <MedicalScheduler />
