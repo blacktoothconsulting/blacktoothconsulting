@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { PageHero } from "@/components/page-hero"
+import { InsuranceBanner } from "@/components/insurance-banner"
 import { GordonProfile } from "@/components/gordon-profile"
 import { GordonBio } from "@/components/gordon-bio"
 import { MedicalScheduler } from "@/components/medical-scheduler"
@@ -42,6 +43,7 @@ export default function MedicalCarePage() {
             <a href="tel:307-655-8775">Call 307.655.8775</a>
           </Button>
         </PageHero>
+        <InsuranceBanner />
         <GordonProfile />
         <GordonBio />
         <MedicalScheduler />
